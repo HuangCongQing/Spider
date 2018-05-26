@@ -6,7 +6,7 @@
 #  */
 # /*
 # 简介
-# 我爬取豆瓣影评，告诉你《复仇者联盟3》在讲什么？
+# 通过 Python 制作网络爬虫，爬取豆瓣电影评论，并分析然后制作豆瓣影评的云图
 # 参考链接：https: // mp.weixin.qq.com/s/uTIhyNVE7W6mGMneSKQNlw
 #  */
 import jieba
