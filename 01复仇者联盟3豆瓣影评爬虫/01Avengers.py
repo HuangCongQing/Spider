@@ -95,7 +95,8 @@ def request_get(url):
     session = requests.Session()
 
     cookie = {
-        'cookie': "你的 cookie 值",
+        'cookie': "wsgxhse46y5uthdsgzrefg",
+        # 'cookie': "你的 cookie 值",
     }
 
     time.sleep(random.randint(5, 15))  
