@@ -97,7 +97,7 @@ def main():
         by=["计数"], ascending=False)
     #  print(words_stat.head())
 
-    bg_pic = numpy.array(Image.open("alice_mask.png"))
+    bg_pic = numpy.array(Image.open("panda.jpg"))
 
     # 用词云进行显示
     wordcloud = WordCloud(
