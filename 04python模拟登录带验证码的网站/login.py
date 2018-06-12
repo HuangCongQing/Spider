@@ -7,6 +7,12 @@
 import requests
 import base64
 
+import io
+import sys
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8')  # 改变标准输出的默认编码
+
+
 from bs4 import BeautifulSoup
 
 if __name__ == '__main__':
@@ -37,7 +43,7 @@ if __name__ == '__main__':
     codeurl = 'http://www.pss-system.gov.cn/sipopublicsearch/portal/login-showPic.shtml'
 
     '''此处改为大家在专利网注册的账号'''
-    strName = ''
+    strName = 'XXX'
     strPass = ''
 
 
