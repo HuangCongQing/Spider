@@ -1,5 +1,7 @@
 # spider
+
 python3 各种爬虫技术
+
 ### 下载不同python版本下模块
 
 如果是python2(python2.exe)
@@ -7,6 +9,10 @@ python3 各种爬虫技术
 
 如果是python3（python3.exe）
 `python3 -m pip install 库名`
+
+### ERRORS
+
+* [ContinuumIO](https://github.com/ContinuumIO)/**[anaconda-issues](https://github.com/ContinuumIO/anaconda-issues)**
 
 ### LICENSE
 
