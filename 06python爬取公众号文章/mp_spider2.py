@@ -66,7 +66,8 @@ class mp_spider(object):
 
     def creat_pdf_file(self, url, title):
         try:
-            file = 'D:/store/file2/{}.pdf'.format(title)
+            file = 'F:/AI/Spider/06python爬取公众号文章/file/{}.pdf'.format(
+                title)
             if not os.path.exists(file):  # 过滤掉重复文件
                 pdfkit.from_url(url, file)
 
