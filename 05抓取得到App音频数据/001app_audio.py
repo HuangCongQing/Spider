@@ -129,7 +129,8 @@ class dedao(object):
     def download_mp3(self, mp3_url):
         try:
             # 补全文件目录
-            mp3_path = u'D:/store/mp3/{}'.format(mp3_url.split('/')[-1])
+            mp3_path = u'F:/AI/Spider/05抓取得到App音频数据/mp3/{}'.format(
+                mp3_url.split('/')[-1])
             print(mp3_path)
             # 判断文件是否存在。
             if not os.path.exists(mp3_path):
