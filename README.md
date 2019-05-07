@@ -20,6 +20,17 @@ python3 各种爬虫技术
 常用的抓包工具有Fiddles与Charles,以及其它今天我这里主要说说Charles使用，相比于Fiddles，Charles功能更强大，而且更容易使用. 所以一般抓包我推荐使用Charles
 [charles4.2下载与破解方法以及配置https](https://www.cnblogs.com/rrl92/p/7928770.html)
 
+### Videos
+
+* https://edu.hellobi.com/course/81/lessons
+
+
+* https://cuiqingcai.com/4352.html
+
+
+* https://cuiqingcai.com/1052.html
+
+
 
 ### ERRORS
 
