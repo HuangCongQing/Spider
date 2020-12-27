@@ -100,7 +100,7 @@ def request_get(url):
     }
 
     time.sleep(random.randint(5, 15))  
-    response = requests.get(url, headers=header, cookies=cookie_nologin, timeout = 3)
+    response = requests.get(url, headers=header, cookies=cookie, timeout = 3)  # cookies值
     if response.status_code != 200:
         print(response.status_code)
     return response
