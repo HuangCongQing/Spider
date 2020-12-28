@@ -2,6 +2,8 @@
 
 python3 各种爬虫技术
 
+**个人爬虫笔记：https://www.yuque.com/huangzhongqing/spider**
+
 ### 下载不同python版本下模块
 
 如果是python2(python2.exe)
@@ -14,6 +16,7 @@ python3 各种爬虫技术
 
 我们以前都是在网页上抓取数据，很少在手机App中抓取数据，那如何在抓取手机App中的数据呢？一般我们都是使用抓包工具来抓取数据.
 两大抓包工具
+
 * Fiddles
 * Charles
 
@@ -23,14 +26,8 @@ python3 各种爬虫技术
 ### Videos
 
 * https://edu.hellobi.com/course/81/lessons
-
-
 * https://cuiqingcai.com/4352.html
-
-
 * https://cuiqingcai.com/1052.html
-
-
 
 ### ERRORS
 
