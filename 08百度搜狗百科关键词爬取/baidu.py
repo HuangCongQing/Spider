@@ -1,11 +1,11 @@
 '''
-Description:    https://www.yuque.com/huangzhongqing/spider/zpdk9z
+Description:  百度关键词爬取  https://www.yuque.com/huangzhongqing/spider/zpdk9z
 Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2020-12-28 10:05:14
-LastEditTime: 2020-12-29 23:51:32
-FilePath: /Spider/08百度百科关键词爬取/baidu.py
+LastEditTime: 2020-12-30 09:59:55
+FilePath: /Spider/08百度搜狗百科关键词爬取/baidu.py
 '''
 import urllib.request
 import urllib.parse
