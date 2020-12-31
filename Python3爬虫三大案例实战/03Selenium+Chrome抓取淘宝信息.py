@@ -1,8 +1,17 @@
+'''
+Description: 爬取淘宝信息  https://www.bilibili.com/video/BV1Gs411E7oF?p=3
+Author: HCQ
+Company(School): UCAS
+Email: 1756260160@qq.com
+Date: 2020-12-31 15:29:38
+LastEditTime: 2020-12-31 18:01:47
+FilePath: /Spider/Python3爬虫三大案例实战/03Selenium+Chrome抓取淘宝信息.py
+'''
 # -*- coding: utf-8 -*-
 '''
 Created on 2017年8月24日
 
-@author: hasee
+@author: HCQ
 '''
 import re
 from selenium import webdriver
