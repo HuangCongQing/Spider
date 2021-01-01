@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 15:15:27
-LastEditTime: 2021-01-01 15:34:21
+LastEditTime: 2021-01-01 15:37:50
 FilePath: /Spider/package/4selenium/031输入文字搜索.py
 '''
 from selenium import webdriver
@@ -19,13 +19,14 @@ search_input = bro.find_element_by_id('q')
 search_input.send_keys('Iphone')
 
 #点击搜索按钮
-btn = bro.find_element_by_css_selector('.btn-search')
-# btn = bro.find_element_by_css_selector('.btn-search')
+# btn = bro.find_element_by_css_selector('.btn-search') # css选择器
+# 下方也行
+btn = bro.find_element_by_class_name('btn-search') # 类名
 btn.click()
 
 
 sleep(5)
-bro.quit() # 退出
+bro.quit() # 5s后自动退出
 
 
 
