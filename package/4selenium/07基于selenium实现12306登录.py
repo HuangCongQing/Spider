@@ -93,8 +93,8 @@ chaojiying = Chaojiying_Client('bobo328410948', 'bobo328410948', '899370')	#用�
 im = open('code.png', 'rb').read()		#本地图片文件路径 来替换 a.jpg 有时WIN系统须要//
 print(chaojiying.PostPic(im, 9004)['pic_str'])
 print("chaojiying.PostPic(im, 9004)['pic_str']")
-result = chaojiying.PostPic(im, 9004)['pic_str']  # 返回对应坐标
-# result = 248,67|104,141  # 测试
+# result = chaojiying.PostPic(im, 9004)['pic_str']  # 返回对应坐标
+result = 248,67|104,141  # 测试
 all_list = [] #要存储即将被点击的点的坐标  [[x1,y1],[x2,y2]]
 if '|' in result:
     list_1 = result.split('|') # 竖线分割
@@ -113,7 +113,7 @@ else:
     xy_list.append(x)
     xy_list.append(y)
     all_list.append(xy_list)
-print(all_list)
+print(all_list) # [[191, 74], [254, 153]]
 
 #遍历列表，使用动作链对每一个列表元素对应的x,y指定的位置进行点击操作
 for l in all_list:
