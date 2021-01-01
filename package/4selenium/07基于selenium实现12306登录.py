@@ -92,7 +92,9 @@ frame.save(code_img_name)
 chaojiying = Chaojiying_Client('bobo328410948', 'bobo328410948', '899370')	#用户中心>>软件ID 生成一个替换 96001
 im = open('code.png', 'rb').read()		#本地图片文件路径 来替换 a.jpg 有时WIN系统须要//
 print(chaojiying.PostPic(im, 9004)['pic_str'])
+print("chaojiying.PostPic(im, 9004)['pic_str']")
 result = chaojiying.PostPic(im, 9004)['pic_str']  # 返回对应坐标
+# result = 248,67|104,141  # 测试
 all_list = [] #要存储即将被点击的点的坐标  [[x1,y1],[x2,y2]]
 if '|' in result:
     list_1 = result.split('|') # 竖线分割
@@ -105,7 +107,7 @@ if '|' in result:
         xy_list.append(y)
         all_list.append(xy_list)
 else:
-    x = int(result.split(',')[0])
+    x = int(result.split(',')[0])  # AttributeError: 'tuple' object has no attribute 'split'
     y = int(result.split(',')[1])
     xy_list = []
     xy_list.append(x)
