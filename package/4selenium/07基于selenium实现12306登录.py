@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-01 18:15:05
+LastEditTime: 2021-01-01 18:22:16
 FilePath: /Spider/package/4selenium/07基于selenium实现12306登录.py
 '''
 #下述代码为超级鹰提供的示例代码
@@ -112,6 +112,7 @@ else:
     xy_list.append(y)
     all_list.append(xy_list)
 print(all_list)
+
 #遍历列表，使用动作链对每一个列表元素对应的x,y指定的位置进行点击操作
 for l in all_list:
     x = l[0]
@@ -119,6 +120,7 @@ for l in all_list:
     ActionChains(bro).move_to_element_with_offset(code_img_ele, x, y).click().perform()
     time.sleep(0.5)
 
+# 输入账号密码登录
 bro.find_element_by_id('username').send_keys('www.zhangbowudi@qq.com')
 time.sleep(2)
 bro.find_element_by_id('password').send_keys('bobo_15027900535')
