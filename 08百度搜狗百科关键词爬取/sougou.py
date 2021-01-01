@@ -4,29 +4,21 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2020-12-30 17:35:35
-LastEditTime: 2020-12-30 18:10:19
+LastEditTime: 2021-01-01 20:30:42
 FilePath: /Spider/08百度搜狗百科关键词爬取/sougou.py
-'''
-
-'''
-Description:  百度关键词爬取  https://www.yuque.com/huangzhongqing/spider/zpdk9z
-Author: HCQ
-Company(School): UCAS
-Email: 1756260160@qq.com
-Date: 2020-12-28 10:05:14
-LastEditTime: 2020-12-30 18:03:02
-FilePath: /Spider/08百度搜狗百科关键词爬取/baidu.py
 '''
 import urllib.request
 import urllib.parse
 import re
 from bs4 import BeautifulSoup
+# from selenium import webdriver
+# from time import sleep
 
 
 def baike( word ) :
        def test_url( soup ) :      		# 检测是否收录该词条，返回 True or False
               result = soup.find( text=re.compile("站内没有找到") )
-              # print("result: ", result)
+              print("result: ", result)
               if result :
                      print("站内没有找到 ")
                      return False
@@ -48,9 +40,10 @@ def baike( word ) :
                      print( soup.find( class_="abstract_main" ).text )
 
        def start( word ):
-              keyword = urllib.parse.urlencode( {"word" : word} )  	# 解析，用于组成URL
+              keyword = urllib.parse.urlencode( {"fromTitle" : word} )  	# 解析，用于组成URL
+              print(keyword)
               
-              response = urllib.request.urlopen( "https://baike.sogou.com/v321023.htm?fromTitle=%s" % keyword )
+              response = urllib.request.urlopen( "https://baike.sogou.com/?fromTitle=%s" % keyword )
               html = response.read()
               soup = BeautifulSoup( html , "html.parser" )
             #   print(soup)
@@ -66,4 +59,5 @@ def baike( word ) :
 
 if(__name__ == "__main__") :
        content = str( input("请输入关键词  :  ") )
+       # content = "体育旅游"
        baike(content)
