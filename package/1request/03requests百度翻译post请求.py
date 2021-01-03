@@ -1,3 +1,12 @@
+'''
+Description: 参考：https://www.bilibili.com/video/BV1Yh411o7Sz?p=8
+Author: HCQ
+Company(School): UCAS
+Email: 1756260160@qq.com
+Date: 2021-01-01 13:56:16
+LastEditTime: 2021-01-03 17:05:17
+FilePath: /Spider/package/1request/03requests百度翻译post请求.py
+'''
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
 import requests
@@ -18,7 +27,7 @@ if __name__ == "__main__":
     #4.请求发送
     response = requests.post(url=post_url,data=data,headers=headers)
     #5.获取响应数据:json()方法返回的是obj（如果确认响应数据是json类型的，才可以使用json（））
-    dic_obj = response.json()
+    dic_obj = response.json() # json格式
 
     #持久化存储
     fileName = word+'.json'
