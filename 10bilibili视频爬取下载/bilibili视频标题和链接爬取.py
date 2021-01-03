@@ -4,10 +4,10 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-03 14:57:10
-LastEditTime: 2021-01-03 15:56:02
+LastEditTime: 2021-01-04 00:55:59
 FilePath: /Spider/10bilibili视频爬取下载/bilibili视频标题和链接爬取.py
 '''
-import requests,lxml,jieba,codecs,re,json
+import requests
 import urllib.request
 import urllib.parse
 import re
@@ -20,4 +20,11 @@ req = urllib.request.Request(url="https://search.bilibili.com/all?%s" % keyword 
 response = urllib.request.urlopen(req )  
 html = response.read().decode('utf-8')
 soup = BeautifulSoup( html , "lxml" )  # lxml解析
-print(soup)
+# print(soup)
+print(soup.select('.mixin-list > ul a')[0]['href'])  
+li1 = soup.select('.mixin-list > ul > li')[0]
+# print(li1)
+url_link = 'https:' +  li1.a['href']  # 视频链接
+titile =  li1.a['title'] # 视频标题
+# print(soup.select('.lazy-img > img')[0]) # <img alt="" src=""/>??????
+# img_link = 'https:' +  soup.select('.lazy-img > img')[0]['src']
