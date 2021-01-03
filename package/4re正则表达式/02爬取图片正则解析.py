@@ -1,3 +1,12 @@
+'''
+Description: 
+Author: HCQ
+Company(School): UCAS
+Email: 1756260160@qq.com
+Date: 2021-01-01 13:56:16
+LastEditTime: 2021-01-03 21:26:29
+FilePath: /Spider/package/4re正则表达式/02爬取图片正则解析.py
+'''
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 import requests
@@ -26,7 +35,7 @@ if __name__ == "__main__":
 
         #使用聚焦爬虫将页面中所有的糗图进行解析/提取
         ex = '<div class="thumb">.*?<img src="(.*?)" alt.*?</div>'
-        img_src_list = re.findall(ex,page_text,re.S)
+        img_src_list = re.findall(ex,page_text,re.S) # 想要的是括号里面的(.*?)
         # print(img_src_list)
         for src in img_src_list:
             #拼接出一个完整的图片url
