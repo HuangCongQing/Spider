@@ -1,5 +1,13 @@
+'''
+Description: 参考：https://www.bilibili.com/video/BV1Yh411o7Sz?p=7
+Author: HCQ
+Company(School): UCAS
+Email: 1756260160@qq.com
+Date: 2021-01-03 16:30:44
+LastEditTime: 2021-01-03 17:05:53
+FilePath: /Spider/package/1request/02requests搜狗网页采集器.py
+'''
 
-# 参考：https://www.bilibili.com/video/BV1Yh411o7Sz?p=7
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
 
