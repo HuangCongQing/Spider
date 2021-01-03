@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-03 17:05:17
+LastEditTime: 2021-01-03 17:06:41
 FilePath: /Spider/package/1request/03requests百度翻译post请求.py
 '''
 #!/usr/bin/env python 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     #持久化存储
     fileName = word+'.json'
     fp = open(fileName,'w',encoding='utf-8')
-    json.dump(dic_obj,fp=fp,ensure_ascii=False)
+    json.dump(dic_obj,fp=fp,ensure_ascii=False) # 中文不能使用ASCII编码
 
     print('over!!!')
 
