@@ -4,27 +4,58 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-03 14:57:10
-LastEditTime: 2021-01-04 00:55:59
+LastEditTime: 2021-01-04 23:31:53
 FilePath: /Spider/10bilibili视频爬取下载/bilibili视频标题和链接爬取.py
 '''
 import requests
-import urllib.request
-import urllib.parse
 import re
 from bs4 import BeautifulSoup
+import openpyxl
 
-word =  "重庆邮电大学 宣传片 最新"  	# 解析，用于组成URL
-keyword = urllib.parse.urlencode( {"keyword" : word} )  	# 解析，用于组成URL
-headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
-req = urllib.request.Request(url="https://search.bilibili.com/all?%s" % keyword , headers=headers)  
-response = urllib.request.urlopen(req )  
-html = response.read().decode('utf-8')
-soup = BeautifulSoup( html , "lxml" )  # lxml解析
-# print(soup)
-print(soup.select('.mixin-list > ul a')[0]['href'])  
-li1 = soup.select('.mixin-list > ul > li')[0]
-# print(li1)
-url_link = 'https:' +  li1.a['href']  # 视频链接
-titile =  li1.a['title'] # 视频标题
-# print(soup.select('.lazy-img > img')[0]) # <img alt="" src=""/>??????
-# img_link = 'https:' +  soup.select('.lazy-img > img')[0]['src']
+def read_excel():
+    #定义一个空列表
+    stu_num=[]
+    #打开目标execl，这里注意openpyxl能读取的execl后缀名是'.xlsx'文件
+    workbook1=openpyxl.load_workbook(r'/home/hcq/python/Spider/文件操作/excel/college.xlsx')
+    #选定目标sheet
+    worksheet1 = workbook1.active
+    for cell in worksheet1['A']:
+        # print(cell.value)
+        stu_num.append(cell.value)#这里用循环把A列每个cell的值写入开始定义的空列表
+    # print(stu_num)
+    return stu_num
+
+def get_details(schools):
+    for school in schools:
+        print(school) # 北京大学
+        url_all = []
+        title_all = []
+        word = school +  "宣传片 最新"  	# 解析，用于组成URL
+        url = 'https://search.bilibili.com/all'
+        param = {
+            'keyword':word
+        }
+        headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
+        response = requests.get(url=url,params=param,headers=headers)
+        html = response.text
+        soup = BeautifulSoup( html , "lxml" )  # lxml解析
+        # print(soup)
+        # print(soup.select('.mixin-list > ul a')[0]['href'])  
+        li1 = soup.select('.mixin-list > ul > li')[0]
+        url_link = 'https:' +  li1.a['href']  # 视频链接
+        title =  li1.a['title'] # 视频标题
+        print(url_link)
+        print(title)
+        url_all.append(url_link)
+        title_all.append(title)
+    # print(soup.select('.lazy-img > img')[0]) # <img alt="" src=""/>??????
+    # img_link = 'https:' +  soup.select('.lazy-img > img')[0]['src']
+    return url_all,  title_all
+
+if __name__ == "__main__":
+    college = read_excel()
+    # print(college[0])
+    url_all,  title_all = get_details(college)
+    print(url_all)
+    
+    
