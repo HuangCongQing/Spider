@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-04 10:33:00
+LastEditTime: 2021-01-04 10:40:37
 FilePath: /Spider/package/3xpath/06xpath解析案例-58二手房.py
 '''
 #!/usr/bin/env python 
@@ -23,10 +23,10 @@ if __name__ == "__main__":
     #数据解析
     tree = etree.HTML(page_text)
     #存储的就是li标签对象
-    li_list = tree.xpath('//ul[@class="house-list-wrap"]/li')
+    li_list = tree.xpath('//ul[@class="house-list-wrap"]/li') # 
     fp = open('58.txt','w',encoding='utf-8')
     for li in li_list:
         #局部解析
-        title = li.xpath('./div[2]/h2/a/text()')[0]
+        title = li.xpath('./div[2]/h2/a/text()')[0]  # 
         print(title)
         fp.write(title+'\n')
