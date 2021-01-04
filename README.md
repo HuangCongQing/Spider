@@ -4,6 +4,9 @@ python3 各种爬虫技术
 
 **个人爬虫笔记：https://www.yuque.com/huangzhongqing/spider**
 
+
+@[双愚](https://github.com/HuangCongQing/Spider) , 若fork或star请注明来源
+
 ### 下载不同python版本下模块
 
 如果是python2(python2.exe)
