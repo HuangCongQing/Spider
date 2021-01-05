@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-03 14:57:10
-LastEditTime: 2021-01-04 23:31:53
+LastEditTime: 2021-01-05 10:22:32
 FilePath: /Spider/10bilibili视频爬取下载/bilibili视频标题和链接爬取.py
 '''
 import requests
@@ -26,11 +26,12 @@ def read_excel():
     return stu_num
 
 def get_details(schools):
-    for school in schools:
-        print(school) # 北京大学
-        url_all = []
-        title_all = []
-        word = school +  "宣传片 最新"  	# 解析，用于组成URL
+    url_all = []
+    title_all = []
+    for school in schools[0:21]:
+        # print(school) # 北京大学
+        word = school +  " 宣传片 最新"  	# 解析，用于组成URL
+        # print(word)
         url = 'https://search.bilibili.com/all'
         param = {
             'keyword':word
@@ -41,21 +42,29 @@ def get_details(schools):
         soup = BeautifulSoup( html , "lxml" )  # lxml解析
         # print(soup)
         # print(soup.select('.mixin-list > ul a')[0]['href'])  
-        li1 = soup.select('.mixin-list > ul > li')[0]
-        url_link = 'https:' +  li1.a['href']  # 视频链接
-        title =  li1.a['title'] # 视频标题
-        print(url_link)
-        print(title)
-        url_all.append(url_link)
-        title_all.append(title)
-    # print(soup.select('.lazy-img > img')[0]) # <img alt="" src=""/>??????
-    # img_link = 'https:' +  soup.select('.lazy-img > img')[0]['src']
+        li = soup.select('.mixin-list > ul > li')
+        # print("li长度：",len(li))
+        if len(li) > 0:
+            li1 = soup.select('.mixin-list > ul > li')[0]  # 数组为空   IndexError: list index out of range
+            url_link = 'https:' +  li1.a['href']  # 视频链接
+            title =  li1.a['title'] # 视频标题
+            # 封面为空
+            # print(soup.select('.lazy-img > img')[0]) # <img alt="" src=""/>??????
+            # img_link = 'https:' +  soup.select('.lazy-img > img')[0]['src']
+            print(url_link)
+            print(title)
+            url_all.append(url_link)
+            title_all.append(title)
+        else:
+            url_all.append('')
+            title_all.append('')
+    # print(title_all)
     return url_all,  title_all
 
 if __name__ == "__main__":
     college = read_excel()
     # print(college[0])
     url_all,  title_all = get_details(college)
-    print(url_all)
+    print(url_all, title_all)
     
     
