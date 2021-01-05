@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-05 16:01:06
-LastEditTime: 2021-01-05 16:04:56
+LastEditTime: 2021-01-05 16:07:43
 FilePath: /Spider/11爬取flash/01爬取flash动画.py
 '''
 import requests
@@ -20,7 +20,7 @@ try:
     if not os.path.exists(path):
         r = requests.get(url)
         with open(path,'wb') as f:
-            f.write(r.content)
+            f.write(r.content) # 二进制流
             f.close()
             print('爬取成功')
     else:
