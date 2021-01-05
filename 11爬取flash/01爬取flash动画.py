@@ -4,16 +4,17 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-05 16:01:06
-LastEditTime: 2021-01-05 16:07:43
+LastEditTime: 2021-01-05 16:18:43
 FilePath: /Spider/11爬取flash/01爬取flash动画.py
 '''
 import requests
 import os
 #url = 'http://pic.baike.soso.com/p/20121204/bki-20121204204856-1238434277.jpg'
 #url = 'http://demo.sc.chinaz.com//Files/DownLoad/flash2/201810/Xflash119.swf'
-url = 'http://demo.sc.chinaz.com//Files/DownLoad/flash2/201810/flash6539.swf'
+url = 'http://demo.sc.chinaz.com//Files/DownLoad/flash2/201810/flash6539.swf' # 可以
+url = 'https://player.polyv.net/common_player/player/module/media/media.19.05.29.swf'
 root = '11爬取flash'#根目录  注意修改
-path = root + url.split('/')[-1]
+path = root + url.split('/')[-1] # 文件名
 try:
     if not os.path.exists(root):#判断根目录是否存在
         os.mkdir(root)          #建立根目录
