@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-06 13:26:47
-LastEditTime: 2021-01-06 20:19:50
+LastEditTime: 2021-01-06 20:20:22
 FilePath: /Spider/practice/10bilibili视频爬取下载/05bilibili爬取封面.py
 '''
 import requests
@@ -40,7 +40,7 @@ def get_content(url):
     result = json.loads(content)
     # print(content,result)
     img_link  = result['data']['pic']
-    print(img_link)
+    print(img_link) # http://i2.hdslb.com/bfs/archive/e4c22d45b5c9832d66c3e6baedcf4a17c9e28191.png
     
 if __name__ == "__main__":
     bv = "BV194411G72j"
