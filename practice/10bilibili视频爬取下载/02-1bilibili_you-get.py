@@ -1,11 +1,11 @@
 '''
-Description: 
+Description: you_get 下载视频
 Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-03 14:22:52
-LastEditTime: 2021-01-06 13:15:21
-FilePath: /Spider/practice/10bilibili视频爬取下载/02bilibili_you-get.py
+LastEditTime: 2021-01-06 21:26:33
+FilePath: /Spider/practice/10bilibili视频爬取下载/02-1bilibili_you-get.py
 '''
 import sys
 from you_get import common as you_get                #导入you-get库
