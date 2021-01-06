@@ -20,6 +20,27 @@ python3 各种爬虫技术
 3. [package/3xpath](package/3xpath)
 4. [package/4re正则表达式](package/4re正则表达式)
 5. [package/5selenium](package/5selenium)
+6. [package/6wordcloud](package/6wordcloud)
+
+
+
+| 功能 | **包名** | **作用** |
+| - | - | - |
+| 数据获取 | request | 爬取网页 |
+| 数据 解析 | re | 正则表达式 |
+| <br/> | BeautifulSoup | <br/> |
+| <br/> | xpath | xpath语法来进行文件格式解析 |
+| <br/> | lxml | lxml库结合libxml2快速强大的特性，使用xpath语法来进行文件格式解析，与Beautiful相比，效率更高。 |
+| 模拟浏览器 | Selenium | 用于测试网站的自动化测试工具，支持各种浏览器包括Chrome、Firefox、Safari等主流界面浏览器，同时也支持phantomJS无界面浏览器。模拟点击 |
+| <br/> | PhantomJS | 无界面浏览器 |
+| <br/> | pandas | <br/> |
+| <br/> | jieba | 使用结巴分词进行中文分词 |
+| <br/> | pandas | <br/> |
+| <br/> | wordcloud | 词云包 |
+| <br/> | matplotlib | 绘制图表 |
+|   | random | <br/> |
+
+[]()[]()
 
 ### 爬虫实战
 
@@ -42,7 +63,7 @@ python3 各种爬虫技术
 
 1. [文件操作/excel](文件操作/excel)
 2. [文件操作/json](文件操作/json)【todo】
-3. [文件操作/txt](文件操作/txt)【todo】
+3. [文件操作/txt](文件操作/txt)
 
 
 
