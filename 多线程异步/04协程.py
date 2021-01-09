@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-09 16:35:12
+LastEditTime: 2021-01-09 16:39:33
 FilePath: /Spider/多线程异步/04协程.py
 '''
 import asyncio
@@ -13,7 +13,7 @@ async def request(url):
     print('正在请求的url是',url)
     print('请求成功,',url)
     return url
-#async修饰的函数，调用之后返回的一个协程对象
+#async修饰的函数，调用之后返回的一个协程对象，赋值给c
 c = request('www.baidu.com')
 # asyncio.run(c)  # 3.7版本可以直接这样用
 
