@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 16:06:28
+LastEditTime: 2021-01-10 16:20:09
 FilePath: /Spider/package/1request-advanced/02登录后爬取当前用户的相关的用户信息.py
 '''
 #编码流程：
@@ -96,11 +96,11 @@ print(response.status_code)
 
 #爬取当前用户的个人主页对应的页面数据========================================================================
 detail_url = 'http://www.renren.com/975698146/profile'
-#手动cookie处理
+#1 手动cookie处理
 # headers = {
 #     'Cookie':'xxxx'
 # }
-#使用携带cookie的session进行get请求的发送
+#2 使用携带cookie的session进行get请求的发送
 detail_page_text = session.get(url=detail_url,headers=headers).text
 with open('bobo.html','w',encoding='utf-8') as fp:
     fp.write(detail_page_text)
