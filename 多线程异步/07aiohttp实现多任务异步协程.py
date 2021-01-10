@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 13:03:06
+LastEditTime: 2021-01-10 13:04:14
 FilePath: /Spider/多线程异步/07aiohttp实现多任务异步协程.py
 '''
 #环境安装：pip install aiohttp
@@ -30,7 +30,7 @@ for i in range(10):
     urls.append('http://127.0.0.1:5000/bobo')
 print(urls)
 
-
+# 获取数据
 async def get_page(url):
     async with aiohttp.ClientSession() as session:
         #get()、post():
