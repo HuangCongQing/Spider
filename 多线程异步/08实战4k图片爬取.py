@@ -1,11 +1,11 @@
 '''
-Description: 实战爬取图片
+Description: 实战爬取图片todo  还没做
 Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 12:55:26
-FilePath: /Spider/多线程异步/08实战爬取图片.py
+LastEditTime: 2021-01-10 13:06:02
+FilePath: /Spider/多线程异步/08实战4k图片爬取.py
 '''
 import requests
 from lxml import etree
