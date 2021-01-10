@@ -6,7 +6,6 @@ python3 各种爬虫技术
 
 @[双愚](https://github.com/HuangCongQing/Spider) , 若fork或star请注明来源
 
-
 ### note笔记
 
 * 爬虫介绍：https://www.yuque.com/docs/share/edb944f3-880a-4a48-a053-df2953be56b4?# 《爬虫基础学习（总结）》
@@ -16,12 +15,12 @@ python3 各种爬虫技术
 ### 模块库
 
 1. [package/1request](package/1request)
-2. [package/2BeautifulSoup4](package/2BeautifulSoup4)
-3. [package/3xpath](package/3xpath)
-4. [package/4re正则表达式](package/4re正则表达式)
-5. [package/5selenium](package/5selenium)
-6. [package/6wordcloud](package/6wordcloud)
-
+2. [package/1request-advanced](package/1request-advanced): cookie&代理
+3. [package/2BeautifulSoup4](package/2BeautifulSoup4)
+4. [package/3xpath](package/3xpath)
+5. [package/4re正则表达式](package/4re正则表达式)
+6. [package/5selenium](package/5selenium)
+7. [package/6wordcloud](package/6wordcloud)
 
 
 | 功能 | **包名** | **作用** |
@@ -56,7 +55,6 @@ python3 各种爬虫技术
 10. [practice/10bilibili视频爬取下载](practice/10bilibili视频爬取下载)
 11.
 
-
 ### 文件操作
 
 读取保存excel，txt等文件
@@ -64,8 +62,6 @@ python3 各种爬虫技术
 1. [文件操作/excel](文件操作/excel)
 2. [文件操作/json](文件操作/json)【todo】
 3. [文件操作/txt](文件操作/txt)
-
-
 
 ### LICENSE
 
