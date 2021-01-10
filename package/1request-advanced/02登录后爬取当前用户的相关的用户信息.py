@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 16:20:09
+LastEditTime: 2021-01-10 16:49:45
 FilePath: /Spider/package/1request-advanced/02登录后爬取当前用户的相关的用户信息.py
 '''
 #编码流程：
@@ -80,7 +80,7 @@ with open('./code.jpg','wb') as fp:
 #post请求的发送（模拟登录）
 login_url = 'http://www.renren.com/ajaxLogin/login?1=1&uniqueTimestamp=2019431046983'
 data = {
-    'email': '18875141356',
+    'email': 'xxx',
     'icode': '', # 验证码 a. 密码账号输入错误3次才需要验证码，一般情况下不用验证码也能登录==================================================================
     'origURL': 'http://www.renren.com/home',
     'domain': 'renren.com',
