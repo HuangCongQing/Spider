@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 13:43:56
+LastEditTime: 2021-01-10 15:46:23
 FilePath: /Spider/package/1request-advanced/01人人网验证码模拟登录.py
 '''
 #编码流程：
@@ -15,7 +15,7 @@ FilePath: /Spider/package/1request-advanced/01人人网验证码模拟登录.py
 from CodeClass import YDMHttp
 import requests
 from lxml import etree
-#封装识别验证码图片的函数
+#封装识别验证码图片的函数  ######已失效#############
 def getCodeText(imgPath,codeType):
     # 普通用户用户名
     username = 'bobo328410948'
@@ -67,11 +67,11 @@ url = 'http://www.renren.com/SysHome.do'
 page_text = requests.get(url=url,headers=headers).text
 tree = etree.HTML(page_text)
 code_img_src = tree.xpath('//*[@id="verifyPic_login"]/@src')[0] # 验证码图片地址
-code_img_data = requests.get(url=code_img_src,headers=headers).content
+code_img_data = requests.get(url=code_img_src,headers=headers).content # 二进制
 with open('./code.jpg','wb') as fp:
     fp.write(code_img_data)
 
-#使用云打码提供的示例代码对验证码图片进行识别
+#使用云打码提供的示例代码对验证码图片进行识别  (已失效)
 result = getCodeText('code.jpg',1000)
 print(result)
 #post请求的发送（模拟登录）
