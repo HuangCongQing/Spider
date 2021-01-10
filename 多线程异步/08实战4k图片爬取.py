@@ -1,10 +1,10 @@
 '''
-Description: 
+Description: 实战爬取图片
 Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 12:53:07
+LastEditTime: 2021-01-10 12:55:26
 FilePath: /Spider/多线程异步/08实战爬取图片.py
 '''
 import requests
