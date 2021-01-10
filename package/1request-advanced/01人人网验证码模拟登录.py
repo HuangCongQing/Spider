@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 15:46:23
+LastEditTime: 2021-01-10 16:01:22
 FilePath: /Spider/package/1request-advanced/01人人网验证码模拟登录.py
 '''
 #编码流程：
@@ -72,24 +72,24 @@ with open('./code.jpg','wb') as fp:
     fp.write(code_img_data)
 
 #使用云打码提供的示例代码对验证码图片进行识别  (已失效)
-result = getCodeText('code.jpg',1000)
-print(result)
+# result = getCodeText('code.jpg',1000)
+# print(result) # 验证码==================================================================
 #post请求的发送（模拟登录）
 login_url = 'http://www.renren.com/ajaxLogin/login?1=1&uniqueTimestamp=2019431046983'
 data = {
-    'email': 'www.zhangbowudi@qq.com',
-    'icode': result,
+    'email': '18875141356',
+    'icode': '', # 验证码 a. 密码账号输入错误3次才需要验证码，一般情况下不用验证码也能登录==================================================================
     'origURL': 'http://www.renren.com/home',
     'domain': 'renren.com',
     'key_id': '1',
     'captcha_type': 'web_login',
-    'password': '06768edabba49f5f6b762240b311ae5bfa4bcce70627231dd1f08b9c7c6f4375',
-    'rkey': '1028219f2897941c98abdc0839a729df',
-    'f':'https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Dgds6TUs9Q1ojOatGda5mVsLKC34AYwc5XiN8OuImHRK%26wd%3D%26eqid%3D8e38ba9300429d7d000000035cedf53a',
+    'password': '88a390533a44df8018d6b481f18c357895a876ac4c79c35768895a74d5ae6993',
+    'rkey': 'd11c3e47ad56c6b124063a8c06f9f1d7',
+    'f':'http%3A%2F%2Fwww.renren.com%2F975698146%2Fnewsfeed%2Fphoto',
 }
 response = requests.post(url=login_url,headers=headers,data=data)
-print(response.text)
-print(response.status_code)
+print(response.text) # {"code":true,"homeUrl":"http://www.renren.com/home"}
+print(response.status_code) # 响应状态码 # 200
 
 # login_page_text = response.text
 #
