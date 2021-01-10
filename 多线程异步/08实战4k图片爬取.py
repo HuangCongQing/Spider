@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-01 13:56:16
-LastEditTime: 2021-01-10 13:06:02
+LastEditTime: 2021-01-10 15:42:13
 FilePath: /Spider/多线程异步/08实战4k图片爬取.py
 '''
 import requests
@@ -26,10 +26,10 @@ for page in range(2,50):
     tree = etree.HTML(page_text)
     li_list = tree.xpath('//div[@class="slist"]/ul/li')
     for li in li_list:
-        img_src = 'http://pic.netbian.com' + li.xpath('./a/img/@src')[0]
+        img_src = 'http://pic.netbian.com' + li.xpath('./a/img/@src')[0] # 获取验证码图片链接
         name = img_src.split('/')[-1]
         print(name)
-        # data = requests.get(url=img_src).content
+        # data = requests.get(url=img_src).content # 二级制content
         # path = './libs/'+name
         # with open(path,'wb') as fp:
         #     fp.write(data)
