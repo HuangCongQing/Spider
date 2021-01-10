@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-10 17:06:09
-LastEditTime: 2021-01-11 01:26:45
+LastEditTime: 2021-01-11 02:06:26
 FilePath: /Spider/practice/12阳光高考信息爬取/01get_school_info.py
 '''
 import requests
@@ -14,6 +14,7 @@ import xlwt	# 存储
 #导入线程池模块对应的类
 from multiprocessing.dummy import Pool
 from openpyxl import Workbook
+from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 
 def get_links():
     print("正在获取大学link......")
@@ -110,6 +111,7 @@ def get_contents(all_list):
     return containers
 
 def write_excel(schools, containers):
+    # containers = ILLEGAL_CHARACTERS_RE.sub(r'', containers)
     print('正在保存文件.......')
     wb = Workbook()
     sheet0 = wb.create_sheet('学校统计数据', index=0) 
@@ -117,18 +119,18 @@ def write_excel(schools, containers):
     col0 = schools
     print('学校总数：', len(col0))
     for i, item in enumerate(head):
-        sheet0.cell(row = 1,column=i+1,value=item) # 表头
+        sheet0.cell(row = 1,column=i+1, value=item) # 表头
     for i in range(len(col0)): #2820
         sheet0.cell(row = i+2,column=1,value=col0[i])
-        sheet0.cell(row = i+2,column=2,value=str(containers[i][0]))
-        sheet0.cell(row = i+2,column=3,value=str(containers[i][1]))
-        sheet0.cell(row = i+2,column=4,value=str(containers[i][2]))
-        sheet0.cell(row = i+2,column=5,value=str(containers[i][3]))
-        sheet0.cell(row = i+2,column=6,value=str(containers[i][4]))
-        sheet0.cell(row = i+2,column=7,value=str(containers[i][5]))
-        sheet0.cell(row = i+2,column=8,value=str(containers[i][6]))
-        sheet0.cell(row = i+2,column=9,value=str(containers[i][7]))
-        sheet0.cell(row = i+2,column=10,value=str(containers[i][8]))
+        sheet0.cell(row = i+2,column=2,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][0])))
+        sheet0.cell(row = i+2,column=3,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][1])))
+        sheet0.cell(row = i+2,column=4,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][2])))
+        sheet0.cell(row = i+2,column=5,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][3])))
+        sheet0.cell(row = i+2,column=6,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][4])))
+        sheet0.cell(row = i+2,column=7,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][5])))
+        sheet0.cell(row = i+2,column=8,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][6])))
+        sheet0.cell(row = i+2,column=9,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][7])))
+        sheet0.cell(row = i+2,column=10,value= ILLEGAL_CHARACTERS_RE.sub(r'',str(containers[i][8])))
         #保存文件
     wb.save('学校统计数据.xlsx') 
     # #创建工作簿
@@ -153,7 +155,6 @@ def write_excel(schools, containers):
 
 if __name__ == "__main__":
     schools, urls = get_links()
-    # print(schools, urls)
     print("大学总数：", len(schools))
     # urls = ['https://gaokao.chsi.com.cn/sch/schoolInfoMain--schId-1.dhtml', 'https://gaokao.chsi.com.cn/sch/schoolInfoMain--schId-1.dhtml']
     # schools = ['北大', '清华']
