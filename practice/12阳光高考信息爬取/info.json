@@ -1,4 +1,4 @@
- {
+{
     "zhiyid": "rw6z9nza7gduikyw",
     "zhiyname": "销售代表",
     "zhiydesc": "<p>销售代表是指代表公司与客户进行直接沟通并负责最终销售产品的人。销售代表是企业面对客户的第一人，他的形象直接决定了企业的形象，对于一些小企业来说，一个销售代表甚至可以决定企业在市场上的成败。因此很多跨国公司非常重视销售代表的选拔和培训，在IBM，销售代表要先坐两年的冷板凳，然后才接触实际的业务。国内的企业也越来越重视销售代表的培训，但是一个优秀的销售代表要具备什么优秀的素质呢? 从销售代表自身来看，在知识方面：优秀的销售代表要有丰富的产品知识、行业知识、营销知识。在技能方面：优秀的销售代表要有良好的沟通技巧、团队精神。在态度方面：优秀销售代表首先要充满激情和上进心;其次要对自己、对产品、对公司充满自信;第三要从心底里面有对成功的渴望;第四要养成勤劳的习惯;第五喜欢来自市场的挑战。当然还要有善于沟通，善于合作等基本素质。<\/p>",
@@ -17,8 +17,7 @@
         "pvseb55wudai54lc",
         "w4dw0yhjshunzzxg"
     ],
-    "suplabels": [
-        {
+    "suplabels": [{
             "labelTypeId": "k31q5426snewhdiv",
             "labelName": "职业定义"
         },
@@ -63,8 +62,7 @@
             "labelName": "职业道德"
         }
     ],
-    "details": [
-        {
+    "details": [{
             "labelTypeId": "k31q5426snewhdiv",
             "labelName": "职业定义",
             "labelLevel": 1,
@@ -77,8 +75,7 @@
             "labelName": "任务职责",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "lxnsqy35w37jonqy",
                     "labelName": "工作内容、任务、职责",
                     "labelLevel": 2,
@@ -107,8 +104,7 @@
             "labelName": "知识背景",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "2c7o5415tj25u7c6",
                     "labelName": "学历要求",
                     "labelLevel": 2,
@@ -142,8 +138,7 @@
             "labelName": "大学课程",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "6nm47mytgoy6wzee",
                     "labelName": "重要的大学课程",
                     "labelLevel": 2,
@@ -168,8 +163,7 @@
             "labelName": "职业技能",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "2rcr18kfu29kzfqi",
                     "labelName": "专业技能",
                     "labelLevel": 2,
@@ -194,8 +188,7 @@
             "labelName": "从业资格",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "wpa41juvbfxstd2v",
                     "labelName": "必要项",
                     "labelLevel": 2,
@@ -231,8 +224,7 @@
             "labelName": "薪酬待遇",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "wy63r6rg3bl92pje",
                     "labelName": "薪酬结构",
                     "labelLevel": 2,
@@ -266,8 +258,7 @@
             "labelName": "工作环境",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "0d3tjb7z18fpxj5k",
                     "labelName": "工作场所",
                     "labelLevel": 2,
@@ -296,8 +287,7 @@
             "labelName": "发展前景",
             "labelLevel": 1,
             "hasSub": true,
-            "sublabels": [
-                {
+            "sublabels": [{
                     "labelTypeId": "jheo0sl3vghtok1j",
                     "labelName": "行业发展前景",
                     "labelLevel": 2,
@@ -336,3 +326,4 @@
         }
     ]
 },
+['utf-8', 'robots', 'all', 'keywords', 'description', 'X-UA-Compatible', 'IE=Edge,chrome=1', 'icon', ' //xz.chsi.com.cn/favicon.ico', 'image/x-icon', 'stylesheet', 'https://t1.chei.com.cn/common/ch/iconfont.css', 'stylesheet', '/assets/video/video.css', 'stylesheet', '/assets/css/app.css', 'text/javascript', '_init identify track getDid getSid getKey setSuperProperty setUserProperties setPlatform', ' ', 'zhuge-js', 'script', 'text/javascript', 'zhuge-js', 'https://tt.chei.com.cn/zhuge.js?v=', 'script', 'xz-layout', 'app', 'xz-content', 'xz-header-warp', 'xz-header clearfix', 'https://xz.chsi.com.cn/', 'logo', 'xz-header-nav', 'clearfix', 'active', '/home.action', '/speciality/index.action', '/survey/index.action', '/occupation/index.action', '/occucase/index.action', '/video/index.action', '/jyzdk/index.action', 'xz-user', '/psn/psncenter.action', 'xz-user-login', 'text/javascript', 'https://xz.chsi.com.cn/occupation/occudetail.action', 'https://xz.chsi.com.cn', '', 'href', 'active', 'active', 'xz-body-width', 'xz-crumb', '18', '/', '/occucase/index.action', 'data.ktName!=null', '/occucase/index.action', 'data.zhiyName!=null', '6', 'text-right', 'data.praise', 'xz-crumb-span', 'md-thumbs-up', '20', '#f38400', 'cursor: pointer;', 'xz-crumb-span', 'praise', 'md-thumbs-up', '20', 'data.collect', 'xz-crumb-span', 'md-star-outline', '20', '#f38400', 'cursor: pointer;', 'xz-crumb-span', 'collect', 'md-star-outline', '20', 'xz-cutline', 'xz-occ-title', 'xz-cutline', 'xz-occupation clearfix', 'xz-occupation-left', 'data.zhiydesc', 'xz-occ-zydesc', 'xz-occ-menu clearfix', 'xz-occ-img xz-occ-menuleft', 'data.images.length>0', 'xz-occ-img xz-occ-img1', 'xz-occ-img xz-occ-img2', 'xz-occ-img xz-occ-img3', "{url:'url'}", 'height:100%;width:100%;', '(img,index) in data.images', 'index==0', '100%', '100%', "'/occupation/showlabelimgori.action?labelimgid='+img", "'/occupation/showlabelimg.action?labelimgid='+img", 'xz-tj', 'xz-occ-directory xz-occ-menuright clearfix', "{'xz-occ-noimg': data.images.length==0}", 'directory-title directory-title-left', 'directory-list directory-title-right clearfix', 'item,index in data.suplabels', "'#'+item.labelTypeId", 'xz-occupation-right', 'xz-include', 'alList.totalPage>0', 'xz-include-header clearfix', 'xz-include-more', 'getOccupation', 'md-refresh', '18', 'xz-include-body', 'item in alList.case', "'/occucase/casedetail.action?id='+item.caseId", '_blank', 'xz-include', 'margin-top: 20px;', 'spList.totalPage>0', 'xz-include-header clearfix', 'xz-include-more', 'getVideo', 'md-refresh', '18', 'xz-include-body', "'/video/detail.action?videoId='+spList.video.videoId", 'xz-include-a', 'spList.video.imgUrl', '134', '238', 'xz-include-hover', 'xz-part', 'item in data.details', 'xz-part-title', 'item.labelTypeId', 'xz-part-dashline', 'xz-part-content clearfix', 'item.hasSub', 'xz-part-sub', 'item2 in item.sublabels', 'xz-part-label', 'xz-part-des clearfix', 'item2.isZyyq', "'/speciality/detail.action?specId='+item3.specId", '_blank', 'item3 in item2.zyyq', 'margin-right: 10px;', 'xz-occ-small-img', 'item2.imgs.length>0', 'xz-occ-img xz-occ-img1', 'xz-occ-img xz-occ-img2', 'xz-occ-img xz-occ-img3 xz-occ-small', "{url:'url'}", 'height:100%;width:100%;', '(img,index) in item2.imgs', 'index==0', '100%', '100%', "'/occupation/showlabelimgori.action?labelimgid='+img", "'/occupation/showlabelimg.action?labelimgid='+img", 'xz-tj', 'item2.content', 'xz-occ-small-img', 'item.imgs.length>0', 'xz-occ-img xz-occ-img1', 'xz-occ-img xz-occ-img2', 'xz-occ-img xz-occ-img3 xz-occ-small', "{url:'url'}", 'height:100%;width:100%;', '(img,index) in item.imgs', 'index==0', '100%', '100%', "'/occupation/showlabelimgori.action?labelimgid='+img", "'/occupation/showlabelimg.action?labelimgid='+img", 'xz-tj', 'item.content', 'xz-part-main', 'side-doc', 'zhiyid', 'rw6z9nza7gduikyw', 'zhiyname', '销售代表', 'zhiydesc', '<p>销售代表是指代表公司与客户进行直接沟通并负责最终销售产品的人。销售代表是企业面对客户的第一人，他的形象直接决定了企业的形象，对于一些小企业来说，一个销售代表甚至可以决定企业在市场上的成败。因此很多跨国公司非常重视销售代表的选拔和培训，在IBM，销售代表要先坐两年的冷板凳，然后才接触实际的业务。国内的企业也越来越重视销售代表的培训，但是一个优秀的销售代表要具备什么优秀的素质呢? 从销售代表自身来看，在知识方面：优秀的销售代表要有丰富的产品知识、行业知识、营销知识。在技能方面：优秀的销售代表要有良好的沟通技巧、团队精神。在态度方面：优秀销售代表首先要充满激情和上进心;其次要对自己、对产品、对公司充满自信;第三要从心底里面有对成功的渴望;第四要养成勤劳的习惯;第五喜欢来自市场的挑战。当然还要有善于沟通，善于合作等基本素质。<\\/p>', 'praiseNum', 'ktName', '销售/市场类', 'praise', 'collect', 'dicZyId', 'ez7pdsrphwf9h9r5', 'images', 'd8p4kefn11mgt9c5', 'dnshidi9rgc1cyz9', 'ikyi2mk0v0df416u', 'p8rm99n3ns5c8xjq', 'uoturrxn7ed4gbay', '2t549hsv5dtrdpb7', 'pvseb55wudai54lc', 'w4dw0yhjshunzzxg', 'suplabels', 'labelTypeId', 'k31q5426snewhdiv', 'labelName', '职业定义', 'labelTypeId', 'ztqemmti9jhq2jwk', 'labelName', '任务职责', 'labelTypeId', 'e6pd4s9c3pxbzpkv', 'labelName', '知识背景', 'labelTypeId', 'ajf4wdl2k32631s4', 'labelName', '大学课程', 'labelTypeId', '67ki1kveoq12p7zd', 'labelName', '职业技能', 'labelTypeId', 'sg9t9vvk4n5cp3jh', 'labelName', '从业资格', 'labelTypeId', '0efpchxej30w1izx', 'labelName', '常用工具', 'labelTypeId', '6es7f4yql1e895w5', 'labelName', '薪酬待遇', 'labelTypeId', 'fz032fbmmzsx17bv', 'labelName', '工作环境', 'labelTypeId', 'cj92h3v2fkt0i2sl', 'labelName', '发展前景', 'labelTypeId', '5m43qxgkgavqolj3', 'labelName', '职业道德', 'details', 'labelTypeId', 'k31q5426snewhdiv', 'labelName', '职业定义', 'labelLevel', 'hasSub', 'content', '<div><strong>职业定义：<\\/strong>销售代表简单的说就是销售员,代表企业进行产品销售。销售代表是传承制造、经销与消费的纽带。<br/><strong>职业其他名称：<\\/strong>销售经理、推销员、销售主管<br/><strong>相关职业：<\\/strong>区域销售专员/助理、网络/在线销售、电话销售<br/><strong>个性定义：<\\/strong>销售代表是指代表公司与客户进行直接沟通并负责最终销售产品的人,就是实现产品和客户见面的一个纽带。<br/><br/><\\/div>', 'imgs', 'labelTypeId', 'ztqemmti9jhq2jwk', 'labelName', '任务职责', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', 'lxnsqy35w37jonqy', 'labelName', '工作内容、任务、职责', 'labelLevel', 'hasSub', 'isZyyq', 'content', '1.负责指定区域的市场开发、客户维护和销售管理等工作。<br>2.负责所属区域的产品宣传、推广和销售,完成销售的任务指标。&nbsp;<br>3.制定自己的销售计划,并按计划拜访客户和开发新客户。&nbsp;<br>4.搜集与寻找客户资料,建立客户档案。&nbsp;<br>', 'imgs', 'labelTypeId', 'g92ubroaweqedrcy', 'labelName', '工作考核要求', 'labelLevel', 'hasSub', 'isZyyq', 'content', '1.协助销售主管制定销售策略、销售计划,以及量化销售目标。&nbsp;<br>2.制定销售费用的预算,控制销售成本,提高销售利润。<br>3.做好销售合同的签订、履行与管理等相关工作,以及协调处理各类市场问题。<br>4.汇总与协调货源需求计划,以及制定货源调配计划。<br>5.接待来访客户,以及综合协调日常销售事务。', 'imgs', 'ikyi2mk0v0df416u', 'p8rm99n3ns5c8xjq', 'pvseb55wudai54lc', 'labelTypeId', 'e6pd4s9c3pxbzpkv', 'labelName', '知识背景', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', '2c7o5415tj25u7c6', 'labelName', '学历要求', 'labelLevel', 'hasSub', 'isZyyq', 'content', '大专以上', 'imgs', 'labelTypeId', 'w9fos8zv5tmc1gjl', 'labelName', '行业知识背景', 'labelLevel', 'hasSub', 'isZyyq', 'content', '<p>1、需要比较高的相关知识背景<\\/p><p>2、销售人员都必须具备职业道德。<\\/p><p>3、应具有一定的销售工作经验。&nbsp;<\\/p>', 'imgs', 'labelTypeId', 'bilh906cm4r9xjdm', 'labelName', '专业知识背景', 'labelLevel', 'hasSub', 'isZyyq', 'content', '<p>1、具有较强的语言与文字表达、人际沟通以及分析和解决营销实际问题的基本能力。<\\/p><p>2、熟悉我国有关市场营销的方针、政策与法规及了解国际市场营销的惯例和规则。<\\/p>', 'imgs', 'labelTypeId', 'ajf4wdl2k32631s4', 'labelName', '大学课程', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', '6nm47mytgoy6wzee', 'labelName', '重要的大学课程', 'labelLevel', 'hasSub', 'isZyyq', 'content', '市场营销导论&nbsp;消费心理学&nbsp;广告&nbsp;经济关系学&nbsp;管理学', 'imgs', 'labelTypeId', 'n5v6t8w2k5262qkd', 'labelName', '重要未开设的大学课程', 'labelLevel', 'hasSub', 'isZyyq', 'content', 'Excel制表&nbsp;财务管理&nbsp;品牌营销&nbsp;商务谈判&nbsp;价格分析', 'imgs', 'labelTypeId', '67ki1kveoq12p7zd', 'labelName', '职业技能', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', '2rcr18kfu29kzfqi', 'labelName', '专业技能', 'labelLevel', 'hasSub', 'isZyyq', 'content', '1.产品的销售策略,在销售中对于产品的介绍及产品推销技巧。<br>2.谈判的方法与技巧。<br>3.运用消费者心理学分析消费者心理,制定营销方案。<br>4.具有组织大型活动的现场组织协调能力。<br>', 'imgs', 'labelTypeId', '84ij9abnzsnh0txt', 'labelName', '通用技能', 'labelLevel', 'hasSub', 'isZyyq', 'content', '1.良好的沟通技能,陌生人拜访。<br>2.团队合作能力。<br>3.个人规划的能力。', 'imgs', 'labelTypeId', 'sg9t9vvk4n5cp3jh', 'labelName', '从业资格', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', 'wpa41juvbfxstd2v', 'labelName', '必要项', 'labelLevel', 'hasSub', 'isZyyq', 'content', '营销专业', 'imgs', 'labelTypeId', 'o73phqgrjwrpzz51', 'labelName', '附加项', 'labelLevel', 'hasSub', 'isZyyq', 'content', '计算机证书<br>英语等级证书<br>营销师证书', 'imgs', 'labelTypeId', '0efpchxej30w1izx', 'labelName', '常用工具', 'labelLevel', 'hasSub', 'content', '<div>1.计算机<br/>2.笔记本（纸质）<br/>3.卷尺<br/>4.OFFICE办公软件<br/>5.CAD制图软件<\\/div>', 'imgs', '2t549hsv5dtrdpb7', 'w4dw0yhjshunzzxg', 'labelTypeId', '6es7f4yql1e895w5', 'labelName', '薪酬待遇', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', 'wy63r6rg3bl92pje', 'labelName', '薪酬结构', 'labelLevel', 'hasSub', 'isZyyq', 'content', '基本工资加绩效', 'imgs', 'labelTypeId', '4ecn2mbh0acu3hos', 'labelName', '满意度', 'labelLevel', 'hasSub', 'isZyyq', 'content', '<p>4（<span>薪酬满意度评分：<\\/span><span>1<\\/span><span>点<\\/span><span>~5<\\/span><span>点，分别代表“非常不满意”<\\/span><span>~<\\/span><span>“非常满意”<\\/span><span>）<\\/span><\\/p>', 'imgs', 'labelTypeId', 'xpqxr6chxvpkz6g3', 'labelName', '福利制度', 'labelLevel', 'hasSub', 'isZyyq', 'content', '有晋升的空间,有培训学习的机会。', 'imgs', 'labelTypeId', 'fz032fbmmzsx17bv', 'labelName', '工作环境', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', '0d3tjb7z18fpxj5k', 'labelName', '工作场所', 'labelLevel', 'hasSub', 'isZyyq', 'content', '随着拜访客户的环境而变化,没有固定的办公地点。', 'imgs', 'labelTypeId', 'g20iyzpcz18771i1', 'labelName', '环境具体描述', 'labelLevel', 'hasSub', 'isZyyq', 'content', '穿梭于在各大超市及连锁经营店,巡店内容多,因此逗留的时间长,环境嘈杂,货物管理比较混乱,若零售店有紧急情况,需要紧急到场,解决问题。', 'imgs', 'd8p4kefn11mgt9c5', 'dnshidi9rgc1cyz9', 'uoturrxn7ed4gbay', 'labelTypeId', 'cj92h3v2fkt0i2sl', 'labelName', '发展前景', 'labelLevel', 'hasSub', 'sublabels', 'labelTypeId', 'jheo0sl3vghtok1j', 'labelName', '行业发展前景', 'labelLevel', 'hasSub', 'isZyyq', 'content', '职业的发展前景是很好的,只有交易就会存在销售,企业越来越多了,职业需求也会越来越多,薪酬相对其它职业也是比较优厚。', 'imgs', 'labelTypeId', 'xd2gf5wvrng6iqhm', 'labelName', '个人发展路径', 'labelLevel', 'hasSub', 'isZyyq', 'content', '销售人员——销售组长——销售主管——销售经理——-CEO', 'imgs', 'labelTypeId', 'vw7oqnsjadkzo5je', 'labelName', '职业的就业趋势', 'labelLevel', 'hasSub', 'isZyyq', 'content', '很好,因为很多成功的人都是从销售走出来的。', 'imgs', 'labelTypeId', '5m43qxgkgavqolj3', 'labelName', '职业道德', 'labelLevel', 'hasSub', 'content', '<div>1.诚信是最重要的,没有诚信就没有信任,信任是双方一切合作的基础。<br/>2.要求自律,销售的工作时间是相对宽松,工作中是没有人时刻监督你,所以平时要严格要求自己。<\\/div>', 'imgs', 'xz-footer-warp', 'xz-footer', 'http://www.chsi.com.cn/', '_blank', 'https://www.chsi.com.cn/about/copyright.shtml', '_blank', '/occupation/showoriorg.action', '_blank', 'http://www.chsi.com.cn/about/contact.shtml', '_blank', '/assets/js/vendors.js', '/assets/js/app.js']

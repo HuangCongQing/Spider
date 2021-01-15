@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 12:43:59
-LastEditTime: 2021-01-15 13:42:21
+LastEditTime: 2021-01-15 20:17:06
 FilePath: /Spider/practice/13职业百科信息搜集/职业百科信息搜集.py
 '''
 import requests
@@ -14,6 +14,7 @@ import xlwt	# 存储
 #导入线程池模块对应的类
 from multiprocessing.dummy import Pool
 import json
+import re
 
 def get_links():
     print("正在获取所有链接... ...")
@@ -53,11 +54,19 @@ def get_contents(id):
     url = 'https://xz.chsi.com.cn/occupation/occudetail.action?id=' + id
     #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
     detail_page_text = requests.post(url=url,headers=headers).text
+
+    # 正则re
+    ex = 'side-doc(.*?)'
+    json_data = re.findall(ex,detail_page_text)# 正则
+    print(json_data)
+
     # BeautifulSoup
-    detail_soup = BeautifulSoup(detail_page_text,'lxml')
-    container = detail_soup.find('div',class_='xz-part-label')
-    print(container)
+    # detail_soup = BeautifulSoup(detail_page_text,'lxml')
+    # container = detail_soup.find('div',class_='xz-part-label')
+    # print(container)
     # containers.append(container)
+
+
     # lxml
     # tree = etree.HTML(detail_page_text)
     # tr_list = tree.xpath('//div[@class="zhiye"]')
