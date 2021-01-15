@@ -20,7 +20,7 @@ python3 各种爬虫技术
 4. [package/3xpath](package/3xpath)
 5. [package/4re正则表达式](package/4re正则表达式)
 6. [package/5selenium](package/5selenium)
-7. [package/6wordcloud](package/6wordcloud)
+7. [package/6wordcloud](package/6wordcloud) 词云
 
 
 | 功能 | **包名** | **作用** |
