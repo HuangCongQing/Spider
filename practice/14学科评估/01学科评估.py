@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 20:19:18
-LastEditTime: 2021-01-15 21:45:17
+LastEditTime: 2021-01-15 21:52:09
 FilePath: /Spider/practice/14学科评估/01学科评估.py
 '''
 
@@ -24,8 +24,8 @@ def get_subject(id):
         'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
     }
     param = {
-        'yjxkdm': '0101'
-        'xkdm':id
+        'yjxkdm': '0101',
+        'xkdm': id
     }
     url = 'https://www.cdgdc.edu.cn/webrms/pages/Ranking/xkpmGXZJ2016.jsp'
     # url = 'https://www.cdgdc.edu.cn/xwyyjsjyxx/xkpgjg/'
