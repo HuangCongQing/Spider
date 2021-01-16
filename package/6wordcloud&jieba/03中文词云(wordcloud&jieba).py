@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-16 17:44:54
-LastEditTime: 2021-01-16 19:09:04
+LastEditTime: 2021-01-16 19:14:29
 FilePath: /Spider/package/6wordcloud&jieba/03中文词云(wordcloud&jieba).py
 '''
 #-*-coding:utf-8-*-
@@ -33,8 +33,11 @@ wl = " ".join(wordlist)
  
  
 #设置词云
-wc = WordCloud(background_color = "black", #设置背景颜色
-            #    mask = "love.png",  #设置背景图片  np.array(image.open("F:\wordcloud\image\love.jpg"))
+wc = WordCloud(
+                background_color = "black", #设置背景颜色
+                # width=990,              #设置图片的宽度
+                # height=440,              #设置图片的高度
+                # margin=10,               #设置图片的边缘
                mask = np.array(image.open("love.png")),  #设置背景图片  
                max_words = 2000, #设置最大显示的字数
                #stopwords = "", #设置停用词
@@ -42,6 +45,7 @@ wc = WordCloud(background_color = "black", #设置背景颜色
         #设置中文字体，使得词云可以显示（词云默认字体是“DroidSansMono.ttf字体库”，不支持中文）
                max_font_size = 50,  #设置字体最大值
                random_state = 30, #设置有多少种随机生成状态，即有多少种配色方案
+               scale=3,  # 数字越大越清晰 
     )
 myword = wc.generate(wl)#生成词云
  
