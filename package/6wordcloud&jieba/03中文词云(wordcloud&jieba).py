@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-16 17:44:54
-LastEditTime: 2021-01-16 20:30:54
+LastEditTime: 2021-01-16 20:40:47
 FilePath: /Spider/package/6wordcloud&jieba/03中文词云(wordcloud&jieba).py
 '''
 #-*-coding:utf-8-*-
@@ -38,8 +38,8 @@ wc = WordCloud(
                 # width=990,              #设置图片的宽度
                 # height=440,              #设置图片的高度
                 # margin=10,               #设置图片的边缘
-               mask = mask,  #设置背景图片  ！！！！没起作用
-            #    mask =imread("love.png"),  #设置背景图片  
+               mask = mask,  #设置背景图片
+            #    mask =imread("love.png"),  #设置背景图片  png不起作用
                max_words = 2000, #设置最大显示的字数
                #stopwords = "", #设置停用词
                font_path = "alibaba.ttf",
