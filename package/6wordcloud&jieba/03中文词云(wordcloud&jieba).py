@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-16 17:44:54
-LastEditTime: 2021-01-16 19:14:29
+LastEditTime: 2021-01-16 20:10:04
 FilePath: /Spider/package/6wordcloud&jieba/03中文词云(wordcloud&jieba).py
 '''
 #-*-coding:utf-8-*-
@@ -16,14 +16,14 @@ from wordcloud import WordCloud
 import jieba
 import PIL.Image as image
 import numpy as np
-
+from cv2 import imread
 
  
 text = open("test.txt","rb").read()
 #结巴分词
 wordlist = jieba.cut(text,cut_all=True)
-wl = " ".join(wordlist)
-#print(wl)#输出分词之后的txt
+wl = " ".join(wordlist)   #  空格分词
+# print(wl)#输出分词之后的txt
  
  
 #把分词后的txt写入文本文件
@@ -38,7 +38,8 @@ wc = WordCloud(
                 # width=990,              #设置图片的宽度
                 # height=440,              #设置图片的高度
                 # margin=10,               #设置图片的边缘
-               mask = np.array(image.open("love.png")),  #设置背景图片  
+               mask = np.array(image.open("love.png")),  #设置背景图片  ！！！！没起作用
+            #    mask =imread("love.png"),  #设置背景图片  
                max_words = 2000, #设置最大显示的字数
                #stopwords = "", #设置停用词
                font_path = "alibaba.ttf",
