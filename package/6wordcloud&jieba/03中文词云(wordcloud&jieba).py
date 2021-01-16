@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-16 17:44:54
-LastEditTime: 2021-01-16 20:10:04
+LastEditTime: 2021-01-16 20:30:54
 FilePath: /Spider/package/6wordcloud&jieba/03中文词云(wordcloud&jieba).py
 '''
 #-*-coding:utf-8-*-
@@ -12,12 +12,12 @@ FilePath: /Spider/package/6wordcloud&jieba/03中文词云(wordcloud&jieba).py
 ###生成txt文件的词云
  
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud
+from wordcloud import WordCloud, ImageColorGenerator
 import jieba
 import PIL.Image as image
 import numpy as np
 from cv2 import imread
-
+import matplotlib.pyplot as plt
  
 text = open("test.txt","rb").read()
 #结巴分词
@@ -31,14 +31,14 @@ wl = " ".join(wordlist)   #  空格分词
 #fenciTxt.writelines(wl)
 #fenciTxt.close()
  
- 
+mask =plt.imread('heart.jpg')
 #设置词云
 wc = WordCloud(
                 background_color = "black", #设置背景颜色
                 # width=990,              #设置图片的宽度
                 # height=440,              #设置图片的高度
                 # margin=10,               #设置图片的边缘
-               mask = np.array(image.open("love.png")),  #设置背景图片  ！！！！没起作用
+               mask = mask,  #设置背景图片  ！！！！没起作用
             #    mask =imread("love.png"),  #设置背景图片  
                max_words = 2000, #设置最大显示的字数
                #stopwords = "", #设置停用词
@@ -49,6 +49,12 @@ wc = WordCloud(
                scale=3,  # 数字越大越清晰 
     )
 myword = wc.generate(wl)#生成词云
+ 
+#改变字体颜色
+img_colors = ImageColorGenerator(mask)
+#字体颜色为背景图片的颜色
+wc.recolor(color_func=img_colors)
+
  
 #展示词云图
 plt.imshow(myword)
