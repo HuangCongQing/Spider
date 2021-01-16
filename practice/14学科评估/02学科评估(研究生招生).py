@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 21:15:31
-LastEditTime: 2021-01-16 21:29:38
+LastEditTime: 2021-01-17 00:54:11
 FilePath: /Spider/practice/14学科评估/02学科评估(研究生招生).py
 '''
 
@@ -16,6 +16,7 @@ import xlwt	# 存储
 from multiprocessing.dummy import Pool
 import json
 import re
+import pandas as pd
 
 def get_subject():
     print("正在获取所有链接... ...")
@@ -30,7 +31,10 @@ def get_subject():
     sname_list =[] # 校名
     result_list = [] # 评选结果
     percent_list = [] # 百分比
-    for page in range(1,3): # 1~111
+    all_number = 0
+    for page in range(1,112): # 1~111
+
+        print("=============页数：", page)
         param = {
             'xid': page,
             'flag':1
@@ -44,7 +48,10 @@ def get_subject():
         # json格式转为字典
         result = json.loads(content)
         # print(result)
-
+        # print(len(result[1]))
+        if len(result[1])==0:
+            print("此url没有数据，接着下一个url")
+            continue
         class_subject = {
             '01': '人文社科类',
             '02': '人文社科类',
@@ -59,6 +66,7 @@ def get_subject():
             '12': '管理学',
             '13': '艺术学',
         }
+        print(result[0]["code"][0:2])
         print(class_subject[result[0]["code"][0:2]])
         # print(result[0]["code"])
         # print(result[0]["code"][0:2]) # 根据此得到大类
@@ -71,12 +79,16 @@ def get_subject():
             sname_list.append(result[1][i]['sname'])
             result_list.append(result[1][i]['result'])
             percent_list.append(result[1][i]['percent'])
+            all_number = all_number+1
             # print('正在遍历学校')
         # print(class_list)
     # 保存csv文件
     print('保存csv文件...')
-
-    print('爬取结束')
+    #字典中的key值即为csv中列名
+    dataframe = pd.DataFrame({'类别':class_list,'学科':subject_list,'序号':number_list,'学校代码':code_list,'校名':sname_list,'评选结果':result_list,'百分比排名':percent_list})
+    #将DataFrame存储为csv,index表示是否显示行名，default=True
+    dataframe.to_csv(r"第四次学科评估数据.csv",index=False, sep=',')
+    print('爬取结束, 爬取数量：', all_number)
 if __name__ == "__main__":
     get_subject()
 
