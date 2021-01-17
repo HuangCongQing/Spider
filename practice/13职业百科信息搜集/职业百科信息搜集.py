@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 12:43:59
-LastEditTime: 2021-01-17 19:40:51
+LastEditTime: 2021-01-17 20:51:42
 FilePath: /Spider/practice/13职业百科信息搜集/职业百科信息搜集.py
 '''
 import requests
@@ -54,10 +54,10 @@ def get_contents(id):
     url = 'https://xz.chsi.com.cn/occupation/occudetail.action?id=' + id
     #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
     detail_page_text = requests.post(url=url,headers=headers).text
-    print(detail_page_text)
+    # print(detail_page_text)
     # 正则re
-    ex = 'data:(.*?)alList'
-    json_data = re.findall(ex,detail_page_text)# 正则
+    # ex = '"zhiyname":"(.*?)","zhiydesc"'
+    # json_data = re.findall(ex,detail_page_text, re.S)# 正则
     print(json_data)
 
     # BeautifulSoup
