@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 12:43:59
-LastEditTime: 2021-01-17 21:54:31
+LastEditTime: 2021-01-17 23:28:59
 FilePath: /Spider/practice/13职业百科信息搜集/职业百科信息搜集.py
 '''
 import requests
@@ -15,6 +15,7 @@ import xlwt	# 存储
 from multiprocessing.dummy import Pool
 import json
 import re
+import pandas as pd
 
 def get_links():
     print("正在获取所有链接... ...")
@@ -79,6 +80,13 @@ def get_contents(id):
     # tree = etree.HTML(detail_page_text)
     # tr_list = tree.xpath('//div[@class="zhiye"]')
     # print("获取链接：", len(tr_list))
+def save_csv(class_names, names):
+    print('保存csv文件...')
+    #字典中的key值即为csv中列名
+    dataframe = pd.DataFrame({'类别':class_names,'职业':names})
+    #将DataFrame存储为csv,index表示是否显示行名，default=True
+    dataframe.to_csv(r"职业百科信息搜集.csv",index=False, sep=',')
+
 
 if __name__ == "__main__":
     urls, names, class_names = get_links()
@@ -86,6 +94,7 @@ if __name__ == "__main__":
     # urls = ['rw6z9nza7gduikyw', 'dvbww41vhzdiqaq9']
     # url = 'rw6z9nza7gduikyw'
     # get_contents(url)
+    save_csv(class_names, names)
 
 
 
