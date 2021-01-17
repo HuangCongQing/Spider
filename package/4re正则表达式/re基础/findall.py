@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-17 19:50:56
-LastEditTime: 2021-01-17 20:15:57
+LastEditTime: 2021-01-17 20:18:46
 FilePath: /Spider/package/4re正则表达式/re基础/findall.py
 '''
 
@@ -33,22 +33,3 @@ print(img_src_list)  # ['//qiubai-video-web.qiushibaike.com/ZHVL04ZEOPBIUZ9X_hd.
 print(img_src_list[0])   # //qiubai-video-web.qiushibaike.com/ZHVL04ZEOPBIUZ9X_hd.jpg?imageView2/1/w/150/h/112
 
 
-#  https://blog.csdn.net/Cashey1991/article/details/8875213?
-''' 
-
->>> import re
->>> s = "adfad asdfasdf asdfas asdfawef asd adsfas "
- 
->>> reObj1 = re.compile('((\w+)\s+\w+)')
->>> reObj1.findall(s)
-[('adfad asdfasdf', 'adfad'), ('asdfas asdfawef', 'asdfas'), ('asd adsfas', 'asd')]
- 
->>> reObj2 = re.compile('(\w+)\s+\w+')
->>> reObj2.findall(s)
-['adfad', 'asdfas', 'asd']
- 
->>> reObj3 = re.compile('\w+\s+\w+')
->>> reObj3.findall(s)
-['adfad asdfasdf', 'asdfas asdfawef', 'asd adsfas']
-
- '''
