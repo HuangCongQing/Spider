@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 12:43:59
-LastEditTime: 2021-01-17 21:37:14
+LastEditTime: 2021-01-17 21:54:31
 FilePath: /Spider/practice/13职业百科信息搜集/职业百科信息搜集.py
 '''
 import requests
@@ -30,6 +30,8 @@ def get_links():
     # json格式转为字典
     result = json.loads(content)
     print(len(result))
+    class_names = []
+    names = []
     urls = []
     for i in range(len(result)):  # 23次
         print("循环获取url  ... ..")
@@ -37,9 +39,13 @@ def get_links():
         # print(len(info))
         for j in range(len(info)):  # 23次
             id = info[j]['id']
+            name = info[j]['name']
             # print(id)
             urls.append(id)
-    print(urls)
+            names.append(name)
+            class_names.append(result[i]['ktname'])
+    # print(urls)
+    return urls, names, class_names
     # tree = etree.HTML(page_text)
     # tr_list = tree.xpath('//div[@class="zhiye"]')
     # print("获取链接：", len(tr_list))
@@ -75,10 +81,11 @@ def get_contents(id):
     # print("获取链接：", len(tr_list))
 
 if __name__ == "__main__":
-    # urls = get_links()
+    urls, names, class_names = get_links()
+    print(class_names)
     # urls = ['rw6z9nza7gduikyw', 'dvbww41vhzdiqaq9']
-    url = 'rw6z9nza7gduikyw'
-    get_contents(url)
+    # url = 'rw6z9nza7gduikyw'
+    # get_contents(url)
 
 
 
