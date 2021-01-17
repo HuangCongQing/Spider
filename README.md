@@ -19,6 +19,8 @@ python3 各种爬虫技术
 3. [package/2BeautifulSoup4](package/2BeautifulSoup4)
 4. [package/3xpath](package/3xpath)
 5. [package/4re正则表达式](package/4re正则表达式)
+   1. [re.findall](package/4re正则表达式/re基础/findall.py)
+   2. [re.search](package/4re正则表达式/re基础/search.py)
 6. [package/5selenium](package/5selenium)
 7. [package/6wordcloud&jieba](package/6wordcloud&jieba) 词云
 
