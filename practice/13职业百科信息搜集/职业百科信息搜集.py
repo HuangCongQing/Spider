@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 12:43:59
-LastEditTime: 2021-01-17 23:28:59
+LastEditTime: 2021-01-18 16:01:09
 FilePath: /Spider/practice/13职业百科信息搜集/职业百科信息搜集.py
 '''
 import requests
@@ -61,13 +61,15 @@ def get_contents(id):
     url = 'https://xz.chsi.com.cn/occupation/occudetail.action?id=' + id
     #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
     detail_page_text = requests.post(url=url,headers=headers).text
+    # print(detail_page_text.replace(' ','').replace('\n', '').replace('\r', ''))
+    detail_page_text = detail_page_text.replace(' ','').replace('\n', '').replace('\r', '')
     print(detail_page_text)
     # 正则re
-    # ex = '"zhiyname":"(.*?)","zhiydesc"'  # 得到销售代表的数据
+    # ex = '"zhiyname":"(.*?)"'  # 得到销售代表的数据
     # json_data = re.findall(ex,detail_page_text, re.S)# 正则
-    ex = '"data: {(.*?)'  # 得到销售代表的数据
+    ex = '"zhiydesc":"(.*?)'  # 得到销售代表的数据
     json_data = re.findall(ex,detail_page_text, re.S)# 正则
-    print(json_data)
+    print(json_data) # 获取到的json数据
 
     # BeautifulSoup
     # detail_soup = BeautifulSoup(detail_page_text,'lxml')
@@ -89,12 +91,12 @@ def save_csv(class_names, names):
 
 
 if __name__ == "__main__":
-    urls, names, class_names = get_links()
-    print(class_names)
+    # urls, names, class_names = get_links()
+    # print(class_names)
     # urls = ['rw6z9nza7gduikyw', 'dvbww41vhzdiqaq9']
-    # url = 'rw6z9nza7gduikyw'
-    # get_contents(url)
-    save_csv(class_names, names)
+    url = 'rw6z9nza7gduikyw'
+    get_contents(url)
+    # save_csv(class_names, names)
 
 
 
