@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-15 12:43:59
-LastEditTime: 2021-01-18 16:01:09
+LastEditTime: 2021-01-18 21:52:11
 FilePath: /Spider/practice/13职业百科信息搜集/职业百科信息搜集.py
 '''
 import requests
@@ -62,12 +62,13 @@ def get_contents(id):
     #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
     detail_page_text = requests.post(url=url,headers=headers).text
     # print(detail_page_text.replace(' ','').replace('\n', '').replace('\r', ''))
-    detail_page_text = detail_page_text.replace(' ','').replace('\n', '').replace('\r', '')
+    # detail_page_text = detail_page_text.replace(' ','').replace('\n', '').replace('\r', '')
     print(detail_page_text)
     # 正则re
     # ex = '"zhiyname":"(.*?)"'  # 得到销售代表的数据
     # json_data = re.findall(ex,detail_page_text, re.S)# 正则
-    ex = '"zhiydesc":"(.*?)'  # 得到销售代表的数据
+    # ex = 'return.*?data: {"(.*?)销售人员——销售组长——销售主管'  #
+    ex = 'return.*?data: {"(.*?)所以平时要严格要求自己'  #
     json_data = re.findall(ex,detail_page_text, re.S)# 正则
     print(json_data) # 获取到的json数据
 
