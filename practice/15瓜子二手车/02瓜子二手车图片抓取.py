@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-19 14:10:17
-LastEditTime: 2021-01-19 20:19:34
+LastEditTime: 2021-01-19 20:33:22
 FilePath: /Spider/practice/15瓜子二手车/02瓜子二手车图片抓取.py
 '''
 
@@ -100,7 +100,8 @@ class GuaZiCrawler():
             # #生成图片名称
             # img_name = img_src.split('/')[-1]
             #图片存储的路径
-            imgPath = './imgs/'+img_name+'.jpg'
+            now_time = time.strftime('%Y_%m_%d_%H_%M_%S',time.localtime())
+            imgPath = './imgs/'+img_name + now_time+'.jpg'
             with open(imgPath,'wb') as fp:
                 fp.write(img_data)
                 print(img_name,'下载成功！！！')
