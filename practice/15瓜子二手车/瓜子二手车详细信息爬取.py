@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-19 11:51:00
-LastEditTime: 2021-01-19 12:42:47
+LastEditTime: 2021-01-19 14:08:25
 FilePath: /Spider/practice/15瓜子二手车/瓜子二手车信息爬取.py
 '''
 """
@@ -72,6 +72,7 @@ class GuaZiCrawler():
         '''
         content = pq(self.sess.get(self.start_url).text)
         page_num_max = max([int(each.text()) for each in content('ul[@class="pageLink clearfix"]  > li > a').items() if re.match(r'\d+', each.text())])
+        print("总页面:", page_num_max)
         page_url_list = []
         for i in range(1,page_num_max+1,1):
             base_url = 'https://www.guazi.com/qd/buy/o{}/'.format(i)
@@ -98,10 +99,19 @@ class GuaZiCrawler():
         :param detail_url:
         :return:
         '''
+        # page_text = self.sess.get(detail_url).text
         content = pq(self.sess.get(detail_url).text)
+        # fileName = 'index.html'
+        # with open(fileName,'w',encoding='utf-8') as fp:
+        #     fp.write(page_text)
+        # print(content)
+    #    print(content('ul[@class="assort clearfix"]').find('li').eq(3).find('span').text())
+        # result = content('ul[@class="carlist clearfix js-top"] li[@class="two"] span').text()
+        # result = content('ul[@class="carlist clearfix js-top"]').find('li').eq(2).find('span').text(),
+        # print(result)
 
         data_dict = {
-            'title': content('h2.titlebox').text().strip(),
+            'title': content('h2.titlebox').text().strip(),  # h1.titlebox  输出结果会为空!!!!??????
             'bordingdate': content('ul[@class="assort clearfix"] li[@class="one"] span').text(),
             'km': content('ul[@class="assort clearfix"] li[@class="two"] span').text(),
             'address': content('ul[@class="assort clearfix"]').find('li').eq(2).find('span').text(),
