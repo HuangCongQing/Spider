@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-19 14:10:17
-LastEditTime: 2021-01-19 14:11:28
+LastEditTime: 2021-01-19 20:19:34
 FilePath: /Spider/practice/15瓜子二手车/02瓜子二手车图片抓取.py
 '''
 
@@ -82,44 +82,29 @@ class GuaZiCrawler():
         :param start_url:
         :return:
         '''
-        content = pq(self.sess.get(start_url).text)
-        for each in content('ul[@class="carlist clearfix js-top"]  > li > a').items():
-            url = each.attr.href
-            if not url.startswith('http'):
-                url = self.baseurl + url
-                yield url
-
-    def detail_page(self, detail_url):
-        '''
-        抓取详情信息
-        :param detail_url:
-        :return:
-        '''
-        # page_text = self.sess.get(detail_url).text
-        content = pq(self.sess.get(detail_url).text)
-        # fileName = 'index.html'
-        # with open(fileName,'w',encoding='utf-8') as fp:
-        #     fp.write(page_text)
-        # print(content)
-    #    print(content('ul[@class="assort clearfix"]').find('li').eq(3).find('span').text())
-        # result = content('ul[@class="carlist clearfix js-top"] li[@class="two"] span').text()
-        # result = content('ul[@class="carlist clearfix js-top"]').find('li').eq(2).find('span').text(),
-        # print(result)
-
-        data_dict = {
-            'title': content('h2.titlebox').text().strip(),  # h1.titlebox  输出结果会为空!!!!??????
-            'bordingdate': content('ul[@class="assort clearfix"] li[@class="one"] span').text(),
-            'km': content('ul[@class="assort clearfix"] li[@class="two"] span').text(),
-            'address': content('ul[@class="assort clearfix"]').find('li').eq(2).find('span').text(),
-            'displacement': content('ul[@class="assort clearfix"]').find('li').eq(3).find('span').text(),
-            'gearbox': content('ul[@class="assort clearfix"] li[@class="two"] span').text(),
-            'price': content('span[@class="pricestype"]').text(),
-        }
-        if not data_dict['title']:
-            #print(str(content).encode('ISO-8859-1').decode('utf-8'))
-            return data_dict
         
-        
+        page_text = self.sess.get(start_url).text
+        # print(page_text)
+        #数据解析
+        tree = etree.HTML(page_text)
+        #存储的就是li标签对象
+        li_list = tree.xpath('//ul[@class="carlist clearfix js-top"] /li/a') # 
+        # print(li_list)
+        for li in li_list:
+            #局部解析
+            img_src = li.xpath('./img/@src')[0]
+            img_name = li.xpath('./@title')[0]  # 生成图片名称
+            print(img_src)
+            #请求到了图片的二进制数据
+            img_data = requests.get(url=img_src,headers=headers).content
+            # #生成图片名称
+            # img_name = img_src.split('/')[-1]
+            #图片存储的路径
+            imgPath = './imgs/'+img_name+'.jpg'
+            with open(imgPath,'wb') as fp:
+                fp.write(img_data)
+                print(img_name,'下载成功！！！')
+
         
     def download_record(city=None, url=None, name=None):
         path = "./download_img_url.csv"
@@ -137,10 +122,8 @@ class GuaZiCrawler():
 
     def run(self):
         for pageurl in self.page_url():
-            for detail_url in self.index_page(pageurl):
-                result = self.detail_page(detail_url)
-                print(result) # 结果
-            print('*'*200)
+            self.index_page(pageurl)
+            print('*'*200) # 20个*号
 
 
 if __name__ == '__main__':
