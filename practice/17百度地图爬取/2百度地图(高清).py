@@ -1,11 +1,11 @@
 '''
-Description:  参考：https://www.jianshu.com/p/ade4c6fc9c55
+Description: todo   参考：https://www.jianshu.com/p/ade4c6fc9c55
 Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-27 20:36:15
-LastEditTime: 2021-01-27 20:43:25
-FilePath: /Spider/practice/17百度地图爬取/2百度地图.py
+LastEditTime: 2021-01-27 21:23:10
+FilePath: /Spider/practice/17百度地图爬取/2百度地图(高清).py
 '''
 
 import requests
