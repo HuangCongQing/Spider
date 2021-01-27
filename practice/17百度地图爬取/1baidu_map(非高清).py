@@ -4,8 +4,8 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-27 18:43:38
-LastEditTime: 2021-01-27 20:55:29
-FilePath: /Spider/practice/17百度地图爬取/baidu_map.py
+LastEditTime: 2021-01-27 21:13:31
+FilePath: /Spider/practice/17百度地图爬取/1baidu_map(非高清).py
 '''
 # -*- encoding: utf-8 -*-
 
@@ -68,7 +68,7 @@ if __name__ == '__main__':  # 主程序
     #  根据输入的内容构建url列表推导式【前21页内容】
     urls = [
         'https://image.baidu.com/search/acjson?tn=resultjson_com&logid=15929772079715400218&ipn=rj&ct=201326592&is=&fp=result&queryWord=' + word + '&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&hd=&latest=&copyright=&word=' + word + '&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&expermode=&force=&pn={}'.format(
-            str(i)) for i in range(0, 60, 30)]
+            str(i)) for i in range(0, 60, 30)] # 设置下载数量
 
     for url in urls:
         downloadPic(url)
