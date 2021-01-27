@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-27 18:43:38
-LastEditTime: 2021-01-27 19:55:45
+LastEditTime: 2021-01-27 20:55:29
 FilePath: /Spider/practice/17百度地图爬取/baidu_map.py
 '''
 # -*- encoding: utf-8 -*-
@@ -29,8 +29,13 @@ i = 1
 #  定义下载图片的方法
 def downloadPic(url):
     global i  # 使用global声明这是一个全局变量,方法内无法直接使用全局变量
-    html = requests.get(url).text
-    pic_url = re.findall('"objURL":"(.*?)",', html, re.S)
+    #UA伪装：将对应的User-Agent封装到一个字典中
+    headers = {
+        'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
+    }
+    html = requests.get(url=url,headers=headers,allow_redirects=False).text
+    # pic_url = re.findall('"ObjURL":"(.*?)",', html, re.S)
+    pic_url = re.findall('"hoverURL":"(.*?)",', html, re.S)
 
     for each in pic_url:
         print("正在下载第" + str(i) + "张图片,图片地址:" + each)
@@ -42,7 +47,7 @@ def downloadPic(url):
             continue  # 跳过本次循环
 
         #  定义变量保存图片的路径
-        string = 'G:/Python/Crawler/百度图片下载器/' + word + "/" + str(i) + ".jpg"
+        string = 'practice/17百度地图爬取/imgs/' + word + "/" + str(i) + ".jpg"
         fp = open(string, 'wb')
         fp.write(pic.content)
         fp.close()
@@ -57,11 +62,13 @@ if __name__ == '__main__':  # 主程序
 
     if not os.path.exists(road):
         os.mkdir(road)
-
+        ''' 
+        https://image.baidu.com/search/acjson?tn=resultjson_com&logid=15929772079715400218&ipn=rj&ct=201326592&is=&fp=result&queryWord=' + word + '&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&hd=&latest=&copyright=&word=' + word + '&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&expermode=&force=&pn={}
+        '''
     #  根据输入的内容构建url列表推导式【前21页内容】
     urls = [
-        'http://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word=' + word + '&ct=201326592&v=flip&pn={}'.format(
-            str(i)) for i in range(0, 400, 20)]
+        'https://image.baidu.com/search/acjson?tn=resultjson_com&logid=15929772079715400218&ipn=rj&ct=201326592&is=&fp=result&queryWord=' + word + '&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&hd=&latest=&copyright=&word=' + word + '&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&expermode=&force=&pn={}'.format(
+            str(i)) for i in range(0, 60, 30)]
 
     for url in urls:
         downloadPic(url)
