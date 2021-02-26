@@ -3,6 +3,7 @@ package/3xpath/07picLibs
 *.csv
 practice/17百度地图爬取/imgs
 practice/17百度地图爬取/baidu_map.py
+!practice/16中国教育在线/特色专业数据.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
