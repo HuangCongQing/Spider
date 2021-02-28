@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-23 22:20:12
-LastEditTime: 2021-02-28 23:12:05
+LastEditTime: 2021-02-28 23:59:59
 FilePath: /Spider/practice/16中国教育在线/重点学科(研究生网站).py
 '''
 
@@ -36,30 +36,18 @@ def get_subject():
     table_list = [] # 学科级别
     tr_list = [] # 学科名
 
-    tab_con  =  tree.xpath('//div[@class="tabCon"]')
-    # print(tab_con)
-    for i in range(len(tab_con)):
-        i = i+1 # 索引是从  1   开始的。
-        for page in range(1,3):
-            tr_list1 = tree.xpath('//div[@class="tabCon"][' + str(i) + ']/table[' + str(page) + ']/tr')#   一级学科表格
-            # print(tr_list[0].text)
-            for tr in tr_list1:
-                names = tr.xpath('./td/a')
-                for name in names:
-                    class_name = tree.xpath('//div[@class="tabs"]/a')[i-1].text#
-                    class_list.append(class_name)
-                    # print("学科类别：", class_name)
-                    table_tit = tree.xpath('//div[@class="tabCon"][' + str(i) + ']/div[@class="tableTit"]')[page-1].text[0:8]# 国家一级重点学科名单(2007年批准) 点击学科名称查看开设院校
-                    # print("table_tit:", table_tit)
-                    table_list.append(table_tit)
-                    # print(name.text)
-                    tr_list.append(name.text)
-    # 保存csv文件
-    print('保存csv文件...')
-    #字典中的key值即为csv中列名
-    dataframe = pd.DataFrame({'学科类别':class_list,'学科级别':table_list,'学科名':tr_list})
-    #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"重点学科数据.csv",index=False, sep=',')
+    tab_con  =  tree.xpath('//div[@class="cdcy"]/table')[0]
+    print(tab_con)
+    
+
+
+    # # 保存csv文件
+    # print('保存csv文件...')
+    # #字典中的key值即为csv中列名
+    # dataframe = pd.DataFrame({'学科类别':class_list,'学科级别':table_list,'学科名':tr_list})
+    # #将DataFrame存储为csv,index表示是否显示行名，default=True
+    # dataframe.to_csv(r"重点学科数据.csv",index=False, sep=',')
+    
     print('爬取结束',)
 
 

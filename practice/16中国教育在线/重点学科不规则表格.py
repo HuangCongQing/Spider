@@ -1,14 +1,14 @@
 '''
-Description: 爬取不规则表格 https://www.cnblogs.com/cttcarrotsgarden/p/10769097.html
+Description:  http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/lsx/266612.shtml
 Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
-Date: 2021-02-28 23:21:10
-LastEditTime: 2021-03-01 00:11:58
-FilePath: /Spider/package/使用tips必看/爬取不规则表格.py
+Date: 2021-02-28 23:40:26
+LastEditTime: 2021-03-01 00:08:30
+FilePath: /Spider/practice/16中国教育在线/重点学科不规则表格.py
 '''
 import pandas as pd
-url = 'http://www.hnu.edu.cn/xyxk/xkzy/zylb.htm'
+url = 'http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/lsx/266612.shtml'
 
 ''' 生成txt文件 '''
 # table = pd.read_html(url) 
@@ -21,6 +21,4 @@ url = 'http://www.hnu.edu.cn/xyxk/xkzy/zylb.htm'
 
 ''' 生成csv文件 '''
 for table in pd.read_html(url):
-    print(table[0]) # 学院
-    print(table[1]) # 专业名称
-    table.to_csv('table.csv', mode='a',encoding='utf-8',header=0,index=False)
+    table.to_csv('重点学科不规则表格.csv', mode='a',encoding='utf-8',header=0,index=False)
