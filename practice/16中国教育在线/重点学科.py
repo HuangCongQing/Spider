@@ -4,9 +4,10 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-23 22:20:12
-LastEditTime: 2021-01-24 00:22:42
+LastEditTime: 2021-02-28 22:51:35
 FilePath: /Spider/practice/16中国教育在线/重点学科.py
 '''
+
 
 import requests
 from bs4 import BeautifulSoup
