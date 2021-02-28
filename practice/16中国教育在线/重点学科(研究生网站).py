@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-23 22:20:12
-LastEditTime: 2021-02-28 23:59:59
+LastEditTime: 2021-03-01 02:03:59
 FilePath: /Spider/practice/16中国教育在线/重点学科(研究生网站).py
 '''
 
@@ -18,6 +18,7 @@ from multiprocessing.dummy import Pool
 import json
 import re
 import pandas as pd
+import numpy as np
 
 def get_subject():
     print("正在获取所有数据... ...")
@@ -35,18 +36,43 @@ def get_subject():
     class_list = [] # 学科类别
     table_list = [] # 学科级别
     tr_list = [] # 学科名
+    schools_list = [] # 学校名
 
-    tab_con  =  tree.xpath('//div[@class="cdcy"]/table')[0]
+    tab_con  =  tree.xpath('//div[@class="cdcy"]/table/tr/td')   # 没有tbody=========================================
     print(tab_con)
-    
+    ids = []
+    for tabs in tab_con[1]:
+        if tabs:
+            id =  tabs.xpath('./@id')[0]
+            ids.append(id)
+            print(id)
+    # 遍历id列表
+    for id in ids:
+        url = 'http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/lsx/' + str(id)  +'.shtml'
+        class_names = pd.read_html(url)[0][0].values[1:-1] # 一二级学科  类别
+        class_names = class_names[~np.isin(class_names,'类别')] 
+        print(class_names)
+        subject_names = pd.read_html(url)[0][1].values[1:-1] # 学科名称   学科代码及名称
+        subject_names = subject_names[~np.isin(subject_names,'学科代码及名称')] 
+        school_names = pd.read_html(url)[0][2].values[1:-1] # 学校名字  学校名称
+        school_names = school_names[~np.isin(school_names,'学校名称')] 
+
+
+        print(len(class_names), len(subject_names), len(school_names))
+        table_list.extend(class_names)
+        tr_list.extend(subject_names)
+        schools_list.extend(school_names)
+
+        class_list =['人文社科类']*len(schools_list) # 添加相同数量类别
+        
 
 
     # # 保存csv文件
-    # print('保存csv文件...')
-    # #字典中的key值即为csv中列名
-    # dataframe = pd.DataFrame({'学科类别':class_list,'学科级别':table_list,'学科名':tr_list})
-    # #将DataFrame存储为csv,index表示是否显示行名，default=True
-    # dataframe.to_csv(r"重点学科数据.csv",index=False, sep=',')
+    print('保存csv文件...')
+    #字典中的key值即为csv中列名
+    dataframe = pd.DataFrame({'学科类别':class_list,'类别':table_list,'学科代码及名称':tr_list,'学校名称':schools_list})
+    #将DataFrame存储为csv,index表示是否显示行名，default=True
+    dataframe.to_csv(r"重点学科(研究生网站).csv",index=False, sep=',')
     
     print('爬取结束',)
 
