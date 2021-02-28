@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-23 22:20:12
-LastEditTime: 2021-03-01 02:15:16
+LastEditTime: 2021-03-01 02:29:30
 FilePath: /Spider/practice/16中国教育在线/重点学科(研究生网站) 循环.py
 '''
 
@@ -26,7 +26,7 @@ def get_subject():
     headers = {
         'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
     }
-    urls = ['http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/lsx/266529.shtml']
+    urls = ['http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/lsx/266529.shtml', 'http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/nx/266574.shtml', 'http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/yx/266582.shtml', 'http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/glx/266590.shtml', 'http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/lx/266683.shtml', 'http://www.cdgdc.edu.cn/xwyyjsjyxx/xwbl/zdjs/zdxk/zdxkmd/gx/266774.shtml']
     class_lists = [] # 学科类别
     table_lists = [] # 学科级别
     tr_lists = [] # 学科名
@@ -72,7 +72,15 @@ def get_subject():
             tr_list.extend(subject_names)
             schools_list.extend(school_names)
 
-            class_list =['人文社科类']*len(schools_list) # 添加相同数量类别
+            data = {
+                'lsx': '人文社科类',
+                'nx': '农学',
+                'yx': '医学',
+                'glx': '管理学',
+                'lx': '理学',
+                'gx': '工学',
+            }
+            class_list =[data[url_class]]*len(schools_list) # 添加相同数量类别
     
        
         table_lists.extend(table_list)
@@ -86,7 +94,7 @@ def get_subject():
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame({'学科类别':class_lists,'类别':table_lists,'学科代码及名称':tr_lists,'学校名称':schools_lists})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"重点学科(研究生网站)循环.csv",index=False, sep=',')
+    dataframe.to_csv(r"重点学科循环.csv",index=False, sep=',')
     
     print('爬取结束',)
 
