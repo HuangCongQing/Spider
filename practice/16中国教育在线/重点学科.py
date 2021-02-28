@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-23 22:20:12
-LastEditTime: 2021-02-28 22:51:35
+LastEditTime: 2021-02-28 23:00:49
 FilePath: /Spider/practice/16中国教育在线/重点学科.py
 '''
 
@@ -32,9 +32,9 @@ def get_subject():
     page_text = response.text
     # print(page_text)
     tree = etree.HTML(page_text)
-    class_list = []
-    table_list = []
-    tr_list = []
+    class_list = [] # 学科类别
+    table_list = [] # 学科级别
+    tr_list = [] # 学科名
 
     tab_con  =  tree.xpath('//div[@class="tabCon"]')
     # print(tab_con)
