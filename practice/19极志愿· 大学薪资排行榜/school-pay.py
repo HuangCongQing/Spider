@@ -44,27 +44,10 @@ def get_school_pay():
         result = json.loads(content)
         print("结果：",result)
         # print("爬取专业数：",len(result['data']['item']))
+        
+        for item in range(0,len(result['data'])): 
+            print("爬取薪资:", result['data'][item]['salary'])
 
-    # for page in range(0,1): # 0-2800
-    #     print("正在获取页数：", page + 1)
-    #     #UA伪装：将对应的User-Agent封装到一个字典中
-    #     headers = {
-    #         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
-    #     }
-    #     ts = ""
-    #     sign = ""
-    #     url = 'https://www.jizhy.com/open/sch/salary-rank-list?page='+ str(page) +  '&page_len=20&diploma_id=7&wenli=0&app_id=98357f659cf8fb6001cff80f7c6b85f2&ts='+ str(ts) +  '&platform=desktop&v=210&sign='+ str(sign)
-    #     # url = 'https://api.eol.cn/gkcx/api/?access_token=&keyword=&level1=' + str(1)  + '&level2=&page='+ str(26) +'&signsafe=&size=30&uri=apidata/api/gkv3/special/lists'
-    #     #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
-    #     # print("访问url：", url)
-    #     response = requests.get(url=url,headers=headers, timeout=60)
-    #     response.encoding = 'utf-8' 
-    #     page_text = response.text
-    #     # print(page_text)
-    #     tree = etree.HTML(page_text)
-    #     tr_list  =  tree.xpath('//div[@class="width1000"]/table/tbody/tr/td/a')
     
-
-
 if __name__ == "__main__":
     get_school_pay()
