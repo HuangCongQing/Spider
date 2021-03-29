@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-03-28 23:20:11
-LastEditTime: 2021-03-29 00:53:50
+LastEditTime: 2021-03-29 11:36:41
 FilePath: /Spider/practice/阳光高考· 抓取大学招生简章/admissions-regulations.py
 '''
 
@@ -19,6 +19,9 @@ import re
 import pandas as pd
 
 def get_admissions_regulations():
+
+    school_list = []
+    class_regulations_list =[]
     for page in range(0,1): # 0-2800
         print("正在获取页数：", page)
         #UA伪装：将对应的User-Agent封装到一个字典中
@@ -37,9 +40,10 @@ def get_admissions_regulations():
         print('本页学校数量', len(tr_list))
         # print(tr_list)
         for tr in tr_list: # 遍历每个学校
-            name = tr.xpath('./text()') # 学校名
+            school_name = tr.xpath('./text()')[0].replace(' ','').replace('\n', '').replace('\r', '') # 学校名
             link = tr.xpath('./@href')[0] # link
             # print("link: ", link)
+            print("正在遍历高校: ", school_name)
             school_url = "https://gaokao.chsi.com.cn" + str(link)
             #UA伪装：将对应的User-Agent封装到一个字典中
             headers = {
@@ -53,12 +57,15 @@ def get_admissions_regulations():
             # print(page_text)
             tree = etree.HTML(page_text)
             # 第二个zszcdel
-            tr_list  =  tree.xpath('//div[@class="zszcdel"][2]/div[@class="right"]/table/tr/td/a')
+            tr_list  =  tree.xpath('//div[@class="zszcdel"][2]/div[@class="right"]/table/tr')  # 每个学校都有招生简章list
             # print(tr_list)
-            for tr in tr_list: # 遍历每个学校
-                name = tr.xpath('./text()') # 学校名
-                link = tr.xpath('./@href')[0] # link
-                # print("link: ", link)
+            class_regulations = []
+            # 遍历每个学校招生简章
+            for tr in tr_list: 
+                name = tr.xpath('./td[1]/a/text()')[0].replace(' ','').replace('\n', '').replace('\r', '') # 学校招生简章
+                link = tr.xpath('./td[1]/a/@href')[0] # link
+                time =  tr.xpath('./td[2]/text()')[0].replace(' ','').replace('\n', '').replace('\r', '')
+                # print("name: ", name, "link: ", link, "time:", time) # name:  北京大学招生章程 link:  /zsgs/zhangcheng/listVerifedZszc--infoId-2355915097,method-view,schId-1.dhtml time:   2019-06-06 16:17
                 #UA伪装：将对应的User-Agent封装到一个字典中
                 headers = {
                     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
@@ -71,8 +78,29 @@ def get_admissions_regulations():
                 # print(page_text)
                 tree = etree.HTML(page_text)
                 # 第二个zszcdel
-                content  =  tree.xpath('//div[@class="content"]//text()') # //text() 标签中非直系的文本内容（所有的文本内容）
-                print("content:", content)
+                msg  =  tree.xpath('//div[@class="content"]') # //text() 标签中非直系的文本内容（所有的文本内容）
+                # print("msg:", len(msg))
+                content = etree.tostring(msg[0], encoding='utf8', method='html').decode()
+                # print("content:", len(content))
+                # print("content:", content)
+                # 将学校的招生简章放在字典，把历年的招生简章放在数组里面
+                class_regulation = {
+                    'name':name,
+                    'time':time,
+                    'content':content,
+                }
+                class_regulations.append(class_regulation)
+            # append
+            school_list.append(school_name)
+            class_regulations_list.append(class_regulations) # 每个学校的
+
+    # 保存csv文件
+    print('保存csv文件...')
+    #字典中的key值即为csv中列名
+    dataframe = pd.DataFrame({'学校名':school_list,'历年招生章程':class_regulations_list})
+    #将DataFrame存储为csv,index表示是否显示行名，default=True
+    dataframe.to_csv(r"高校招生章程.csv",index=False, sep=',')
+    print('爬取结束',)
 
 
 
