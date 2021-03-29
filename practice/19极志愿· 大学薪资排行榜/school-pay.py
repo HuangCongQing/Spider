@@ -23,6 +23,7 @@ def get_school_pay():
     # 存储数据初始化
     school_list = []
     pay_list =[]
+    rank_list = []
     # 获取数据
     # 本科url
     url_list = [
@@ -133,15 +134,17 @@ def get_school_pay():
         # print("爬取专业数：",len(result['data']['item']))
         
         for item in range(0,len(result['data'])): 
-            print("爬取薪资:", result['data'][item]['salary'])
+            # print("爬取薪资:", result['data'][item]['salary'])
             school = result['data'][item]['sch_name']
             pay = result['data'][item]['salary']
+            rank = result['data'][item]['sch_rank']
             school_list.append(school)
             pay_list.append(pay)
+            rank_list.append(rank)
     # 保存csv文件
     print('保存csv文件...')
     #字典中的key值即为csv中列名
-    dataframe = pd.DataFrame({'学校':school_list,'薪资':pay_list})
+    dataframe = pd.DataFrame({'排名':rank_list,'学校':school_list,'毕业后五年月薪':pay_list})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
     dataframe.to_csv(r"中国大学薪资2020排行榜(专科).csv",index=False, sep=',')
     print('爬取结束',)
