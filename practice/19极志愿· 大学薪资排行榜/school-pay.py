@@ -47,6 +47,17 @@ def get_school_pay():
         
         for item in range(0,len(result['data'])): 
             print("爬取薪资:", result['data'][item]['salary'])
+            school = result['data'][item]['sch_name']
+            pay = result['data'][item]['salary']
+            school_list.append(school)
+            pay_list.append(pay)
+    # 保存csv文件
+    print('保存csv文件...')
+    #字典中的key值即为csv中列名
+    dataframe = pd.DataFrame({'学校':school_list,'薪资':pay_list})
+    #将DataFrame存储为csv,index表示是否显示行名，default=True
+    dataframe.to_csv(r"大学薪资2020排行榜.csv",index=False, sep=',')
+    print('爬取结束',)
 
     
 if __name__ == "__main__":
