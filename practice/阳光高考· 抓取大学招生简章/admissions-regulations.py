@@ -26,12 +26,13 @@ def get_admissions_regulations():
         print("正在获取页数：", page)
         #UA伪装：将对应的User-Agent封装到一个字典中
         headers = {
-            'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
+            'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
+            'Cookie': 'PI=44; Hm_lvt_2610e5c202b60841b30a62960fbef0ad=1616894968,1616894993,1616924728,1616924739; Hm_lpvt_2610e5c202b60841b30a62960fbef0ad=1616997585'
         }
-        url = 'https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-index,lb-1.start-'+ str(10*page) +  '.dhtml'
+        url = 'https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-index,lb-1.start-'+ str(100*page) +  '.dhtml'
         # url = 'https://api.eol.cn/gkcx/api/?access_token=&keyword=&level1=' + str(1)  + '&level2=&page='+ str(26) +'&signsafe=&size=30&uri=apidata/api/gkv3/special/lists'
         #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
-        response = requests.get(url=url,headers=headers)
+        response = requests.get(url=url,headers=headers, timeout=10)
         response.encoding = 'utf-8' 
         page_text = response.text
         # print(page_text)
@@ -51,7 +52,7 @@ def get_admissions_regulations():
             }
             # url = 'https://api.eol.cn/gkcx/api/?access_token=&keyword=&level1=' + str(1)  + '&level2=&page='+ str(26) +'&signsafe=&size=30&uri=apidata/api/gkv3/special/lists'
             #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
-            response = requests.get(url=school_url,headers=headers)
+            response = requests.get(url=school_url,headers=headers,timeout=10)
             response.encoding = 'utf-8' 
             page_text = response.text
             # print(page_text)
@@ -72,7 +73,7 @@ def get_admissions_regulations():
                 }
                 url = "https://gaokao.chsi.com.cn" + str(link)
                 #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
-                response = requests.get(url=url,headers=headers)
+                response = requests.get(url=url,headers=headers, timeout=10)
                 response.encoding = 'utf-8' 
                 page_text = response.text
                 # print(page_text)
