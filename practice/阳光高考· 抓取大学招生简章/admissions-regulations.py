@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-03-28 23:20:11
-LastEditTime: 2021-03-29 11:36:41
+LastEditTime: 2021-03-29 11:38:08
 FilePath: /Spider/practice/阳光高考· 抓取大学招生简章/admissions-regulations.py
 '''
 
@@ -22,7 +22,7 @@ def get_admissions_regulations():
 
     school_list = []
     class_regulations_list =[]
-    for page in range(0,1): # 0-2800
+    for page in range(0,29): # 0-2800
         print("正在获取页数：", page)
         #UA伪装：将对应的User-Agent封装到一个字典中
         headers = {
