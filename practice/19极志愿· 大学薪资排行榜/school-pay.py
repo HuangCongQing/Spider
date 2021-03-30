@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-03-28 18:02:31
-LastEditTime: 2021-03-29 20:01:22
+LastEditTime: 2021-03-30 19:55:50
 FilePath: /Spider/practice/19极志愿· 大学薪资排行榜/school-pay.py
 '''
 
@@ -115,7 +115,7 @@ def get_school_pay():
         "https://www.jizhy.com/open/sch/salary-rank-list?page=31&page_len=20&diploma_id=5&wenli=0&app_id=98357f659cf8fb6001cff80f7c6b85f2&ts=1616995809072&platform=desktop&v=210&sign=474CA5C42F2EB8CEBE63C93436EDD630",
         "https://www.jizhy.com/open/sch/salary-rank-list?page=32&page_len=20&diploma_id=5&wenli=0&app_id=98357f659cf8fb6001cff80f7c6b85f2&ts=1616995811972&platform=desktop&v=210&sign=ADB4AE2ABBF2D7025B8EC6EB63BBC66D",
     ]
-    for url in url_list1: # 0-2800
+    for url in url_list: # 0-2800
         print("正在获取：", url)
         #UA伪装：将对应的User-Agent封装到一个字典中
         headers = {
@@ -146,7 +146,7 @@ def get_school_pay():
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame({'排名':rank_list,'学校':school_list,'毕业后五年月薪':pay_list})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"中国大学薪资2020排行榜(专科).csv",index=False, sep=',')
+    dataframe.to_csv(r"中国大学薪资2020排行榜(本科).csv",index=False, sep=',')
     print('爬取结束',)
 
     
