@@ -19,7 +19,7 @@ from multiprocessing.dummy import Pool
 import json
 import re
 import pandas as pd
-
+from tqdm import *
 
 def get_coin_pay():
     # 存储数据初始化
@@ -35,26 +35,26 @@ def get_coin_pay():
         'Referer': 'https://www.mxc.la/trade/easy',
         # 'X-Requested-With': 'XMLHttpRequest',
         'Connection': 'keep-alive',
-        'Cookie': "_ga=GA1.2.796343481.1618981015; _gid=GA1.2.1137290540.1618981015; __zlcmid=13ijyJ1eBCHrOpL; aliyungf_tc=55a0a4103a49dd83fa2f7b31bea1732efc0ce169c03cf37b56225ec28e8f085a; uc_token=; _gat_gtag_UA_177925109_1=1",
+        # 'Cookie': "_ga=GA1.2.796343481.1618981015; _gid=GA1.2.1137290540.1618981015; __zlcmid=13ijyJ1eBCHrOpL; aliyungf_tc=55a0a4103a49dd83fa2f7b31bea1732efc0ce169c03cf37b56225ec28e8f085a; uc_token=; _gat_gtag_UA_177925109_1=1",
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
     }
     param = {
         'symbol': 'BDP_USDT'
     }
-    url = 'https://www.mxc.la/api/platform/spot/market/deals?symbol=BDP_USDT'
+    url = 'https://www.mxc.la/api/platform/spot/market/deals'
     # 对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
     response = requests.get(url=url, params=param, headers=headers)
     response.encoding = 'utf-8'
     content = response.content
     # json格式转为字典
     result = json.loads(content)
-    print(result)
+    # print(result)
     # tree = etree.HTML(page_text)
     # tr_list = tree.xpath('//div[@class="zhiye"]')
     # print("获取链接：", len(tr_list))
     result = result['data']
-    for item in range(0,len(result['data'])): 
-        print("爬取p:", result['data'][item]['p'])
+    for item in tqdm(range(0,len(result['data']))): 
+        # print("爬取p:", result['data'][item]['p'])
         p = result['data'][item]['p']
         q = result['data'][item]['q']
         T = result['data'][item]['T']
