@@ -19,7 +19,7 @@ from multiprocessing.dummy import Pool
 import json
 import re
 import pandas as pd
-from tqdm import *
+from tqdm import tqdm
 
 def get_coin_pay():
     # 存储数据初始化
