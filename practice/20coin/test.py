@@ -20,12 +20,19 @@ while 1:
         # 'X-Requested-With': 'XMLHttpRequest',
         # 'Connection': 'keep-alive',
         # 'Cookie': "_ga=GA1.2.796343481.1618981015; _gid=GA1.2.1137290540.1618981015; __zlcmid=13ijyJ1eBCHrOpL; aliyungf_tc=55a0a4103a49dd83fa2f7b31bea1732efc0ce169c03cf37b56225ec28e8f085a; uc_token=; _gat_gtag_UA_177925109_1=1",
-        'Connection': 'close'
+        'Connection': 'close',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
 
     }
-    # try:
-    response = requests.get(url_total,headers=headers, timeout=30, verify=False)
+    try:
+        response = requests.get(url_total,headers=headers, timeout=30, verify=False)
+    except:
+        print("Connection refused by the server..")
+        print("Let me sleep for 5 seconds")
+        print("ZZzzzz...")
+        time.sleep(0.3)
+        print("Was a nice sleep, now let me continue...")
+        continue
     # requests.adapters.DEFAULT_RETRIES = 5
     url_total_html = response.text
     # number = re.findall(r"\d+\.?\d*", url_total_html)
@@ -36,7 +43,7 @@ while 1:
     response.close() # # 关闭，很重要,确保不要过多的链接
     time.sleep(0.6)
     i = i+1
-    print("循环次数", i)
+    print("循环次数:", i)
     # 时间
     end_time = time.time()
     time_diff = end_time - start_time
