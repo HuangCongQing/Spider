@@ -42,6 +42,7 @@ def get_subject():
         # print(tr_list)
         for tr in tr_list:
             name = tr.xpath('./td//text()')
+            print("name:", name)
             class_name = tree.xpath('//div[@class="tabCon"][' + str(i+1) + ']/div')[0].text[0:3] # 第七批 名字
             class_list.append(class_name)
             class_list.append(class_name)
@@ -55,7 +56,7 @@ def get_subject():
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame({'专业批次':class_list,'学校':school_list,'特色专业':sub_list})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"特色专业数据.csv",index=False, sep=',')
+    dataframe.to_csv(r"特色专业数据20210516.csv",index=False, sep=',')
     print('爬取结束',)
 
 
