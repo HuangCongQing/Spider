@@ -10,6 +10,7 @@ from multiprocessing.dummy import Pool
 import json
 import re
 import pandas as pd
+from tqdm import tqdm
 
 def get_baike():
     # 存储数据初始化
@@ -53,15 +54,16 @@ def get_baike():
             tree = etree.HTML(page_text)
             # 获取data
             try:
-                tab_content  =  tree.xpath('//div[@class="baikeArticle"]')
-                content = etree.tostring(tab_content[0], encoding='utf8', method='html').decode()
+                tab_content  =  tree.xpath('//div[@class="baikeArticle"]/p//text()')[0]
+                # print("tab_content", tab_content)
+                # content = etree.tostring(tab_content, encoding='utf8', method='html').decode()
             except:
                 print("此链接没所需内容！！！")
                 continue
             # print("content", content)
             label_list.append(modTitle)
             title_list.append(title)
-            content_list.append(content)
+            content_list.append(tab_content)
         
     
     # 保存csv文件
