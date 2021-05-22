@@ -54,9 +54,13 @@ def get_baike():
             tree = etree.HTML(page_text)
             # 获取data
             try:
-                tab_content  =  tree.xpath('//div[@class="baikeArticle"]/p//text()')[0]
+                tab_content  =  tree.xpath('//div[@class="baikeArticle"]')[0]
                 # print("tab_content", tab_content)
-                # content = etree.tostring(tab_content, encoding='utf8', method='html').decode()
+                tab_content = etree.tostring(tab_content, encoding='utf8', method='html').decode()
+                ex = '(.*?)<div class="clear">'  # 得到销售代表的数据
+                tab_content = re.findall(ex,tab_content, re.S)[0]# 正则
+                tab_content = tab_content + "</div>"
+                # print("tab_content", tab_content)
             except:
                 print("此链接没所需内容！！！")
                 continue
@@ -71,7 +75,7 @@ def get_baike():
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame({'类别':label_list,'百科名':title_list,'百科内容':content_list})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"高考百科（高考志愿帮）20210517.csv",index=False, sep=',')
+    dataframe.to_csv(r"高考百科（高考志愿帮）20210521.csv",index=False, sep=',')
     print('爬取结束',)
 
 

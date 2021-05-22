@@ -85,7 +85,7 @@ def get_admissions_regulations():
                 # print("msg:", len(msg))
                 content = etree.tostring(msg[0], encoding='utf8', method='html').decode()
                 # print("content:", len(content))
-                # print("content:", content)
+                print("content:", content)
                 # 将学校的招生简章放在字典，把历年的招生简章放在数组里面
                 class_regulation = {
                     'name':name,
