@@ -44,38 +44,48 @@ def get_baike():
             url1 =  tr.xpath('./@href')[0]
             if url1.find("https") == -1: # 不包含
                 url1 = "https:" + str(url1)
-            else:
-                url1 = url1
             # print("url",url1)
             # print("正在爬取百科：",title)
             #UA伪装：将对应的User-Agent封装到一个字典中
             headers = {
                 'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
             }
-            # url = 'https://www.gkzyb.com/baike.html'
             #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
-            response = requests.get(url=url1,headers=headers)
-            response.encoding = 'utf-8' 
-            page_text = response.text
-            # print(page_text)
-            tree = etree.HTML(page_text)
+            # url1 = "https://daxue.eol.cn/syl.shtml"
+            url1= url1.strip()
+            print("url1 : ",url1 )
+            response1 = requests.get(url=url1,headers=headers)
+            response1.encoding = 'utf-8' 
+            page_text1 = response1.text
+            # print(page_text1)
+            tree = etree.HTML(page_text1)
+            print("URL : ",url1 )
             # 获取data
             try:
                 if url1.find("gaokao.eol.cn/") != -1: # 不包含
-                    tab_content  =  tree.xpath('//div[@class="article"]')
+                    print("Filter gaokao.eol.cn  URL : ",url1 )
+                    tab_content  =  tree.xpath('//div[@class="TRS_Editor"]')
+                    print("--tab_content", tab_content)
                 elif url1.find("daxue.eol.cn") != -1:
-                    tab_content  =  tree.xpath('//div[@class="container"]')
-                elif url1.find("www.eol.cn/e_html/") != -1:
-                    tab_content  =  tree.xpath('//div[@class="conBox"]')
+                    print("Filter daxue.eol.cn  URL : ",url1 )
+                    tab_content  =  tree.xpath('//div[@class="con-jianjie"]')
+                    # print(page_text1)
+                    print("--tab_content", tab_content)
+                elif url1.find("www.eol.cn") != -1:
+                    print("Filter www.eol.cn URL : ",url1 )
+                    tab_content  =  tree.xpath('//div[@class="conBox"]/text()')
+                    print("--tab_content", tab_content)
                 else:
+                    print("Filter else URL : ",url1 )
                     tab_content  =  tree.xpath('//div[@class="container"]')
+                    print("--tab_content", tab_content)
                 content = etree.tostring(tab_content[0], encoding='utf8', method='html').decode()
                 print("--爬取链接内容")
             except:
                 print("--此链接没所需内容！！！")
                 continue
             # print("content", content)
-            label_list.append(modTitle)
+            label_list.append( modTitle[0])
             title_list.append(title)
             content_list.append(content)
         
