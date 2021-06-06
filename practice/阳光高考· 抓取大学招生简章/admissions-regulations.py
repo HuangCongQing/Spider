@@ -60,7 +60,7 @@ def get_admissions_regulations():
             # print(page_text)
             tree = etree.HTML(page_text)
             # 第二个zszcdel
-            tr_list  =  tree.xpath('//div[@class="zszcdel"][2]/div[@class="right"]/table/tr')  # 每个学校都有招生简章list
+            tr_list  =  tree.xpath('//div[@class="zszcdel"]/div[@class="right"]/table/tr')  # 每个学校都有招生简章list
             # print(tr_list)
             class_regulations = []
             # 遍历每个学校招生简章
@@ -75,7 +75,7 @@ def get_admissions_regulations():
                 }
                 url = "https://gaokao.chsi.com.cn" + str(link)
                 #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
-                response = requests.get(url=url,headers=headers, timeout=60)
+                response = requests.get(url=url,headers=headers, timeout=120)
                 response.encoding = 'utf-8' 
                 page_text = response.text
                 # print(page_text)
@@ -85,7 +85,7 @@ def get_admissions_regulations():
                 # print("msg:", len(msg))
                 content = etree.tostring(msg[0], encoding='utf8', method='html').decode()
                 # print("content:", len(content))
-                print("content:", content)
+                # print("content:", content)
                 # 将学校的招生简章放在字典，把历年的招生简章放在数组里面
                 class_regulation = {
                     'name':name,
@@ -102,7 +102,7 @@ def get_admissions_regulations():
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame({'学校名':school_list,'历年招生章程':class_regulations_list})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"高校招生章程.csv",index=False, sep=',')
+    dataframe.to_csv(r"2021高校招生章程20210606.csv",index=False, sep=',')
     print('爬取结束',)
 
 
