@@ -4,8 +4,8 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-03-28 23:20:11
-LastEditTime: 2021-03-29 11:38:08
-FilePath: /Spider/practice/阳光高考· 抓取大学招生简章/admissions-regulations.py
+LastEditTime: 2021-06-18 19:46:18
+FilePath: /Spider/practice/12阳光高考· 抓取大学招生简章/admissions-regulations.py
 '''
 
 import requests
@@ -102,7 +102,7 @@ def get_admissions_regulations():
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame({'学校名':school_list,'历年招生章程':class_regulations_list})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"2021高校招生章程20210606.csv",index=False, sep=',')
+    dataframe.to_csv(r"2021高校招生章程20210618.csv",index=False, sep=',')
     print('爬取结束',)
 
 
