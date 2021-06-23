@@ -1,0 +1,1568 @@
+{
+    "data": {
+        "provList": ["\u5317\u4eac", "\u5929\u6d25", "\u4e0a\u6d77", "\u91cd\u5e86", "\u6cb3\u5317",
+            "\u5c71\u897f", "\u8fbd\u5b81", "\u5409\u6797", "\u9ed1\u9f99\u6c5f", "\u6c5f\u82cf",
+            "\u6d59\u6c5f", "\u5b89\u5fbd", "\u798f\u5efa", "\u6c5f\u897f", "\u5c71\u4e1c",
+            "\u6cb3\u5357", "\u6e56\u5317", "\u6e56\u5357", "\u5e7f\u4e1c", "\u6d77\u5357",
+            "\u56db\u5ddd", "\u8d35\u5dde", "\u4e91\u5357", "\u9655\u897f", "\u7518\u8083",
+            "\u9752\u6d77", "\u5185\u8499\u53e4", "\u5e7f\u897f", "\u897f\u85cf", "\u5b81\u590f",
+            "\u65b0\u7586"
+        ],
+        "url": "https:\/\/quark.sm.cn\/api\/rest?uc_param_str=dnntnwvepffrgibijbprsvdsdicheiniut&from=gaokao_share",
+        "domain": "https:\/\/quark.sm.cn",
+        "provInfo": {
+            "2020": [{
+                "id": "1",
+                "province": "\u4e0a\u6d77",
+                "year": "2020",
+                "type": "1"
+            }, {
+                "id": "2",
+                "province": "\u6d59\u6c5f",
+                "year": "2020",
+                "type": "2"
+            }, {
+                "id": "3",
+                "province": "\u5317\u4eac",
+                "year": "2020",
+                "type": "1"
+            }, {
+                "id": "4",
+                "province": "\u5929\u6d25",
+                "year": "2020",
+                "type": "1"
+            }, {
+                "id": "5",
+                "province": "\u5c71\u4e1c",
+                "year": "2020",
+                "type": "1"
+            }, {
+                "id": "6",
+                "province": "\u6d77\u5357",
+                "year": "2020",
+                "type": "1"
+            }, {
+                "id": "7",
+                "province": "\u5e7f\u4e1c",
+                "year": "2020",
+                "type": "0"
+            }, {
+                "id": "8",
+                "province": "\u6c5f\u82cf",
+                "year": "2020",
+                "type": "0"
+            }, {
+                "id": "9",
+                "province": "\u6e56\u5357",
+                "year": "2020",
+                "type": "0"
+            }, {
+                "id": "10",
+                "province": "\u6e56\u5317",
+                "year": "2020",
+                "type": "0"
+            }, {
+                "id": "11",
+                "province": "\u91cd\u5e86",
+                "year": "2020",
+                "type": "0"
+            }, {
+                "id": "12",
+                "province": "\u798f\u5efa",
+                "year": "2020",
+                "type": "0"
+            }, {
+                "id": "13",
+                "province": "\u8fbd\u5b81",
+                "year": "2020",
+                "type": "0"
+            }, {
+                "id": "14",
+                "province": "\u6cb3\u5317",
+                "year": "2020",
+                "type": "0"
+            }],
+            "2021": [{
+                "id": "15",
+                "province": "\u4e0a\u6d77",
+                "year": "2021",
+                "type": "1"
+            }, {
+                "id": "16",
+                "province": "\u6d59\u6c5f",
+                "year": "2021",
+                "type": "2"
+            }, {
+                "id": "17",
+                "province": "\u5317\u4eac",
+                "year": "2021",
+                "type": "1"
+            }, {
+                "id": "18",
+                "province": "\u5929\u6d25",
+                "year": "2021",
+                "type": "1"
+            }, {
+                "id": "19",
+                "province": "\u5c71\u4e1c",
+                "year": "2021",
+                "type": "1"
+            }, {
+                "id": "20",
+                "province": "\u6d77\u5357",
+                "year": "2021",
+                "type": "1"
+            }, {
+                "id": "21",
+                "province": "\u5e7f\u4e1c",
+                "year": "2021",
+                "type": "3"
+            }, {
+                "id": "22",
+                "province": "\u6c5f\u82cf",
+                "year": "2021",
+                "type": "3"
+            }, {
+                "id": "23",
+                "province": "\u6e56\u5357",
+                "year": "2021",
+                "type": "3"
+            }, {
+                "id": "24",
+                "province": "\u6e56\u5317",
+                "year": "2021",
+                "type": "3"
+            }, {
+                "id": "25",
+                "province": "\u91cd\u5e86",
+                "year": "2021",
+                "type": "3"
+            }, {
+                "id": "26",
+                "province": "\u798f\u5efa",
+                "year": "2021",
+                "type": "3"
+            }, {
+                "id": "27",
+                "province": "\u8fbd\u5b81",
+                "year": "2021",
+                "type": "3"
+            }, {
+                "id": "28",
+                "province": "\u6cb3\u5317",
+                "year": "2021",
+                "type": "3"
+            }],
+            "2022": [{
+                "id": "29",
+                "province": "\u4e0a\u6d77",
+                "year": "2022",
+                "type": "1"
+            }, {
+                "id": "30",
+                "province": "\u6d59\u6c5f",
+                "year": "2022",
+                "type": "2"
+            }, {
+                "id": "31",
+                "province": "\u5317\u4eac",
+                "year": "2022",
+                "type": "1"
+            }, {
+                "id": "32",
+                "province": "\u5929\u6d25",
+                "year": "2022",
+                "type": "1"
+            }, {
+                "id": "33",
+                "province": "\u5c71\u4e1c",
+                "year": "2022",
+                "type": "1"
+            }, {
+                "id": "34",
+                "province": "\u6d77\u5357",
+                "year": "2022",
+                "type": "1"
+            }, {
+                "id": "35",
+                "province": "\u5e7f\u4e1c",
+                "year": "2022",
+                "type": "3"
+            }, {
+                "id": "36",
+                "province": "\u6c5f\u82cf",
+                "year": "2022",
+                "type": "3"
+            }, {
+                "id": "37",
+                "province": "\u6e56\u5357",
+                "year": "2022",
+                "type": "3"
+            }, {
+                "id": "38",
+                "province": "\u6e56\u5317",
+                "year": "2022",
+                "type": "3"
+            }, {
+                "id": "39",
+                "province": "\u91cd\u5e86",
+                "year": "2022",
+                "type": "3"
+            }, {
+                "id": "40",
+                "province": "\u798f\u5efa",
+                "year": "2022",
+                "type": "3"
+            }, {
+                "id": "41",
+                "province": "\u8fbd\u5b81",
+                "year": "2022",
+                "type": "3"
+            }, {
+                "id": "42",
+                "province": "\u6cb3\u5317",
+                "year": "2022",
+                "type": "3"
+            }]
+        },
+        "ucid": 0,
+        "userInfo": [],
+        "os": "ios",
+        "isQuark": false,
+        "isQuark40": false,
+        "quarkVersion": 0,
+        "conf": {
+            "js": ["\/\/sm01.alicdn.com\/L1\/272\/709\/ai\/quark-baby\/jssdk_cn-with-bridge.js",
+                "\/\/sm01.alicdn.com\/L1\/272\/6837\/static\/ky\/wx.js",
+                "\/\/sm01.alicdn.com\/L1\/272\/6837\/static\/wap\/js\/feedback\/aliyun-oss-sdk.min.js",
+                "\/\/g.alicdn.com\/hanma-spa\/gaokao2020\/js\/runtime.cfa7552c.js",
+                "\/\/g.alicdn.com\/hanma-spa\/gaokao2020\/js\/chunk\/index.f40c8729.js"
+            ],
+            "css": ["\/\/at.alicdn.com\/t\/font_875818_5ckz1ivc553.css",
+                "\/\/g.alicdn.com\/hanma-spa\/gaokao2020\/css\/index.7c6984ea.css"
+            ]
+        },
+        "isUc": false,
+        "provScore": [{
+            "id": "32",
+            "province": "\u5317\u4eac",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": "\u672c\u79d1"
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": "\u672c\u79d1"
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "450",
+                "score_type": "\u4e13\u79d1"
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u7efc\u5408"]
+        }, {
+            "id": "33",
+            "province": "\u5929\u6d25",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": "\u672c\u79d1"
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": "\u672c\u79d1"
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "450",
+                "score_type": "\u4e13\u79d1"
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u7efc\u5408"]
+        }, {
+            "id": "34",
+            "province": "\u5c71\u4e1c",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u7efc\u5408"]
+        }, {
+            "id": "35",
+            "province": "\u6d77\u5357",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "940",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "940",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "940",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "940",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "940",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "940",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "940",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u7efc\u5408"]
+        }, {
+            "id": "36",
+            "province": "\u6d59\u6c5f",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u7efc\u5408"]
+        }, {
+            "id": "37",
+            "province": "\u4e0a\u6d77",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "660",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "660",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "660",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "660",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "660",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "660",
+                "score_type": "\u672c\u79d1"
+            }, {
+                "year": "2021",
+                "aos": ["\u7efc\u5408"],
+                "max_score": "660",
+                "score_type": "\u672c\u79d1"
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u7efc\u5408"]
+        }, {
+            "id": "38",
+            "province": "\u5e7f\u4e1c",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "39",
+            "province": "\u6c5f\u82cf",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "480",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "480",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "480",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "480",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "480",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "480",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "40",
+            "province": "\u6e56\u5357",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "41",
+            "province": "\u6e56\u5317",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "42",
+            "province": "\u91cd\u5e86",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "43",
+            "province": "\u8fbd\u5b81",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "44",
+            "province": "\u798f\u5efa",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "45",
+            "province": "\u6cb3\u5317",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u9996\u9009\u7269\u7406", "\u9996\u9009\u5386\u53f2"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1", "\u9996\u9009\u7269\u7406",
+                "\u9996\u9009\u5386\u53f2"
+            ]
+        }, {
+            "id": "46",
+            "province": "\u5b89\u5fbd",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "47",
+            "province": "\u7518\u8083",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "48",
+            "province": "\u5e7f\u897f",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "49",
+            "province": "\u8d35\u5dde",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "50",
+            "province": "\u9ed1\u9f99\u6c5f",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "51",
+            "province": "\u6cb3\u5357",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "52",
+            "province": "\u5409\u6797",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "53",
+            "province": "\u6c5f\u897f",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": "\u672c\u79d1"
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": "\u672c\u79d1"
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "450",
+                "score_type": "\u4e13\u79d1"
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "54",
+            "province": "\u5185\u8499\u53e4",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "55",
+            "province": "\u5b81\u590f",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "56",
+            "province": "\u9752\u6d77",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "57",
+            "province": "\u5c71\u897f",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "58",
+            "province": "\u9655\u897f",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "59",
+            "province": "\u56db\u5ddd",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "60",
+            "province": "\u897f\u85cf",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "61",
+            "province": "\u65b0\u7586",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2020",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }, {
+            "id": "62",
+            "province": "\u4e91\u5357",
+            "years": [{
+                "year": "2015",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2016",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2017",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2018",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2019",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2020",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }, {
+                "year": "2021",
+                "aos": ["\u7406\u79d1", "\u6587\u79d1"],
+                "max_score": "750",
+                "score_type": ""
+            }],
+            "defaultYear": "2021",
+            "controlAos": ["\u7406\u79d1", "\u6587\u79d1"]
+        }],
+        "ipProv": "\u5317\u4eac",
+        "from": "gaokao_share",
+        "channelConf": null,
+        "uc_share": {
+            "os": "ios",
+            "version": false,
+            "isSupportShare": false,
+            "from": "gaokao_share"
+        }
+    },
+    "sc_hy": "other",
+    "wxsign": {
+        "appId": "wx8f55afc7efa5248e",
+        "nonceStr": "eYC5zBcf9Pl9wKwx",
+        "timestamp": 1624455084,
+        "url": "https:\/\/quark.sm.cn\/api\/rest?uc_param_str=dnntnwvepffrgibijbprsvdsdicheiniut&from=gaokao_share&method=QuarkGaoKao2020.index&format=html",
+        "signature": "0a1ada997a17a2e7624a558de60f9c26ed122832",
+        "rawString": "jsapi_ticket=kgt8ON7yVITDhtdwci0qeYF9VqpfsTM0TPTzXCwZJqCqwqVXPD11j2efoCcWZ5vyQIvq_efxhmVY4_3XzwdL0g&noncestr=eYC5zBcf9Pl9wKwx&timestamp=1624455084&url=https:\/\/quark.sm.cn\/api\/rest?uc_param_str=dnntnwvepffrgibijbprsvdsdicheiniut&from=gaokao_share&method=QuarkGaoKao2020.index&format=html"
+    }
+}
