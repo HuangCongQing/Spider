@@ -1,7 +1,7 @@
 
 # https://quark.sm.cn/api/rest?uc_param_str=dnntnwvepffrgibijbprsvdsdicheiniut&from=gaokao_share&method=QuarkGaoKao2020.index&format=html#/grade-interval?location=%E5%9B%9B%E5%B7%9D&student_rank=110757&score=500&aos=%E7%90%86%E7%A7%91&subjects=%E7%90%86%E7%A7%91&fromPT=share
 
-
+# 报错 b'access denied'============================================================================
 
 
 
@@ -40,9 +40,12 @@ def get_score():
         for item2 in aos: 
             url = 'https://quark.sm.cn/api/rest?format=json&uc_param_str=dnntnwvepffrgibijbprsvdsdicheiniut&method=QuarkGaoKao2020.getScoreRanksNew&aos='+ str(item2) + '&year=' + str(year)+ '&location='+str(item1)+'&score='
             #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
+            # try:
             response = requests.get(url=url, headers=headers)
             response.encoding = 'utf-8' 
+            # if response.content:
             content = response.content
+            # print(content) # b'access denied'
             # json格式转为字典
             result = json.loads(content)
             # print(result)
@@ -54,6 +57,9 @@ def get_score():
                 lists_sum.append(item["sums"])
                 lists_aos.append(item2)
                 lists_location.append(item1)
+            # except:
+            #     print("没所需内容！！！")
+            #     continue
     
     dest = []
     for e in lists_location:
