@@ -20,7 +20,7 @@ def get_dependent_repos(url):
             user = t.find('a', {"data-hovercard-type":"user"}).text
             repository = t.find('a', {"data-hovercard-type":"repository"}).text
             # star
-            star = int(t.find('svg', {"class":"octicon octicon-star"}).text)
+            star = int(t.find('span', {"class":"pl-3"}).text)
             print("star:", star)
             # if(star >2):
             print("path路径：", str(user) + "/" + str(repository))
@@ -51,8 +51,8 @@ def write_repos(repos):
 #页数  你想爬取的repo的页数
 page_num = 2
 #dependents 第一页的链接
-# url = 'https://github.com/facebookresearch/pytorch3d/network/dependents?dependents_before=MTM5NDM2MzA2NzE'
-url = 'https://github.com/huggingface/transformers/network/dependents?package_id=UGFja2FnZS01MjY1Njg3NA%3D%3D'
+url = 'https://github.com/facebookresearch/pytorch3d/network/dependents?dependents_before=MTM5NDM2MzA2NzE'
+# url = 'https://github.com/huggingface/transformers/network/dependents?package_id=UGFja2FnZS01MjY1Njg3NA%3D%3D'
 i = 0
 repos_sum = []
 
