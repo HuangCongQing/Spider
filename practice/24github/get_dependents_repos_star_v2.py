@@ -41,7 +41,7 @@ def get_dependent_repos(url):
 
 # 写repos
 def write_repos(repos):
-    path = "./dependents_pytorch3d.txt"
+    path = "./dependents_pytorch3d_star.txt"
     for repo in repos:
         f = open(path, 'a', encoding='utf-8')
         f.write(repo  + '\n')
