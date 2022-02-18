@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-03-28 23:20:11
-LastEditTime: 2021-06-18 19:46:18
+LastEditTime: 2022-02-19 00:38:06
 FilePath: /Spider/practice/12阳光高考· 抓取大学招生简章/admissions-regulations.py
 '''
 
@@ -17,12 +17,13 @@ from multiprocessing.dummy import Pool
 import json
 import re
 import pandas as pd
+import random
 
 def get_admissions_regulations():
 
     school_list = []
     class_regulations_list =[]
-    for page in range(0,29): # 0-2800
+    for page in range(0,28): # 0-2800
         print("正在获取页数：", page + 1)
         #UA伪装：将对应的User-Agent封装到一个字典中
         headers = {
@@ -33,7 +34,7 @@ def get_admissions_regulations():
         # url = 'https://api.eol.cn/gkcx/api/?access_token=&keyword=&level1=' + str(1)  + '&level2=&page='+ str(26) +'&signsafe=&size=30&uri=apidata/api/gkv3/special/lists'
         #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
         # print("访问url：", url)
-        response = requests.get(url=url,headers=headers, timeout=60)
+        response = requests.get(url=url,headers=headers, timeout=120)
         response.encoding = 'utf-8' 
         page_text = response.text
         # print(page_text)
@@ -52,6 +53,19 @@ def get_admissions_regulations():
             headers = {
                 'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
             }
+            # 随机切换User-Agent：
+# 在爬虫中报如下的错误：requests.exceptions.ConnectionError: (‘Connection aborted.’, RemoteDisconnected(‘Remote end closed connection without response’,))
+
+            user_agent_list = [
+                "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
+                "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+                "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36",
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36",
+                "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36",
+                "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)",
+                "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.5; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15"
+                ]
+            headers['User-Agent'] = random.choice(user_agent_list)
             # url = 'https://api.eol.cn/gkcx/api/?access_token=&keyword=&level1=' + str(1)  + '&level2=&page='+ str(26) +'&signsafe=&size=30&uri=apidata/api/gkv3/special/lists'
             #对指定的url发起的请求对应的url是携带参数的，并且请求过程中处理了参数
             response = requests.get(url=school_url,headers=headers,timeout=60)
@@ -62,8 +76,11 @@ def get_admissions_regulations():
             # 第二个zszcdel
             tr_list  =  tree.xpath('//div[@class="zszcdel"]/div[@class="right"]/table/tr')  # 每个学校都有招生简章list
             # print(tr_list)
+            if len(tr_list)==0:
+                print("\t招生简章还没出～")
+                continue
             class_regulations = []
-            # 遍历每个学校招生简章
+            # 遍历招生简章
             for tr in tr_list: 
                 name = tr.xpath('./td[1]/a/text()')[0].replace(' ','').replace('\n', '').replace('\r', '') # 学校招生简章
                 link = tr.xpath('./td[1]/a/@href')[0] # link
@@ -102,7 +119,7 @@ def get_admissions_regulations():
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame({'学校名':school_list,'历年招生章程':class_regulations_list})
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(r"2021高校招生章程20210618.csv",index=False, sep=',')
+    dataframe.to_csv(r"2022高校招生章程20220219.csv",index=False, sep=',')
     print('爬取结束',)
 
 
