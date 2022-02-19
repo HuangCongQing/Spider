@@ -4,12 +4,12 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-06 13:26:47
-LastEditTime: 2021-01-06 20:20:22
+LastEditTime: 2022-02-19 22:54:32
 FilePath: /Spider/practice/10bilibili视频爬取下载/05bilibili爬取封面.py
 '''
 import requests
 import json
-
+import time
 
 def get_aid(bv):
     table='fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF'
@@ -41,6 +41,16 @@ def get_content(url):
     # print(content,result)
     img_link  = result['data']['pic']
     print(img_link) # http://i2.hdslb.com/bfs/archive/e4c22d45b5c9832d66c3e6baedcf4a17c9e28191.png
+    #请求到了图片的二进制数据
+    img_data = requests.get(url=img_link,headers=headers).content
+    # #生成图片名称
+    # img_name = img_link.split('/')[-1]
+    #图片存储的路径
+    now_time = time.strftime('%Y_%m_%d_%H_%M_%S',time.localtime())
+    imgPath =  now_time+'.jpg'
+    with open(imgPath,'wb') as fp:
+        fp.write(img_data)
+        print(imgPath,'下载成功！！！')
     
 if __name__ == "__main__":
     bv = "BV194411G72j"
