@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-16 21:50:27
-LastEditTime: 2021-01-16 21:52:29
+LastEditTime: 2022-02-19 23:19:48
 FilePath: /Spider/文件操作/csv/04pd读取csv.py
 '''
 import pandas as pd
@@ -20,3 +20,9 @@ print(data)
 3       3       8
 4       4       9
  '''
+#  获得行数
+print(len(data))
+# 遍历每行的每个元素
+for i  in range(0, len(data)):
+   #  每列的表头
+   print(data['a_name'][i], data['b_name'][i] )

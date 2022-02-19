@@ -4,20 +4,22 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-01-03 14:57:10
-LastEditTime: 2021-01-05 12:41:31
-FilePath: /Spider/10bilibili视频爬取下载/bilibili视频标题和链接爬取.py
+LastEditTime: 2022-02-19 23:12:31
+FilePath: /Spider/practice/10bilibili视频爬取下载/03bilibili视频标题和链接爬取.py
 '''
 import requests
 import re
 from bs4 import BeautifulSoup
 import openpyxl
 import xlwt			# 存储excel
+import pandas as pd
 
 def read_excel():
     #定义一个空列表
     stu_num=[]
     #打开目标execl，这里注意openpyxl能读取的execl后缀名是'.xlsx'文件
-    workbook1=openpyxl.load_workbook(r'../../文件操作/excel/college.xlsx')
+    # workbook1=openpyxl.load_workbook(r'../../文件操作/excel/college.xlsx')
+    workbook1=openpyxl.load_workbook(r'../../文件操作/excel/college_test.xlsx')
     #选定目标sheet
     worksheet1 = workbook1.active
     for cell in worksheet1['A']:
@@ -89,9 +91,17 @@ def write_excel(schools_all, url_all,  title_all ):
 if __name__ == "__main__":
     college = read_excel()
     # print(college[0])
+    # schools_all, url_all,  title_all = get_details(college[0])
     schools_all, url_all,  title_all = get_details(college)
     # print(url_all, title_all)
+    # 保存方式1:excel==============================================
     write_excel(schools_all, url_all,  title_all )
+    # 保存方式2：csv==============================================
+    #字典中的key值即为csv中列名
+    dataframe = pd.DataFrame({'school':schools_all,'title':title_all,'url':url_all})
+    #将DataFrame存储为csv,index表示是否显示行名，default=True
+    dataframe.to_csv(r"学校视频url.csv",index=False, sep=',')
+
     print("爬取完毕，共爬取",len(schools_all), "学校" )
     
     
