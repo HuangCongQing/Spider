@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2021-03-28 23:20:11
-LastEditTime: 2022-02-19 00:38:06
+LastEditTime: 2022-02-21 10:54:26
 FilePath: /Spider/practice/12阳光高考· 抓取大学招生简章/admissions-regulations.py
 '''
 
@@ -54,7 +54,7 @@ def get_admissions_regulations():
                 'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
             }
             # 随机切换User-Agent：
-# 在爬虫中报如下的错误：requests.exceptions.ConnectionError: (‘Connection aborted.’, RemoteDisconnected(‘Remote end closed connection without response’,))
+            # 在爬虫中报如下的错误：requests.exceptions.ConnectionError: (‘Connection aborted.’, RemoteDisconnected(‘Remote end closed connection without response’,))
 
             user_agent_list = [
                 "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
