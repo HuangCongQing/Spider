@@ -1,0 +1,2001 @@
+rank,school,year
+1,Harvard University,2021
+2,Massachusetts Institute of Technology,2021
+3,Stanford University,2021
+4,University of Cambridge,2021
+5,University of Oxford,2021
+6,Princeton University,2021
+7,Columbia University,2021
+8,University of Chicago,2021
+9,University of Pennsylvania,2021
+10,Yale University,2021
+11,California Institute of Technology,2021
+12,"University of California, Berkeley",2021
+13,University of Tokyo,2021
+14,Cornell University,2021
+15,"University of Michigan, Ann Arbor",2021
+16,Johns Hopkins University,2021
+17,Northwestern University,2021
+18,"University of California, Los Angeles",2021
+19,University College London,2021
+20,Duke University,2021
+21,PSL University,2021
+22,University of Illinois at Urbana–Champaign,2021
+23,University of Washington - Seattle,2021
+24,University of Toronto,2021
+25,University of Wisconsin–Madison,2021
+26,New York University,2021
+27,McGill University,2021
+28,Kyoto University,2021
+29,ETH Zurich,2021
+30,Imperial College London,2021
+31,Seoul National University,2021
+32,Paris-Saclay University,2021
+33,University of Texas at Austin,2021
+34,"University of California, San Diego",2021
+35,Karolinska Institute,2021
+36,Sorbonne University,2021
+37,University of Copenhagen,2021
+38,"University of California, San Francisco",2021
+39,University of North Carolina at Chapel Hill,2021
+40,Dartmouth College,2021
+41,Institut Polytechnique de Paris,2021
+42,University of Paris,2021
+43,King's College London,2021
+44,Ludwig Maximilian University of Munich,2021
+45,University of Edinburgh,2021
+46,University of Minnesota - Twin Cities,2021
+47,Washington University in St. Louis,2021
+48,University of British Columbia,2021
+49,Rockefeller University,2021
+50,Rutgers University–New Brunswick,2021
+51,University of Southern California,2021
+52,"University of California, Davis",2021
+53,Vanderbilt University,2021
+54,Pennsylvania State University,2021
+55,Free University of Berlin,2021
+56,Ohio State University,2021
+57,University of Manchester,2021
+58,Tsinghua University,2021
+59,Peking University,2021
+60,Humboldt University of Berlin,2021
+61,Purdue University,2021
+62,University of Texas Southwestern Medical Center,2021
+63,University of Melbourne,2021
+64,Hebrew University of Jerusalem,2021
+65,University of Zurich,2021
+66,Brown University,2021
+67,Weizmann Institute of Science,2021
+68,University of Colorado Boulder,2021
+69,University of Virginia,2021
+70,Heidelberg University,2021
+71,Utrecht University,2021
+72,University of Pittsburgh,2021
+73,University of Chinese Academy of Sciences,2021
+74,"Texas A&M University, College Station",2021
+75,"University of Maryland, College Park",2021
+76,Georgia Institute of Technology,2021
+77,University of Oslo,2021
+78,Osaka University,2021
+79,University of Birmingham,2021
+80,Technical University of Munich,2021
+81,University of Alberta,2021
+82,"University of California, Irvine",2021
+83,University of Rochester,2021
+84,University of Amsterdam,2021
+85,Carnegie Mellon University,2021
+86,University of Florida,2021
+87,Leiden University,2021
+88,Uppsala University,2021
+89,National University of Singapore,2021
+90,National Taiwan University,2021
+91,University of Bristol,2021
+92,University of Göttingen,2021
+93,University of Arizona,2021
+94,Boston University,2021
+95,"University of California, Santa Barbara",2021
+96,Erasmus University Rotterdam,2021
+97,Keio University,2021
+98,University of Sydney,2021
+99,University of Geneva,2021
+100,University of Basel,2021
+101,University of Leeds,2021
+102,Shanghai Jiao Tong University,2021
+103,University of Groningen,2021
+104,École Polytechnique Fédérale de Lausanne,2021
+105,University of São Paulo,2021
+106,University of Texas MD Anderson Cancer Center,2021
+107,Aarhus University,2021
+108,University of Tübingen,2021
+109,University of Queensland,2021
+110,Zhejiang University,2021
+111,Indiana University Bloomington,2021
+112,University of Utah,2021
+113,Sapienza University of Rome,2021
+114,University of New South Wales,2021
+115,Fudan University,2021
+116,KU Leuven,2021
+117,University of Southampton,2021
+118,University of Helsinki,2021
+119,INSEAD,2021
+120,University of Montreal,2021
+121,Ghent University,2021
+122,University of Freiburg,2021
+123,University of Bonn,2021
+124,Emory University,2021
+125,Australian National University,2021
+126,University of Glasgow,2021
+127,Baylor College of Medicine,2021
+128,Monash University,2021
+129,Case Western Reserve University,2021
+130,Nagoya University,2021
+131,University of Barcelona,2021
+132,Tohoku University,2021
+133,Goethe University Frankfurt,2021
+134,Tufts University,2021
+135,University of Nottingham,2021
+136,Nanyang Technological University,2021
+137,University of Liverpool,2021
+138,Grenoble Alpes University,2021
+139,University of Science and Technology of China,2021
+140,KTH Royal Institute of Technology,2021
+141,Lund University,2021
+142,VU Amsterdam,2021
+143,University of Bern,2021
+144,Stockholm University,2021
+145,University of Iowa,2021
+146,Michigan State University,2021
+147,Rice University,2021
+148,University of Strasbourg,2021
+149,University of Colorado Anschutz Medical Campus,2021
+150,University of Sheffield,2021
+151,Tokyo Institute of Technology,2021
+152,Tel Aviv University,2021
+153,Sun Yat-sen University,2021
+154,Queen Mary University of London,2021
+155,Radboud University,2021
+156,University of Western Australia,2021
+157,Aix-Marseille University,2021
+158,University of Massachusetts Amherst,2021
+159,Cardiff University,2021
+160,Huazhong University of Science and Technology,2021
+161,Technion – Israel Institute of Technology,2021
+162,Nanjing University,2021
+163,Korea University,2021
+164,McMaster University,2021
+165,University of Padova,2021
+166,University of Hamburg,2021
+167,Iowa State University,2021
+168,University of Montpellier,2021
+169,Yonsei University,2021
+170,University of Notre Dame,2021
+171,University of Hong Kong,2021
+172,Icahn School of Medicine at Mount Sinai,2021
+173,University of Gothenburg,2021
+174,University of Warwick,2021
+175,École nationale d'administration,2021
+176,University of Milan,2021
+177,University of Bologna,2021
+178,Newcastle University,2021
+179,University of Alabama at Birmingham,2021
+180,Wageningen University & Research,2021
+181,Arizona State University,2021
+182,Norwegian University of Science and Technology,2021
+183,Western University,2021
+184,University of Cologne,2021
+185,University of Kansas,2021
+186,Autonomous University of Barcelona,2021
+187,Chinese University of Hong Kong,2021
+188,Waseda University,2021
+189,University of Lausanne,2021
+190,University of Calgary,2021
+191,North Carolina State University,2021
+192,Sungkyunkwan University,2021
+193,University of Münster,2021
+194,Lomonosov Moscow State University,2021
+195,University of Connecticut,2021
+196,Technical University of Denmark,2021
+197,Université catholique de Louvain,2021
+198,Stony Brook University,2021
+199,Brandeis University,2021
+200,University of Waterloo,2021
+201,University of Lisbon,2021
+202,University of Ottawa,2021
+203,University of Würzburg,2021
+204,University of Georgia,2021
+205,Xi'an Jiaotong University,2021
+206,Harbin Institute of Technology,2021
+207,University of Vienna,2021
+208,Johannes Gutenberg University Mainz,2021
+209,Yeshiva University,2021
+210,Technical University of Dresden,2021
+211,RWTH Aachen University,2021
+212,The Scripps Research Institute,2021
+213,University of Adelaide,2021
+214,University of Illinois at Chicago,2021
+215,Wuhan University,2021
+216,Kiel University,2021
+217,University of Missouri–Columbia,2021
+218,Trinity College Dublin,2021
+219,Université libre de Bruxelles,2021
+220,Hokkaido University,2021
+221,Claude Bernard University Lyon 1,2021
+222,Xiamen University,2021
+223,KAIST,2021
+224,Kyushu University,2021
+225,Shandong University,2021
+226,University of Miami,2021
+227,University of Erlangen–Nuremberg,2021
+228,Georgetown University,2021
+229,Hong Kong University of Science and Technology,2021
+230,University of Turin,2021
+231,Tianjin University,2021
+232,London School of Hygiene & Tropical Medicine,2021
+233,Charles University in Prague,2021
+234,Karlsruhe Institute of Technology,2021
+235,P.N. Lebedev Physical Institute of the Russian Academy of Sciences,2021
+236,University of Cincinnati,2021
+237,Wake Forest University,2021
+238,University of Naples Federico II,2021
+239,Paul Sabatier University,2021
+240,Sichuan University,2021
+241,University of Sussex,2021
+242,"University of California, Riverside",2021
+243,University of Bordeaux,2021
+244,University of Texas Health Science Center at Houston,2021
+245,University of Leicester,2021
+246,University of Reading,2021
+247,Complutense University of Madrid,2021
+248,Jilin University,2021
+249,Nankai University,2021
+250,Maastricht University,2021
+251,"University of Tennessee, Knoxville",2021
+252,HEC Paris,2021
+253,South China University of Technology,2021
+254,Virginia Commonwealth University,2021
+255,Colorado State University,2021
+256,Tongji University,2021
+257,University of Houston,2021
+258,University of Florence,2021
+259,Delft University of Technology,2021
+260,Southeast University,2021
+261,University of Tsukuba,2021
+262,University of Auckland,2021
+263,University of Exeter,2021
+264,National and Kapodistrian University of Athens,2021
+265,University of Pisa,2021
+266,City University of Hong Kong,2021
+267,Hong Kong Polytechnic University,2021
+268,Oregon Health & Science University,2021
+269,University of Cape Town,2021
+270,Oregon State University,2021
+271,Virginia Tech,2021
+272,University of East Anglia,2021
+273,Central South University,2021
+274,University of Manitoba,2021
+275,Florida State University,2021
+276,University of Bergen,2021
+277,"Soochow University, China",2021
+278,King Abdulaziz University,2021
+279,Leipzig University,2021
+280,University of Aberdeen,2021
+281,University of Genoa,2021
+282,Autonomous University of Madrid,2021
+283,University of Massachusetts Medical School,2021
+284,"University of California, Santa Cruz",2021
+285,University of Lorraine,2021
+286,"University of Maryland, Baltimore",2021
+287,National Autonomous University of Mexico,2021
+288,University of Valencia,2021
+289,University College Dublin,2021
+290,University of Antwerp,2021
+291,University of Liège,2021
+292,University of the Witwatersrand,2021
+293,University at Buffalo,2021
+294,Laval University,2021
+295,Medical University of Vienna,2021
+296,Beihang University,2021
+297,University of South Florida,2021
+298,Wayne State University,2021
+299,University of Delaware,2021
+300,University of Pavia,2021
+301,University of Kentucky,2021
+302,Louisiana State University,2021
+303,Dalian University of Technology,2021
+304,King Abdullah University of Science and Technology,2021
+305,University of New Mexico,2021
+306,University of Nebraska–Lincoln,2021
+307,Washington State University,2021
+308,China Europe International Business School,2021
+309,George Washington University,2021
+310,University of Lille,2021
+311,University of Rome Tor Vergata,2021
+312,Ruhr University Bochum,2021
+313,University of Duisburg-Essen,2021
+314,Southern Methodist University,2021
+315,Queen's University,2021
+316,Hanyang University,2021
+317,University of Porto,2021
+318,Ulm University,2021
+319,Chinese Academy of Medical Sciences & Peking Union Medical College,2021
+320,Northeastern University,2021
+321,University of York,2021
+322,Friedrich Schiller University Jena,2021
+323,Durham University,2021
+324,Umeå University,2021
+325,Beijing Normal University,2021
+326,University of Granada,2021
+327,University of South Carolina - Columbia,2021
+328,London School of Economics and Political Science,2021
+329,Polytechnic University of Milan,2021
+330,Dalhousie University,2021
+331,National Cheng Kung University,2021
+332,University of Düsseldorf,2021
+333,Eindhoven University of Technology,2021
+334,Hunan University,2021
+335,Aalto University,2021
+336,Versailles Saint-Quentin-en-Yvelines University,2021
+337,Hannover Medical School,2021
+338,International Institute for Management Development,2021
+339,Simon Fraser University,2021
+340,Beijing Institute of Technology,2021
+341,University of Dundee,2021
+342,University of St Andrews,2021
+343,University of the Basque Country,2021
+344,University of Milano-Bicocca,2021
+345,Lancaster University,2021
+346,University of Electronic Science and Technology of China,2021
+347,University of Campinas,2021
+348,University of Belgrade,2021
+349,École des ponts ParisTech,2021
+350,City College of New York,2021
+351,University of Otago,2021
+352,Temple University,2021
+353,Albert Einstein College of Medicine,2021
+354,Aalborg University,2021
+355,Ben-Gurion University of the Negev,2021
+356,University of Buenos Aires,2021
+357,Queen's University Belfast,2021
+358,Vrije Universiteit Brussel,2021
+359,Drexel University,2021
+360,Federal University of Rio de Janeiro,2021
+361,University of Southern Denmark,2021
+362,Linköping University,2021
+363,Curtin University,2021
+364,University of Marburg,2021
+365,University of Parma,2021
+366,Lanzhou University,2021
+367,China Agricultural University,2021
+368,Pohang University of Science and Technology,2021
+369,National Research Center «Kurchatov Institute»,2021
+370,Technical University of Berlin,2021
+371,King Saud University,2021
+372,Islamic Azad University,2021
+373,Justus Liebig University Giessen,2021
+374,University of Ljubljana,2021
+375,University of Innsbruck,2021
+376,Jagiellonian University,2021
+377,Pontifical Catholic University of Chile,2021
+378,University of Oregon,2021
+379,University of Technology Sydney,2021
+380,Macquarie University,2021
+381,University of Turku,2021
+382,National Tsing Hua University,2021
+383,Medical University of South Carolina,2021
+384,East China Normal University,2021
+385,University of Victoria,2021
+386,Chongqing University,2021
+387,University of Perugia,2021
+388,Deakin University,2021
+389,University of Regensburg,2021
+390,Griffith University,2021
+391,Kyung Hee University,2021
+392,"University of Oklahoma, Norman",2021
+393,East China University of Science and Technology,2021
+394,University of Warsaw,2021
+395,Pompeu Fabra University,2021
+396,University of Wollongong,2021
+397,University of Malaya,2021
+398,University of Newcastle,2021
+399,University of Texas at Dallas,2021
+400,Chalmers University of Technology,2021
+401,Queensland University of Technology,2021
+402,Kyungpook National University,2021
+403,"University at Albany, SUNY",2021
+404,Swedish University of Agricultural Sciences,2021
+405,University of Seville,2021
+406,Vienna University of Technology,2021
+407,University of Coimbra,2021
+408,University of Bari,2021
+409,Aristotle University of Thessaloniki,2021
+410,University of Science and Technology Beijing,2021
+411,University of Twente,2021
+412,Amherst College,2021
+413,Northwestern Polytechnical University,2021
+414,University of Saskatchewan,2021
+415,Indian Institute of Management Ahmedabad,2021
+416,University of Tasmania,2021
+417,University of Côte d'Azur,2021
+418,Tampere University,2021
+419,University of Ulsan,2021
+420,Indiana University – Purdue University Indianapolis,2021
+421,São Paulo State University,2021
+422,Zhengzhou University,2021
+423,Texas Tech University,2021
+424,Hiroshima University,2021
+425,Thomas Jefferson University,2021
+426,Capital Medical University,2021
+427,York University,2021
+428,China University of Geosciences,2021
+429,Kansas State University,2021
+430,Chonnam National University,2021
+431,University of Stuttgart,2021
+432,Stockholm School of Economics,2021
+433,Catholic University of the Sacred Heart,2021
+434,University of Mississippi,2021
+435,Stellenbosch University,2021
+436,University of Chile,2021
+437,University of Trieste,2021
+438,Okayama University,2021
+439,University of Clermont Auvergne,2021
+440,Kobe University,2021
+441,Tulane University,2021
+442,Shenzhen University,2021
+443,Saint Louis University,2021
+444,University of Bath,2021
+445,University of Texas Health Science Center at San Antonio,2021
+446,University of Oulu,2021
+447,Vita-Salute San Raffaele University,2021
+448,University of Navarra,2021
+449,Pusan National University,2021
+450,University of Trento,2021
+451,Medical College of Wisconsin,2021
+452,University of Eastern Finland,2021
+453,University of Zaragoza,2021
+454,Martin Luther University Halle-Wittenberg,2021
+455,National Chiao Tung University,2021
+456,University of Catania,2021
+457,University of Colorado Denver,2021
+458,University of Vermont,2021
+459,Indian Institute of Science,2021
+460,University of Guelph,2021
+461,University of Alabama - Tuscaloosa,2021
+462,Syracuse University,2021
+463,University of Central Florida,2021
+464,Polytechnic University of Catalonia,2021
+465,University of Louisville,2021
+466,Shanghai University,2021
+467,University of Santiago de Compostela,2021
+468,University of Siena,2021
+469,Florida International University,2021
+470,Nanjing Agricultural University,2021
+471,Nanjing University of Aeronautics and Astronautics,2021
+472,Nanjing University of Science and Technology,2021
+473,George Mason University,2021
+474,Federal University of Rio Grande do Sul,2021
+475,University of Strathclyde,2021
+476,Scuola Normale Superiore di Pisa,2021
+477,Technical University of Darmstadt,2021
+478,Joint Institute for Nuclear Research,2021
+479,University of Rostock,2021
+480,Beijing University of Chemical Technology,2021
+481,École normale supérieure de Lyon,2021
+482,James Cook University,2021
+483,University of KwaZulu-Natal,2021
+484,Chulalongkorn University,2021
+485,Oklahoma State University,2021
+486,University of Oviedo,2021
+487,Ioffe Physical-Technical Institute of the Russian Academy of Sciences,2021
+488,Polytechnic University of Valencia,2021
+489,Rovira i Virgili University,2021
+490,Leibniz University Hannover,2021
+491,Huazhong Agricultural University,2021
+492,Xidian University,2021
+493,West Virginia University,2021
+494,Nanjing Medical University,2021
+495,Baylor University,2021
+496,Savoie Mont Blanc University,2021
+497,Technical University of Dortmund,2021
+498,Lehigh University,2021
+499,University of Hawaii at Manoa,2021
+500,La Trobe University,2021
+501,University of Ferrara,2021
+502,Rush University,2021
+503,Federal University of Minas Gerais,2021
+504,University of Tennessee Health Science Center,2021
+505,Swarthmore College,2021
+506,Novosibirsk State University,2021
+507,Boston College,2021
+508,University of Modena and Reggio Emilia,2021
+509,Western Sydney University,2021
+510,University of Surrey,2021
+511,University of Hull,2021
+512,University of Tromsø – The Arctic University of Norway,2021
+513,Northwest A&F University,2021
+514,NOVA University of Lisbon,2021
+515,"Royal Holloway, University of London",2021
+516,University of Canterbury,2021
+517,University College Cork,2021
+518,Wuhan University of Technology,2021
+519,University of Potsdam,2021
+520,University of Tehran,2021
+521,University of Tartu,2021
+522,National Yang-Ming University,2021
+523,University of South Australia,2021
+524,RMIT University,2021
+525,University of Zagreb,2021
+526,Colorado School of Mines,2021
+527,Bar-Ilan University,2021
+528,Ulsan National Institute of Science and Technology,2021
+529,University of Bremen,2021
+530,Georgia State University,2021
+531,USI - University of Italian Speaking Switzerland,2021
+532,University of Verona,2021
+533,University of Rennes 1,2021
+534,Carleton University,2021
+535,Polytechnic University of Madrid,2021
+536,University of Konstanz,2021
+537,Hitotsubashi University,2021
+538,Saint Petersburg University,2021
+539,"Northeastern University, China",2021
+540,University of Arkansas - Fayetteville,2021
+541,Rensselaer Polytechnic Institute,2021
+542,Moscow Institute of Physics and Technology,2021
+543,Tata Institute of Fundamental Research,2021
+544,University of Nantes,2021
+545,Medical University of Innsbruck,2021
+546,Cairo University,2021
+547,Ewha Womans University,2021
+548,National Technical University of Athens,2021
+549,Mahidol University,2021
+550,Chiba University,2021
+551,Fuzhou University,2021
+552,"China Medical University, Taiwan",2021
+553,Jinan University,2021
+554,Flinders University,2021
+555,National Central University,2021
+556,Clemson University,2021
+557,Indian Institute of Technology Madras,2021
+558,Mayo Clinic College of Medicine and Science,2021
+559,Brunel University London,2021
+560,San Diego State University,2021
+561,Medical University of Graz,2021
+562,Southwest University,2021
+563,University of Graz,2021
+564,University of Sherbrooke,2021
+565,University of Jyväskylä,2021
+566,Institut Agro,2021
+567,Indian Institute of Technology Bombay,2021
+568,China University of Petroleum,2021
+569,University of Texas at Arlington,2021
+570,Chang Gung University,2021
+571,University of Delhi,2021
+572,Palacký University Olomouc,2021
+573,Middle East Technical University,2021
+574,Illinois Institute of Technology,2021
+575,University of Iceland,2021
+576,Nanjing Tech University,2021
+577,University of Minho,2021
+578,"Institute of Cancer Research, University of London",2021
+579,University of Udine,2021
+580,University of Pretoria,2021
+581,Auburn University,2021
+582,Swansea University,2021
+583,University of Wisconsin–Milwaukee,2021
+584,University of Burgundy,2021
+585,University of Palermo,2021
+586,Concordia University,2021
+587,Masaryk University,2021
+588,Bocconi University,2021
+589,College of William & Mary,2021
+590,University of Nebraska Medical Center,2021
+591,Eötvös Loránd University,2021
+592,Haverford College,2021
+593,Central China Normal University,2021
+594,Czech Technical University in Prague,2021
+595,Jiangsu University,2021
+596,University Paris-Est Créteil,2021
+597,Brigham Young University,2021
+598,CINVESTAV,2021
+599,Polytechnic University of Turin,2021
+600,University of Salerno,2021
+601,Beijing Jiaotong University,2021
+602,Jiangnan University,2021
+603,University of Aveiro,2021
+604,University of Cagliari,2021
+605,University of Eastern Piedmont,2021
+606,AGH University of Science and Technology,2021
+607,Federal University of São Paulo,2021
+608,Nanjing University of Information Science and Technology,2021
+609,Comenius University in Bratislava,2021
+610,University of St.Gallen,2021
+611,Jeonbuk National University,2021
+612,Sharif University of Technology,2021
+613,National Research Nuclear University MEPhI,2021
+614,"St George's, University of London",2021
+615,Utah State University,2021
+616,University of Bayreuth,2021
+617,University of Québec at Montreal,2021
+618,Second Military Medical University,2021
+619,"National University of Ireland, Galway",2021
+620,Rio de Janeiro State University,2021
+621,National University of La Plata,2021
+622,University of Brescia,2021
+623,Indian Institute of Technology Delhi,2021
+624,Toulouse INP,2021
+625,University of La Laguna,2021
+626,Institut national des sciences appliquées de Lyon,2021
+627,Konkuk University,2021
+628,Southern Medical University,2021
+629,Bielefeld University,2021
+630,Cold Spring Harbor Laboratory,2021
+631,University of Plymouth,2021
+632,Henryk Niewodniczański Institute of Nuclear Physics,2021
+633,North China Electric Power University,2021
+634,Ocean University of China,2021
+635,Catholic University of Korea,2021
+636,Courtauld Institute of Art,2021
+637,Boğaziçi University,2021
+638,China University of Mining and Technology,2021
+639,Memorial University of Newfoundland,2021
+640,National Polytechnic Institute,2021
+641,University of New Hampshire,2021
+642,Tilburg University,2021
+643,Tehran University of Medical Sciences,2021
+644,Southern University of Science and Technology,2021
+645,Renmin University of China,2021
+646,Nanjing Normal University,2021
+647,Hefei University of Technology,2021
+648,Donghua University,2021
+649,University of Cantabria,2021
+650,Hacettepe University,2021
+651,Saarland University,2021
+652,Ankara University,2021
+653,Binghamton University,2021
+654,Chung-Ang University,2021
+655,Shinshu University,2021
+656,University of Macau,2021
+657,Swinburne University of Technology,2021
+658,University of Campania Luigi Vanvitelli,2021
+659,Sciences Po,2021
+660,Loughborough University,2021
+661,Loyola University Chicago,2021
+662,University of Texas Medical Branch,2021
+663,Tokyo Metropolitan University,2021
+664,University of Kent,2021
+665,Roma Tre University,2021
+666,University of Calabria,2021
+667,Massey University,2021
+668,University of Haifa,2021
+669,Kanazawa University,2021
+670,University of Wyoming,2021
+671,University of Málaga,2021
+672,Tokyo Medical and Dental University,2021
+673,Istanbul University,2021
+674,University of Johannesburg,2021
+675,University of Texas at San Antonio,2021
+676,University of Ioannina,2021
+677,Zhejiang University of Technology,2021
+678,University of Szeged,2021
+679,University of Fribourg,2021
+680,"University of Maine, Orono",2021
+681,Tianjin Medical University,2021
+682,Istanbul Technical University,2021
+683,Semmelweis University,2021
+684,Nanchang University,2021
+685,"University of Nevada, Reno",2021
+686,Warsaw University of Technology,2021
+687,Vilnius University,2021
+688,National University of Defense Technology,2021
+689,Chungnam National University,2021
+690,Yokohama City University,2021
+691,Southwest Jiaotong University,2021
+692,University of Salamanca,2021
+693,Hong Kong Baptist University,2021
+694,Isfahan University of Technology,2021
+695,University of Debrecen,2021
+696,National Chung Hsing University,2021
+697,Oswaldo Cruz Foundation,2021
+698,Victoria University of Wellington,2021
+699,Heriot-Watt University,2021
+700,University of Oklahoma Health Sciences Center,2021
+701,Inha University,2021
+702,University of Crete,2021
+703,Kumamoto University,2021
+704,Otto von Guericke University Magdeburg,2021
+705,King Fahd University of Petroleum and Minerals,2021
+706,Northeast Normal University,2021
+707,University of Greifswald,2021
+708,Indian Institute of Technology Kharagpur,2021
+709,Panjab University,2021
+710,"University of North Texas, Denton",2021
+711,South China Normal University,2021
+712,Taipei Medical University,2021
+713,Mississippi State University,2021
+714,University of Arkansas for Medical Sciences,2021
+715,University of Missouri-Kansas City,2021
+716,"Birkbeck, University of London",2021
+717,International School for Advanced Studies,2021
+718,Budker Institute of Nuclear Physics of the Siberian Branch of the Russian Academy of Sciences,2021
+719,Montana State University - Bozeman,2021
+720,University of Angers,2021
+721,Yangzhou University,2021
+722,Niigata University,2021
+723,Qingdao University,2021
+724,Central Party School of the Communist Party of China,2021
+725,American University of Beirut,2021
+726,Kangwon National University,2021
+727,"University of Maryland, Baltimore County",2021
+728,Federal University of Santa Catarina,2021
+729,University of Massachusetts Boston,2021
+730,Bangor University,2021
+731,Beijing University of Technology,2021
+732,Antioch College,2021
+733,Ajou University,2021
+734,Army Medical University,2021
+735,Tokyo University of Science,2021
+736,University of Vigo,2021
+737,Beijing University of Posts and Telecommunications,2021
+738,University of Alaska Fairbanks,2021
+739,Augusta University,2021
+740,University of Salento,2021
+741,Technical University of Braunschweig,2021
+742,Quaid-i-Azam University,2021
+743,SUNY Downstate Medical Center,2021
+744,Guangdong University of Technology,2021
+745,Osaka City University,2021
+746,"Northwest University, Xi'an",2021
+747,University of Castilla–La Mancha,2021
+748,Kitasato University,2021
+749,University of Cyprus,2021
+750,"University of the Andes, Colombia",2021
+751,University of Idaho,2021
+752,Kent State University,2021
+753,Amirkabir University of Technology,2021
+754,Nanjing University of Posts and Telecommunications,2021
+755,Yerevan Physics Institute,2021
+756,University of Essex,2021
+757,South China Agricultural University,2021
+758,Sejong University,2021
+759,Shaanxi Normal University,2021
+760,Air Force Medical University,2021
+761,University of Wuppertal,2021
+762,Institute for Nuclear Research of the Russian Academy of Sciences,2021
+763,"Graduate Faculty, General Research Institute For Nonferrous Metals",2021
+764,University of Lübeck,2021
+765,Yeungnam University,2021
+766,University of Split,2021
+767,Centrale Lille Institut,2021
+768,University of Girona,2021
+769,Örebro University,2021
+770,Hohai University,2021
+771,Shanxi University,2021
+772,University of the Balearic Islands,2021
+773,University of Montana,2021
+774,Ohio University,2021
+775,University of Murcia,2021
+776,National Taiwan University of Science and Technology,2021
+777,Gwangju Institute of Science and Technology,2021
+778,"University of Science, Malaysia",2021
+779,Federal University of Paraná,2021
+780,Marche Polytechnic University,2021
+781,Belarusian State University,2021
+782,Kaohsiung Medical University,2021
+783,"University of Natural Resources and Life Sciences, Vienna",2021
+784,Sorbonne Paris Nord University,2021
+785,Wenzhou Medical University,2021
+786,Northern Illinois University,2021
+787,L.D. Landau Institute for Theoretical Physics of the Russian Academy of Sciences,2021
+788,"University of Córdoba, Spain",2021
+789,National Sun Yat-sen University,2021
+790,University of Patras,2021
+791,Norwegian University of Life Sciences,2021
+792,Tarbiat Modares University,2021
+793,Harbin Medical University,2021
+794,University of Hohenheim,2021
+795,Guangzhou Medical University,2021
+796,University of North Carolina at Charlotte,2021
+797,Ain Shams University,2021
+798,Carl von Ossietzky University of Oldenburg,2021
+799,Gyeongsang National University,2021
+800,"China Medical University, PRC",2021
+801,University of Siegen,2021
+802,Gustave Eiffel University,2021
+803,University of Jinan,2021
+804,Beijing Forestry University,2021
+805,"Putra University, Malaysia",2021
+806,University of L'Aquila,2021
+807,Kindai University,2021
+808,Nagasaki University,2021
+809,COMSATS University Islamabad,2021
+810,Polytechnic University of Bari,2021
+811,Brazilian Center for Research in Physics (CBPF),2021
+812,University of Rhode Island,2021
+813,"Open University, UK",2021
+814,Carlos III University of Madrid,2021
+815,University of Denver,2021
+816,National University of Colombia,2021
+817,University of Toledo,2021
+818,Indian Institute of Technology Kanpur,2021
+819,Adam Mickiewicz University in Poznań,2021
+820,Shizuoka University,2021
+821,University of Basilicata,2021
+822,Miami University,2021
+823,Jawaharlal Nehru University,2021
+824,Old Dominion University,2021
+825,University of Concepción,2021
+826,Harbin Engineering University,2021
+827,University of Alcalá,2021
+828,Graz University of Technology,2021
+829,Ryerson University,2021
+830,Getúlio Vargas Foundation,2021
+831,University of Tours,2021
+832,"University of Nevada, Las Vegas",2021
+833,Jawaharlal Nehru Centre for Advanced Scientific Research,2021
+834,Federico Santa María Technical University,2021
+835,Hasselt University,2021
+836,University of Messina,2021
+837,University of Wrocław,2021
+838,Juntendo University,2021
+839,Ege University,2021
+840,Aberystwyth University,2021
+841,Federal University of Pernambuco,2021
+842,Benemérita Autonomous University of Puebla,2021
+843,Rutgers University–Newark,2021
+844,Gazi University,2021
+845,University of Alicante,2021
+846,Wesleyan University,2021
+847,"University of California, Merced",2021
+848,Cranfield University,2021
+849,University of Mons,2021
+850,University of Louisiana at Lafayette,2021
+851,Liverpool John Moores University,2021
+852,Ivane Javakhishvili Tbilisi State University,2021
+853,Jean Monnet University,2021
+854,Sofia University,2021
+855,Graduate University for Advanced Studies,2021
+856,Banaras Hindu University,2021
+857,INSA Toulouse,2021
+858,"All India Institute of Medical Sciences, New Delhi",2021
+859,Uniformed Services University of the Health Sciences,2021
+860,Indian Institute of Technology Roorkee,2021
+861,Northern Arizona University,2021
+862,Tomsk State University,2021
+863,Technical University of Kaiserslautern,2021
+864,University of Luxembourg,2021
+865,"City, University of London",2021
+866,Anhui University,2021
+867,Murdoch University,2021
+868,Chongqing Medical University,2021
+869,University of Orléans,2021
+870,Southern Illinois University Carbondale,2021
+871,Babeș-Bolyai University,2021
+872,University of Brasília,2021
+873,Henan University,2021
+874,University of Brighton,2021
+875,Dongguk University,2021
+876,National Centre for Nuclear Research,2021
+877,University of Insubria,2021
+878,University of Akron,2021
+879,Hangzhou Normal University,2021
+880,Iran University of Science and Technology,2021
+881,National Research University Higher School of Economics,2021
+882,Shandong University of Science and Technology,2021
+883,China Pharmaceutical University,2021
+884,National University of Malaysia (UKM),2021
+885,Norwegian School of Economics,2021
+886,Portland State University,2021
+887,Budapest University of Technology and Economics,2021
+888,Jaume I University,2021
+889,University of Seoul,2021
+890,Gachon University,2021
+891,Polytechnic University of Bucharest,2021
+892,Peter the Great St. Petersburg Polytechnic University,2021
+893,New Mexico State University,2021
+894,Nihon University,2021
+895,University of Stirling,2021
+896,Federal University of ABC,2021
+897,University of Hyogo,2021
+898,East Carolina University,2021
+899,ShanghaiTech University,2021
+900,Inje University,2021
+901,"University of Technology, Malaysia",2021
+902,Keele University,2021
+903,University of Valladolid,2021
+904,Michigan Technological University,2021
+905,Guangxi University,2021
+906,North Dakota State University,2021
+907,Ningbo University,2021
+908,University of Portsmouth,2021
+909,London Business School,2021
+910,Institut national de la recherche scientifique,2021
+911,Oberlin College,2021
+912,Federal University of Viçosa,2021
+913,Çukurova University,2021
+914,University of Windsor,2021
+915,Tokushima University,2021
+916,Missouri University of Science and Technology,2021
+917,University of Poitiers,2021
+918,Paul Valéry University,2021
+919,"University of Science and Technology, Korea",2021
+920,Zhejiang Normal University,2021
+921,Ulster University,2021
+922,Northumbria University,2021
+923,Meijo University,2021
+924,North-West University,2021
+925,Shandong First Medical University & Shandong Academy of Medical Sciences,2021
+926,Johannes Kepler University Linz,2021
+927,V.A. Engelhardt Institute of Molecular Biology of the Russian Academy of Sciences,2021
+928,Pepperdine University,2021
+929,Federal University of Ceará,2021
+930,Federal University of Pelotas,2021
+931,Gabriele d’Annunzio University,2021
+932,Ritsumeikan University,2021
+933,Claremont McKenna College,2021
+934,Makerere University,2021
+935,Shiraz University,2021
+936,Bucknell University,2021
+937,Chungbuk National University,2021
+938,Indian Institute of Technology Guwahati,2021
+939,"University of the Republic, Uruguay",2021
+940,Bilkent University,2021
+941,National University of Córdoba,2021
+942,Sanford Burnham Prebys Medical Discovery Institute,2021
+943,Medical University of Warsaw,2021
+944,Chiang Mai University,2021
+945,Khalifa University,2021
+946,Mohammed V University,2021
+947,Colgate University,2021
+948,New Jersey Institute of Technology,2021
+949,Lappeenranta University of Technology,2021
+950,Tokyo University of Agriculture and Technology,2021
+951,University of Regina,2021
+952,Tunis El Manar University,2021
+953,Anhui Medical University,2021
+954,University of Franche-Comté,2021
+955,Autonomous University of San Luis Potosí,2021
+956,Yanshan University,2021
+957,Aston University,2021
+958,University of Naples Parthenope,2021
+959,Pomona College,2021
+960,Qingdao University of Science and Technology,2021
+961,Shandong Agricultural University,2021
+962,King Juan Carlos University,2021
+963,University of Limerick,2021
+964,Ehime University,2021
+965,University of Memphis,2021
+966,Xiangtan University,2021
+967,Tokai University,2021
+968,Federal University of São Carlos,2021
+969,University of Upper Alsace,2021
+970,Victoria University,2021
+971,University of Sassari,2021
+972,University of Texas Rio Grande Valley,2021
+973,Ferdowsi University of Mashhad,2021
+974,Shandong Normal University,2021
+975,Taiyuan University of Technology,2021
+976,Wroclaw Medical University,2021
+977,Gifu University,2021
+978,Florida Institute of Technology,2021
+979,Fluminense Federal University,2021
+980,Hunter College,2021
+981,Qatar University,2021
+982,Henan Normal University,2021
+983,ITMO University,2021
+984,Mansoura University,2021
+985,Wrocław University of Science and Technology,2021
+986,Miguel Hernández University of Elche,2021
+987,Federal University of Juiz de Fora,2021
+988,Shahid Beheshti University of Medical Sciences,2021
+989,Cheung Kong Graduate School of Business,2021
+990,Fujian Agriculture and Forestry University,2021
+991,Osaka Prefecture University,2021
+992,Shanghai Normal University,2021
+993,University of A Coruña,2021
+994,University of Tabriz,2021
+995,Hunan Normal University,2021
+996,Hallym University,2021
+997,Marmara University,2021
+998,Hangzhou Dianzi University,2021
+999,Alexandria University,2021
+1000,American University,2021
+1001,University of Extremadura,2021
+1002,Federal University of Rio Grande do Norte,2021
+1003,Capital Normal University,2021
+1004,Creighton University,2021
+1005,Louisiana Tech University,2021
+1006,Yamagata University,2021
+1007,Tokyo Women's Medical University,2021
+1008,University of Toyama,2021
+1009,University of Mannheim,2021
+1010,University of Bucharest,2021
+1011,VetAgro Sup,2021
+1012,Academy of Scientific & Innovative Research,2021
+1013,Kunming University of Science and Technology,2021
+1014,Medical University of Lodz,2021
+1015,Sogang University,2021
+1016,Nicolaus Copernicus University,2021
+1017,Nantong University,2021
+1018,Yunnan University,2021
+1019,Federal University of Bahia,2021
+1020,United States Naval Academy,2021
+1021,University of Shanghai for Science and Technology,2021
+1022,University of Texas at El Paso,2021
+1023,National Taiwan Normal University,2021
+1024,SUNY Upstate Medical University,2021
+1025,Royal College of Surgeons in Ireland,2021
+1026,Federal University of Santa Maria,2021
+1027,Babson College,2021
+1028,Mohamed First University Oujda,2021
+1029,Chuo University,2021
+1030,Rouen Normandy University,2021
+1031,Brandenburg University of Technology,2021
+1032,Jadavpur University,2021
+1033,Manhattan College,2021
+1034,Cadi Ayyad University,2021
+1035,Guangzhou University,2021
+1036,"University of New England, Australia",2021
+1037,Edith Cowan University,2021
+1038,École nationale supérieure de chimie de Montpellier,2021
+1039,Sichuan Agricultural University,2021
+1040,Gaziantep University,2021
+1041,Qufu Normal University,2021
+1042,Nanjing Forestry University,2021
+1043,Villanova University,2021
+1044,Dublin City University,2021
+1045,Yıldız Technical University,2021
+1046,National Taipei University of Technology,2021
+1047,Paderborn University,2021
+1048,Kagoshima University,2021
+1049,Gunma University,2021
+1050,University of Urbino,2021
+1051,IMT Atlantique,2021
+1052,University of South Bohemia,2021
+1053,University of Augsburg,2021
+1054,University of New Brunswick,2021
+1055,Rochester Institute of Technology,2021
+1056,Smith College,2021
+1057,Auckland University of Technology,2021
+1058,Fordham University,2021
+1059,University of Maribor,2021
+1060,University of Cádiz,2021
+1061,Federal University of Goiás,2021
+1062,University of Puerto Rico at Mayagüez,2021
+1063,University of Antioquia,2021
+1064,Nara Institute of Science and Technology,2021
+1065,Florida Atlantic University,2021
+1066,Australian Catholic University,2021
+1067,Kazan Federal University,2021
+1068,Worcester Polytechnic Institute,2021
+1069,Dankook University,2021
+1070,University of Salzburg,2021
+1071,Singapore University of Technology and Design,2021
+1072,Jichi Medical University,2021
+1073,Kharkov Institute of Physics and Technology,2021
+1074,University of Jaén,2021
+1075,Hassan II University of Casablanca,2021
+1076,Fujian Normal University,2021
+1077,University of North Carolina at Greensboro,2021
+1078,Institute of Solid State Physics of the Russian Academy of Sciences,2021
+1079,Mersin University,2021
+1080,Medical University of Silesia,2021
+1081,Paracelsus Medical University,2021
+1082,Aga Khan University,2021
+1083,Zhejiang Sci-Tech University,2021
+1084,University of Novi Sad,2021
+1085,Fujian Medical University,2021
+1086,Nagoya City University,2021
+1087,Medical University of Gdańsk,2021
+1088,Charles Darwin University,2021
+1089,Åbo Akademi University,2021
+1090,University of Pécs,2021
+1091,Charles Sturt University,2021
+1092,Indian Association for the Cultivation of Science,2021
+1093,Pablo de Olavide University,2021
+1094,University of Lleida,2021
+1095,Toho University,2021
+1096,College of the Holy Cross,2021
+1097,University of Calcutta,2021
+1098,Liverpool School of Tropical Medicine,2021
+1099,University of Hertfordshire,2021
+1100,Copenhagen Business School,2021
+1101,Loma Linda University,2021
+1102,Visva-Bharati University,2021
+1103,University of Thessaly,2021
+1104,"University of Veterinary Medicine, Vienna",2021
+1105,Shahid Beheshti University,2021
+1106,Teikyo University,2021
+1107,University of Neuchâtel,2021
+1108,Maria Sklodowska-Curie National Research Institute of Oncology,2021
+1109,University of Kassel,2021
+1110,University of Évry Val d'Essonne,2021
+1111,Manchester Metropolitan University,2021
+1112,Institute of Science and Technology Austria,2021
+1113,University of Waikato,2021
+1114,University of Canberra,2021
+1115,University of Massachusetts Lowell,2021
+1116,"University of Chemistry and Technology, Prague",2021
+1117,"California State University, Fresno",2021
+1118,Chemnitz University of Technology,2021
+1119,Soonchunhyang University,2021
+1120,Hubei University,2021
+1121,National Institute of Public Health (INSP),2021
+1122,South Dakota State University,2021
+1123,Ramon Llull University,2021
+1124,"Indian Institute of Science Education and Research, Pune",2021
+1125,Kyoto Prefectural University of Medicine,2021
+1126,Tokat Gaziosmanpaşa University,2021
+1127,Tiangong University,2021
+1128,Postgraduate Institute of Medical Education and Research,2021
+1129,Shantou University,2021
+1130,Ural Federal University,2021
+1131,Shanghai University of Finance and Economics,2021
+1132,Metropolitan Autonomous University,2021
+1133,San Francisco State University,2021
+1134,Federal University of São João del-Rei,2021
+1135,Wright State University,2021
+1136,Marquette University,2021
+1137,New York Medical College,2021
+1138,University of Silesia in Katowice,2021
+1139,Aligarh Muslim University,2021
+1140,National Defense Medical Center,2021
+1141,Mie University,2021
+1142,Dokuz Eylül University,2021
+1143,University of Sfax,2021
+1144,Yamaguchi University,2021
+1145,İzmir Institute of Technology,2021
+1146,École centrale de Lyon,2021
+1147,Jiangsu Normal University,2021
+1148,Hofstra University,2021
+1149,Howard University,2021
+1150,Addis Ababa University,2021
+1151,Bowdoin College,2021
+1152,Pukyong National University,2021
+1153,United States Military Academy,2021
+1154,Luleå University of Technology,2021
+1155,Stevens Institute of Technology,2021
+1156,Ibero-American University,2021
+1157,Chung Shan Medical University,2021
+1158,Jacobs University,2021
+1159,Magna Graecia University of Catanzaro,2021
+1160,Koç University,2021
+1161,University of Las Palmas de Gran Canaria,2021
+1162,West University of Timișoara,2021
+1163,University of the Free State,2021
+1164,Guizhou University,2021
+1165,Osnabrück University,2021
+1166,University of Yamanashi,2021
+1167,University of Ibadan,2021
+1168,Anna University,2021
+1169,Santa Clara University,2021
+1170,University of Missouri-St. Louis,2021
+1171,Hebei University of Technology,2021
+1172,Khon Kaen University,2021
+1173,Maynooth University,2021
+1174,Adıyaman University,2021
+1175,University of Western Brittany,2021
+1176,Sant'Anna School of Advanced Studies,2021
+1177,Nippon Medical School,2021
+1178,University of Dayton,2021
+1179,"California Polytechnic State University, San Luis Obispo",2021
+1180,Tokyo Medical University,2021
+1181,TOBB University of Economics and Technology,2021
+1182,Wilfrid Laurier University,2021
+1183,Poznan University of Medical Sciences,2021
+1184,Changzhou University,2021
+1185,Prince of Songkla University,2021
+1186,Nottingham Trent University,2021
+1187,Northeast Forestry University,2021
+1188,Tianjin University of Technology,2021
+1189,Clark University,2021
+1190,Assiut University,2021
+1191,"Asia University, Taiwan",2021
+1192,Oakland University,2021
+1193,University of North Dakota,2021
+1194,Indian Agricultural Research Institute,2021
+1195,Kanazawa Institute of Technology,2021
+1196,Erciyes University,2021
+1197,Albany Medical College,2021
+1198,Kafkas University,2021
+1199,Federal University of Mato Grosso do Sul,2021
+1200,Tomsk Polytechnic University,2021
+1201,Menlo College,2021
+1202,Nanjing University of Chinese Medicine,2021
+1203,University of Alabama in Huntsville,2021
+1204,Macau University of Science and Technology,2021
+1205,Asian Institute of Management,2021
+1206,Fu Jen Catholic University,2021
+1207,University of Gdańsk,2021
+1208,Jikei University,2021
+1209,Suez Canal University,2021
+1210,University of the Ryukyus,2021
+1211,Yokohama National University,2021
+1212,Federal University of Pará,2021
+1213,Toulouse 1 Capitole University,2021
+1214,University of Bradford,2021
+1215,University of Picardie Jules Verne,2021
+1216,"University of Puerto Rico, Medical Sciences Campus",2021
+1217,Carol Davila University of Medicine and Pharmacy,2021
+1218,Hebei University,2021
+1219,Huaqiao University,2021
+1220,Dong-A University,2021
+1221,Monterrey Institute of Technology and Higher Education,2021
+1222,Andrés Bello University,2021
+1223,Brock University,2021
+1224,Dalian Maritime University,2021
+1225,"University of the West of England, Bristol",2021
+1226,Catholic University of America,2021
+1227,Conservatoire national des arts et métiers,2021
+1228,Jiangxi Normal University,2021
+1229,Nagasaki Institute of Applied Science,2021
+1230,Federal University of Paraíba,2021
+1231,Hunan Agricultural University,2021
+1232,University of Lodz,2021
+1233,Dalian Medical University,2021
+1234,Northeast Agricultural University,2021
+1235,Daegu Gyeongbuk Institute of Science and Technology,2021
+1236,University of Hyderabad,2021
+1237,Gran Sasso Science Institute,2021
+1238,Süleyman Demirel University,2021
+1239,University of Western Cape,2021
+1240,Texas State University,2021
+1241,Fujita Health University,2021
+1242,Federal University of Espírito Santo,2021
+1243,Saitama Medical University,2021
+1244,University of Algarve,2021
+1245,University of Southern Queensland,2021
+1246,Chung Yuan Christian University,2021
+1247,Saitama University,2021
+1248,Boise State University,2021
+1249,Henan University of Science and Technology,2021
+1250,SOAS University of London,2021
+1251,University of Namur,2021
+1252,Kasetsart University,2021
+1253,Kōchi University,2021
+1254,United Arab Emirates University,2021
+1255,University of the Punjab,2021
+1256,Ca' Foscari University of Venice,2021
+1257,Czech University of Life Sciences Prague,2021
+1258,Austral University of Chile,2021
+1259,Public University of Navarre,2021
+1260,Qilu University of Technology,2021
+1261,K. N. Toosi University of Technology,2021
+1262,"École supérieure de chimie, physique, électronique de Lyon",2021
+1263,Saga University,2021
+1264,Wenzhou University,2021
+1265,XLRI - Xavier School of Management,2021
+1266,"Vietnam National University, Hanoi",2021
+1267,Hirosaki University,2021
+1268,University of Camerino,2021
+1269,Guangxi Medical University,2021
+1270,Federal University of Uberlândia,2021
+1271,SUNY College of Environmental Science and Forestry,2021
+1272,Bowling Green State University,2021
+1273,Tottori University,2021
+1274,Tuscia University,2021
+1275,National Institute for Space Research (INPE),2021
+1276,"Institute of Physics, Azerbaijan National Academy of Sciences",2021
+1277,Chang'an University,2021
+1278,Linnaeus University,2021
+1279,National University of Distance Education,2021
+1280,Lakehead University,2021
+1281,Vellore Institute of Technology,2021
+1282,Bournemouth University,2021
+1283,Campus Bio-Medico University,2021
+1284,University of Pau and Pays de l'Adour,2021
+1285,Hyogo College of Medicine,2021
+1286,State University of Maringá,2021
+1287,University of Almería,2021
+1288,Hebei Medical University,2021
+1289,"California State University, Fullerton",2021
+1290,Keimyung University,2021
+1291,Hampton University,2021
+1292,Xi'an University of Technology,2021
+1293,ESSEC Business School,2021
+1294,"California State University, Northridge",2021
+1295,École des Hautes Études en Sciences Sociales,2021
+1296,Medical University Sofia,2021
+1297,Zagazig University,2021
+1298,Brno University of Technology,2021
+1299,Showa University,2021
+1300,Fukuoka University,2021
+1301,National Taiwan Ocean University,2021
+1302,Heilongjiang University,2021
+1303,Hiroshima Institute of Technology,2021
+1304,Atatürk University,2021
+1305,Shanghai University of Traditional Chinese Medicine,2021
+1306,Trent University,2021
+1307,Shenyang Pharmaceutical University,2021
+1308,University of Foggia,2021
+1309,University of Miyazaki,2021
+1310,Chosun University,2021
+1311,Babol Noshirvani University of Technology,2021
+1312,Pavol Jozef Šafárik University in Košice,2021
+1313,Rhodes University,2021
+1314,Anhui Normal University,2021
+1315,Fayoum University,2021
+1316,Kurume University,2021
+1317,Federal University of Lavras,2021
+1318,Erzincan Binali Yıldırım University,2021
+1319,National University of Science and Technology MISiS,2021
+1320,Zhejiang A&F University,2021
+1321,University of Yaoundé I,2021
+1322,Warsaw University of Life Sciences,2021
+1323,Autonomous University of Nuevo León,2021
+1324,Wuhan University of Science and Technology,2021
+1325,Gdańsk University of Technology,2021
+1326,Soongsil University,2021
+1327,University of León,2021
+1328,Hainan University,2021
+1329,University of Limoges,2021
+1330,Mashhad University of Medical Sciences,2021
+1331,National Kaohsiung University of Science and Technology,2021
+1332,Kuwait University,2021
+1333,National University of Rosario,2021
+1334,University of Central Lancashire,2021
+1335,National Chung Cheng University,2021
+1336,National Chengchi University,2021
+1337,Antonio Nariño University,2021
+1338,Coventry University,2021
+1339,Uludağ University,2021
+1340,University of Agriculture Faisalabad,2021
+1341,University of Ghana,2021
+1342,Okinawa Institute of Science and Technology,2021
+1343,Southern Cross University,2021
+1344,University of Carthage,2021
+1345,Isfahan University of Medical Sciences,2021
+1346,Ontario Tech University,2021
+1347,University of Malawi,2021
+1348,Selçuk University,2021
+1349,Oxford Brookes University,2021
+1350,Kwansei Gakuin University,2021
+1351,Jordan University of Science and Technology,2021
+1352,Democritus University of Thrace,2021
+1353,British University in Egypt,2021
+1354,Skolkovo Institute of Science and Technology,2021
+1355,Guangxi Normal University,2021
+1356,University of Guadalajara,2021
+1357,Lodz University of Technology,2021
+1358,University of Toulouse-Jean Jaurès,2021
+1359,University of Monastir,2021
+1360,University of Stavanger,2021
+1361,Southwest University of Science and Technology,2021
+1362,San Jose State University,2021
+1363,Singapore Management University,2021
+1364,Western Michigan University,2021
+1365,University of Greenwich,2021
+1366,Changsha University of Science and Technology,2021
+1367,University of South Alabama,2021
+1368,Institute of Tropical Medicine Antwerp,2021
+1369,Carleton College,2021
+1370,Shimane University,2021
+1371,CY Cergy Paris University,2021
+1372,Istanbul University-Cerrahpaşa,2021
+1373,"Indian Institute of Science Education and Research, Kolkata",2021
+1374,University of the Aegean,2021
+1375,Nagoya Institute of Technology,2021
+1376,University of Perpignan,2021
+1377,University of Costa Rica,2021
+1378,Henan Polytechnic University,2021
+1379,Bohai University,2021
+1380,Sultan Qaboos University,2021
+1381,Özyeğin University,2021
+1382,"National Institute of Technology, Rourkela",2021
+1383,Iran University of Medical Sciences,2021
+1384,Southwest Petroleum University,2021
+1385,University of Electro-Communications,2021
+1386,"University of Santiago, Chile",2021
+1387,Feng Chia University,2021
+1388,Southwestern University of Finance and Economics,2021
+1389,Savitribai Phule Pune University,2021
+1390,University of Reims Champagne-Ardenne,2021
+1391,École de technologie supérieure,2021
+1392,Institute for Pure and Applied Mathematics (IMPA),2021
+1393,Grinnell College,2021
+1394,Williams College,2021
+1395,Jeju National University,2021
+1396,Royal Veterinary College,2021
+1397,Manipal Academy of Higher Education,2021
+1398,Silesian University of Technology,2021
+1399,University of the Sunshine Coast,2021
+1400,Taras Shevchenko National University of Kyiv,2021
+1401,"California State University, Long Beach",2021
+1402,China Jiliang University,2021
+1403,University of Occupational and Environmental Health Japan,2021
+1404,Cha University,2021
+1405,University of Beira Interior,2021
+1406,Wuhan Institute of Technology,2021
+1407,Akdeniz University,2021
+1408,Xuzhou Medical University,2021
+1409,University of Isfahan,2021
+1410,Clarkson University,2021
+1411,Leuphana University of Lüneburg,2021
+1412,Michoacán University of San Nicolás of Hidalgo,2021
+1413,Fairfield University,2021
+1414,Northwest Normal University,2021
+1415,Xinjiang University,2021
+1416,University of South Africa,2021
+1417,Doshisha University,2021
+1418,University of Lethbridge,2021
+1419,Pontifical Catholic University of Rio Grande do Sul,2021
+1420,University of South Dakota,2021
+1421,University of Minnesota Duluth,2021
+1422,University of Nairobi,2021
+1423,Hanken School of Economics,2021
+1424,State University of Londrina,2021
+1425,University of Southern Mississippi,2021
+1426,Tôn Đức Thắng University,2021
+1427,Doğuş University,2021
+1428,Liaocheng University,2021
+1429,Baruch College,2021
+1430,University of Jordan,2021
+1431,Kagawa University,2021
+1432,Tianjin University of Science and Technology,2021
+1433,Jiangsu University of Science and Technology,2021
+1434,V.A. Steklov Mathematical Institute of the Russian Academy of Sciences,2021
+1435,Fukushima Medical University,2021
+1436,Shiga University of Medical Science,2021
+1437,Pontifical Catholic University of Valparaíso,2021
+1438,University of South China,2021
+1439,University of Huelva,2021
+1440,King Saud bin Abdulaziz University for Health Sciences,2021
+1441,Kwame Nkrumah University of Science and Technology,2021
+1442,Karadeniz Technical University,2021
+1443,Technical University of Ilmenau,2021
+1444,Witten/Herdecke University,2021
+1445,University of Évora,2021
+1446,Tamkang University,2021
+1447,Tallinn University of Technology,2021
+1448,Kyoto University of Education,2021
+1449,Ilia State University,2021
+1450,Education University of Hong Kong,2021
+1451,Texas Tech University Health Sciences Center,2021
+1452,Alexandru Ioan Cuza University of Iaşi,2021
+1453,Nova Southeastern University,2021
+1454,University of Caen Normandy,2021
+1455,University of San Francisco,2021
+1456,National University of Sciences and Technology,2021
+1457,Freiberg University of Mining and Technology,2021
+1458,Henan Agricultural University,2021
+1459,University of Salford,2021
+1460,Guglielmo Marconi University,2021
+1461,I-Shou University,2021
+1462,Yuan Ze University,2021
+1463,National University of Cuyo,2021
+1464,Lincoln University,2021
+1465,University of Trás-os-Montes and Alto Douro,2021
+1466,University of Veterinary Medicine Hanover,2021
+1467,University of La Frontera,2021
+1468,Hamburg University of Technology,2021
+1469,Sapporo Medical University,2021
+1470,Ball State University,2021
+1471,Anhui University of Technology,2021
+1472,Ochanomizu University,2021
+1473,Tanta University,2021
+1474,Arts et Métiers Sciences et Technologies,2021
+1475,South Central University for Nationalities,2021
+1476,Central Michigan University,2021
+1477,Anglia Ruskin University,2021
+1478,University of Lincoln,2021
+1479,Federal University of Technology - Paraná,2021
+1480,Institute of Applied Physics of the Russian Academy of Sciences,2021
+1481,Kookmin University,2021
+1482,Duy Tân University,2021
+1483,Illinois State University,2021
+1484,Myongji University,2021
+1485,Ibaraki University,2021
+1486,École nationale vétérinaire d'Alfort,2021
+1487,Shiraz University of Medical Sciences,2021
+1488,Zhejiang Gongshang University,2021
+1489,Iuliu Hațieganu University of Medicine and Pharmacy,2021
+1490,National Institute of Amazonian Research (INPA),2021
+1491,Texas Christian University,2021
+1492,National University of the Littoral,2021
+1493,University of Avignon,2021
+1494,University of Tulsa,2021
+1495,Fırat University,2021
+1496,Maria Curie-Skłodowska University,2021
+1497,Montclair State University,2021
+1498,Incheon National University,2021
+1499,Kyushu Institute of Technology,2021
+1500,Pomeranian Medical University in Szczecin,2021
+1501,Western Norway University of Applied Sciences,2021
+1502,Istanbul Bilgi University,2021
+1503,Hamamatsu University School of Medicine,2021
+1504,Shanghai Ocean University,2021
+1505,Chongqing University of Posts and Telecommunications,2021
+1506,University of Guilan,2021
+1507,DePaul University,2021
+1508,University of Sannio,2021
+1509,Hebei Normal University,2021
+1510,Seoul National University of Science and Technology,2021
+1511,Poznań University of Technology,2021
+1512,"Queens College, City University of New York",2021
+1513,Qingdao Agricultural University,2021
+1514,Utah Valley University,2021
+1515,Istanbul Aydın University,2021
+1516,Eastern Virginia Medical School,2021
+1517,Vienna University of Economics and Business,2021
+1518,Cayetano Heredia Peruvian University,2021
+1519,University of Huddersfield,2021
+1520,"Indian Institute of Technology (Indian School of Mines), Dhanbad",2021
+1521,Helwan University,2021
+1522,Indian Institute of Technology Indore,2021
+1523,Razi University,2021
+1524,Guangzhou University of Chinese Medicine,2021
+1525,Poznań University of Life Sciences,2021
+1526,University of Rijeka,2021
+1527,International Islamic University Malaysia,2021
+1528,"Federal Institute of Education, Science and Technology of Rio Grande do Sul",2021
+1529,Indian Institute of Technology (BHU) Varanasi,2021
+1530,Tabriz University of Medical Sciences,2021
+1531,Rikkyo University,2021
+1532,Federal University of Sergipe,2021
+1533,Wakayama Medical University,2021
+1534,Sabancı University,2021
+1535,Medical University of Lublin,2021
+1536,University of Guanajuato,2021
+1537,University of Latvia,2021
+1538,Thapar Institute of Engineering and Technology,2021
+1539,N.N. Semenov Institute of Chemical Physics of the Russian Academy of Sciences,2021
+1540,Shaanxi University of Science and Technology,2021
+1541,Middlesex University,2021
+1542,Shihezi University,2021
+1543,Lobachevsky University,2021
+1544,Norwegian School of Sport Sciences,2021
+1545,National University of Mar del Plata,2021
+1546,Trinity University,2021
+1547,Ohio Wesleyan University,2021
+1548,Guilin University of Electronic Technology,2021
+1549,Pontifical Catholic University of Rio de Janeiro,2021
+1550,"Birla Institute of Technology and Science, Pilani",2021
+1551,King Mongkut's University of Technology Thonburi,2021
+1552,North China University of Science and Technology,2021
+1553,Semnan University,2021
+1554,Lanzhou University of Technology,2021
+1555,De Montfort University,2021
+1556,Shanxi Medical University,2021
+1557,Cooper Union,2021
+1558,"Indian Statistical Institute, Kolkata",2021
+1559,Bu-Ali Sina University,2021
+1560,Claremont Graduate University,2021
+1561,University of Zambia,2021
+1562,Cleveland State University,2021
+1563,Shanghai Maritime University,2021
+1564,Pontifical Javeriana University,2021
+1565,Inner Mongolia University,2021
+1566,MARA University of Technology,2021
+1567,Slovak University of Technology in Bratislava,2021
+1568,Tamil Nadu Dr. M.G.R. Medical University,2021
+1569,Anhui Agricultural University,2021
+1570,Sheffield Hallam University,2021
+1571,China Three Gorges University,2021
+1572,Yantai University,2021
+1573,Tianjin Normal University,2021
+1574,Pontifical Catholic University of Peru,2021
+1575,Beni Suef University,2021
+1576,University of Trier,2021
+1577,Iwate Medical University,2021
+1578,Al-Azhar University,2021
+1579,Glasgow Caledonian University,2021
+1580,University of Niš,2021
+1581,Harokopio University,2021
+1582,Indian Institute of Technology Hyderabad,2021
+1583,Georgia Southern University,2021
+1584,University Paris 1 Panthéon-Sorbonne,2021
+1585,Liaoning University,2021
+1586,Lithuanian University of Health Sciences,2021
+1587,University of Fukui,2021
+1588,Kongju National University,2021
+1589,Kwangwoon University,2021
+1590,National Dong Hwa University,2021
+1591,Krasnoyarsk Science Center of the Siberian Branch of the Russian Academy of Sciences,2021
+1592,Federal Rural University of Pernambuco,2021
+1593,University of Massachusetts Dartmouth,2021
+1594,University of Agder,2021
+1595,Aichi Medical University,2021
+1596,Shahid Bahonar University of Kerman,2021
+1597,University of Valparaíso,2021
+1598,Kunming Medical University,2021
+1599,Brooklyn College,2021
+1600,University of Peradeniya,2021
+1601,Chengdu University of Technology,2021
+1602,Polytechnic University of Cartagena,2021
+1603,Iwate University,2021
+1604,Indian Institute of Management Calcutta,2021
+1605,University of Warmia and Mazury in Olsztyn,2021
+1606,Shenyang Agricultural University,2021
+1607,North University of China,2021
+1608,Rowan University,2021
+1609,Wonkwang University,2021
+1610,Ariel University,2021
+1611,Sechenov University,2021
+1612,Harbin University of Science and Technology,2021
+1613,Medical University of Białystok,2021
+1614,"National Institute of Technology, Tiruchirappalli",2021
+1615,University of North Carolina Wilmington,2021
+1616,Gangneung-Wonju National University,2021
+1617,Laurentian University,2021
+1618,University of Indonesia,2021
+1619,"Vietnam National University, Ho Chi Minh City",2021
+1620,Mimar Sinan Fine Arts University,2021
+1621,Nara Medical University,2021
+1622,Polytechnic University of Hauts-de-France,2021
+1623,Bharathiar University,2021
+1624,Ondokuz Mayıs University,2021
+1625,Space Research Institute of the Russian Academy of Sciences,2021
+1626,Kocaeli University,2021
+1627,Yangtze University,2021
+1628,Western Washington University,2021
+1629,"California State University, Los Angeles",2021
+1630,University of La Rioja,2021
+1631,Nelson Mandela University,2021
+1632,Hunan University of Science and Technology,2021
+1633,University of New Orleans,2021
+1634,Beijing University of Chinese Medicine,2021
+1635,Peoples' Friendship University of Russia,2021
+1636,University of South Wales,2021
+1637,Kingston University,2021
+1638,Beaux-Arts de Paris,2021
+1639,Grigore T. Popa University of Medicine and Pharmacy,2021
+1640,National University of the South,2021
+1641,Irkutsk Scientific Center of the Siberian Branch of the Russian Academy of Sciences,2021
+1642,University of Leoben,2021
+1643,Tzu Chi University,2021
+1644,Chapman University,2021
+1645,University of Kashan,2021
+1646,University of Molise,2021
+1647,Catholic University of the North,2021
+1648,College of Charleston,2021
+1649,A.M. Prokhorov General Physics Institute of the Russian Academy of Sciences,2021
+1650,Jackson State University,2021
+1651,Southern Federal University,2021
+1652,Open University of Catalonia,2021
+1653,University of Kragujevac,2021
+1654,Thammasat University,2021
+1655,Kyorin University,2021
+1656,Guangdong Medical University,2021
+1657,Changchun University of Science and Technology,2021
+1658,Payame Noor University,2021
+1659,Shandong University of Technology,2021
+1660,Estonian University of Life Sciences,2021
+1661,Georgian Technical University,2021
+1662,Agricultural University of Athens,2021
+1663,ISCTE – University Institute of Lisbon,2021
+1664,University of Québec at Trois-Rivières,2021
+1665,Transilvania University of Brașov,2021
+1666,Homi Bhabha National Institute,2021
+1667,Xi'an University of Architecture and Technology,2021
+1668,Yazd University,2021
+1669,Central European University,2021
+1670,Comillas Pontifical University,2021
+1671,Anadolu University,2021
+1672,James Madison University,2021
+1673,Naval Postgraduate School,2021
+1674,University of Westminster,2021
+1675,University of Ruhuna,2021
+1676,Akita University,2021
+1677,Indian Institute of Technology Bhubaneswar,2021
+1678,Institute for Nuclear Research of the National Academy of Sciences of Ukraine,2021
+1679,Central Queensland University,2021
+1680,"Institute of Physics, Polish Academy of Sciences",2021
+1681,PLA University of Science and Technology,2021
+1682,University of Jammu,2021
+1683,Menoufia University,2021
+1684,St. John's University,2021
+1685,Zhejiang Chinese Medical University,2021
+1686,AgroSup Dijon,2021
+1687,Catholic University of Portugal,2021
+1688,University of the West of Scotland,2021
+1689,Marshall University,2021
+1690,Federal University of Rio Grande,2021
+1691,Pontifical Catholic University of Paraná,2021
+1692,Beijing Technology and Business University,2021
+1693,Japan Advanced Institute of Science and Technology,2021
+1694,Appalachian State University,2021
+1695,Oslo Metropolitan University,2021
+1696,University of Malta,2021
+1697,South Dakota School of Mines and Technology,2021
+1698,University of Rajasthan,2021
+1699,Amrita Vishwa Vidyapeetham,2021
+1700,"University of San Francisco, Quito",2021
+1701,G.K. Boreskov Institute of Catalysis of the Siberian Branch of the Russian Academy of Sciences,2021
+1702,University of Arkansas at Little Rock,2021
+1703,BI Norwegian Business School,2021
+1704,Nanchang Hangkong University,2021
+1705,Hongik University,2021
+1706,Urmia University,2021
+1707,University of Gondar,2021
+1708,Saint Mary's University,2021
+1709,Henan University of Technology,2021
+1710,Jamia Millia Islamia,2021
+1711,University of Cassino and Southern Lazio,2021
+1712,Idaho State University,2021
+1713,Technical University of Crete,2021
+1714,Dongguan University of Technology,2021
+1715,New Mexico Institute of Mining and Technology,2021
+1716,V.M. Glushkov Institute of Cybernetics of the National Academy of Sciences of Ukraine,2021
+1717,Roskilde University,2021
+1718,Union College,2021
+1719,Shanghai University of Electric Power,2021
+1720,St. Marianna University School of Medicine,2021
+1721,Washington and Lee University,2021
+1722,Eskişehir Osmangazi University,2021
+1723,Sookmyung Women's University,2021
+1724,Mendel University in Brno,2021
+1725,"California State University, Sacramento",2021
+1726,Architectural Association School of Architecture,2021
+1727,University of Shizuoka,2021
+1728,University of Koblenz-Landau,2021
+1729,"University of Puerto Rico, Río Piedras Campus",2021
+1730,Cyprus University of Technology,2021
+1731,University of South-Eastern Norway,2021
+1732,IFP School,2021
+1733,Eulji University,2021
+1734,University of the Philippines Manila,2021
+1735,Federation University Australia,2021
+1736,N.N. Bogolyubov Institute for Theoretical Physics of the National Academy of Sciences of Ukraine,2021
+1737,Diego Portales University,2021
+1738,Free University of Bozen-Bolzano,2021
+1739,University of La Rochelle,2021
+1740,Kütahya Dumlupınar University,2021
+1741,Kyoto Institute of Technology,2021
+1742,Federal University of Mato Grosso,2021
+1743,Oita University,2021
+1744,Hamilton College,2021
+1745,University of Zimbabwe,2021
+1746,Zhengzhou University of Light Industry,2021
+1747,Suranaree University of Technology,2021
+1748,Kansai Medical University,2021
+1749,Mae Fah Luang University,2021
+1750,University of Technology of Belfort-Montbéliard,2021
+1751,Hankuk University of Foreign Studies,2021
+1752,Dokkyo Medical University,2021
+1753,A.N. Nesmeyanov Institute of Organoelement Compounds of the Russian Academy of Sciences,2021
+1754,Yunnan Normal University,2021
+1755,University of Technology of Compiègne,2021
+1756,Düsseldorf Art Academy,2021
+1757,University of Sharjah,2021
+1758,Moscow Conservatory,2021
+1759,A.A. Kharkevich Institute for Information Transmission Problems of the Russian Academy of Sciences,2021
+1760,Humanitas University,2021
+1761,Kanagawa University,2021
+1762,East Tennessee State University,2021
+1763,University of Notre Dame Australia,2021
+1764,Ludong University,2021
+1765,China West Normal University,2021
+1766,Hebei Agricultural University,2021
+1767,Sanjay Gandhi Postgraduate Institute of Medical Sciences,2021
+1768,Institut supérieur de l'aéronautique et de l'espace,2021
+1769,Bahçeşehir University,2021
+1770,Central University of Venezuela,2021
+1771,Zhongnan University of Economics and Law,2021
+1772,Technological Institute of Aeronautics,2021
+1773,European University Institute,2021
+1774,Catholic University of Daegu,2021
+1775,Shanghai Institute of Technology,2021
+1776,Meiji University,2021
+1777,Guru Nanak Dev University,2021
+1778,Towson University,2021
+1779,National United University,2021
+1780,Kennesaw State University,2021
+1781,Mid Sweden University,2021
+1782,Manisa Celal Bayar University,2021
+1783,Polytechnic Institute of Porto,2021
+1784,Xinjiang Medical University,2021
+1785,University of Peshawar,2021
+1786,University of Zielona Góra,2021
+1787,University of Bialystok,2021
+1788,University of Agriculture in Krakow,2021
+1789,Federal University of Campina Grande,2021
+1790,"Goldsmiths, University of London",2021
+1791,University of Mazandaran,2021
+1792,King Khalid University,2021
+1793,Nara Women's University,2021
+1794,A.V. Nikolaev Institute of Inorganic Chemistry of the Siberian Branch of the Russian Academy of Sciences,2021
+1795,Guilin University of Technology,2021
+1796,Wellesley College,2021
+1797,Kawasaki Medical School,2021
+1798,Xinyang Normal University,2021
+1799,Franklin & Marshall College,2021
+1800,Tunghai University,2021
+1801,Sichuan Normal University,2021
+1802,Minia University,2021
+1803,University of the Philippines Diliman,2021
+1804,Federal University of Triângulo Mineiro,2021
+1805,Alfaisal University,2021
+1806,University of Winnipeg,2021
+1807,Pamukkale University,2021
+1808,Chubu University,2021
+1809,"Institute of Physical Chemistry, Polish Academy of Sciences",2021
+1810,Kyoto Sangyo University,2021
+1811,Karlstad University,2021
+1812,Kaunas University of Technology,2021
+1813,Federal University of Ouro Preto,2021
+1814,Xi'an Jiaotong-Liverpool University,2021
+1815,University of Valle,2021
+1816,University of Dhaka,2021
+1817,University of Nova Gorica,2021
+1818,Embry-Riddle Aeronautical University,2021
+1819,University of Science and Technology Houari Boumediene,2021
+1820,Autonomous University of Sinaloa,2021
+1821,National University of Comahue,2021
+1822,Bahauddin Zakariya University,2021
+1823,Xinxiang Medical University,2021
+1824,PETRONAS University of Technology,2021
+1825,Industrial University of Santander,2021
+1826,Taibah University,2021
+1827,Sakarya University,2021
+1828,Guangdong Pharmaceutical University,2021
+1829,National Defense Medical College,2021
+1830,University of Toulon,2021
+1831,University of Burgos,2021
+1832,Hamad Bin Khalifa University,2021
+1833,University of Madras,2021
+1834,Wrocław University of Environmental and Life Sciences,2021
+1835,University of Alaska Anchorage,2021
+1836,International University of Health and Welfare,2021
+1837,University of Talca,2021
+1838,Florida Agricultural and Mechanical University,2021
+1839,University of the Highlands and Islands,2021
+1840,Malmö University,2021
+1841,M.M. Shemyakin and Y.A. Ovchinnikov Institute of Bioorganic Chemistry of the Russian Academy of Sciences,2021
+1842,Rajiv Gandhi University of Health Sciences,2021
+1843,"Indian Institute of Science Education and Research, Bhopal",2021
+1844,ESCP Europe,2021
+1845,Drew University,2021
+1846,Central South University of Forestry and Technology,2021
+1847,Bond University,2021
+1848,Annamalai University,2021
+1849,Mediterranean University of Reggio Calabria,2021
+1850,Osaka Medical College,2021
+1851,Federal University of Alagoas,2021
+1852,Near East University,2021
+1853,Government College University Faisalabad,2021
+1854,Başkent University,2021
+1855,Far Eastern Federal University,2021
+1856,Necmettin Erbakan University,2021
+1857,University of La Réunion,2021
+1858,"Institute of Chemical Technology, Mumbai",2021
+1859,IHE Delft Institute for Water Education,2021
+1860,Interdisciplinary Center Herzliya,2021
+1861,University of Nigeria,2021
+1862,Kettering University,2021
+1863,Linyi University,2021
+1864,N.D. Zelinsky Institute of Organic Chemistry of the Russian Academy of Sciences,2021
+1865,Cracow University of Technology,2021
+1866,Benha University,2021
+1867,Le Mans University,2021
+1868,Duquesne University,2021
+1869,"West Pomeranian University of Technology, Szczecin",2021
+1870,Mekelle University,2021
+1871,Federal Rural University of Rio de Janeiro,2021
+1872,Muhimbili University of Health and Allied Sciences,2021
+1873,Indian Institute of Technology Gandhinagar,2021
+1874,University of Karachi,2021
+1875,Hanbat National University,2021
+1876,College of Staten Island,2021
+1877,Southwest Medical University,2021
+1878,National Yunlin University of Science and Technology,2021
+1879,University of Northern British Columbia,2021
+1880,University of Ostrava,2021
+1881,Sohag University,2021
+1882,Institute of Ecology (INECOL),2021
+1883,Technical University of Ostrava,2021
+1884,University of Richmond,2021
+1885,Shiraz University of Technology,2021
+1886,University of Kurdistan,2021
+1887,Liaoning Normal University,2021
+1888,Jönköping University,2021
+1889,Wichita State University,2021
+1890,University of Roehampton,2021
+1891,"Indian Institute of Engineering Science and Technology, Shibpur",2021
+1892,National Changhua University of Education,2021
+1893,Çağ University,2021
+1894,Liaoning University of Technology,2021
+1895,Gebze Technical University,2021
+1896,Van Yüzüncü Yıl University,2021
+1897,National Chiayi University,2021
+1898,V.S. Sobolev Institute of Geology and Mineralogy of the Siberian Branch of the Russian Academy of Sciences,2021
+1899,Technological University Dublin,2021
+1900,Kanazawa Medical University,2021
+1901,Amity University,2021
+1902,University of West Bohemia,2021
+1903,Jiaxing University,2021
+1904,Jilin Agricultural University,2021
+1905,Chongqing Technology and Business University,2021
+1906,Edinburgh Napier University,2021
+1907,Cheikh Anta Diop University of Dakar,2021
+1908,Rosalind Franklin University of Medicine and Science,2021
+1909,Federal University of Piauí,2021
+1910,Nagaoka University of Technology,2021
+1911,University of Rzeszów,2021
+1912,Autonomous University of Chile,2021
+1913,Chongqing Normal University,2021
+1914,Aoyama Gakuin University,2021
+1915,Kansai University,2021
+1916,Tezpur University,2021
+1917,Shanghai University of Engineering Science,2021
+1918,Imam Abdulrahman Bin Faisal University,2021
+1919,Harbin Normal University,2021
+1920,Sunchon National University,2021
+1921,Kermanshah University of Medical Sciences,2021
+1922,Nazarbayev University,2021
+1923,Siberian Federal University,2021
+1924,Autonomous University of the State of Morelos,2021
+1925,Clausthal University of Technology,2021
+1926,University of Colorado Colorado Springs,2021
+1927,Ningxia Medical University,2021
+1928,"Victor Babeș University of Medicine and Pharmacy, Timișoara",2021
+1929,Federal Scientific Research Centre «Crystallography and Photonics» of the Russian Academy of Sciences,2021
+1930,Sivas Cumhuriyet University,2021
+1931,Central University of Finance and Economics,2021
+1932,Daegu University,2021
+1933,Çanakkale Onsekiz Mart University,2021
+1934,"Graduate School & Training Center, Research Institute of Petroleum Exploration and Development",2021
+1935,"University of Djillali Liabès, Sidi Bel-Abbès",2021
+1936,Center for Scientific Research and Higher Education of Ensenada,2021
+1937,Dicle University,2021
+1938,Lebanese University,2021
+1939,University of San Diego,2021
+1940,Jimma University,2021
+1941,İnönü University,2021
+1942,Gakushuin University,2021
+1943,Baqiyatallah University of Medical Sciences,2021
+1944,Ss. Cyril and Methodius University in Skopje,2021
+1945,Federal University of Amazonas,2021
+1946,University of Québec at Chicoutimi,2021
+1947,"Indian Institute of Science Education and Research, Thiruvananthapuram",2021
+1948,Hubei University of Technology,2021
+1949,University of Pannonia,2021
+1950,Tshwane University of Technology,2021
+1951,Punjab Agricultural University,2021
+1952,Air Force Engineering University,2021
+1953,Reed College,2021
+1954,Hanoi University of Science and Technology,2021
+1955,Leeds Beckett University,2021
+1956,Tokyo University of Pharmacy and Life Sciences,2021
+1957,Guizhou Medical University,2021
+1958,Northeast Ohio Medical University,2021
+1959,Josip Juraj Strossmayer University of Osijek,2021
+1960,SRM Institute of Science and Technology,2021
+1961,Dongbei University of Finance and Economics,2021
+1962,University of Bergamo,2021
+1963,University of Wolverhampton,2021
+1964,Chengdu University of Information Technology,2021
+1965,Ahvaz Jundishapur University of Medical Sciences,2021
+1966,B. Verkin Institute for Low Temperature Physics and Engineering of the National Academy of Sciences of Ukraine,2021
+1967,Reykjavík University,2021
+1968,Jiangxi Agricultural University,2021
+1969,Dalarna University,2021
+1970,Open University of the Netherlands,2021
+1971,Vilnius Gediminas Technical University,2021
+1972,University of Veracruz,2021
+1973,Mazandaran University of Medical Sciences,2021
+1974,Danube University Krems,2021
+1975,Shahrood University of Technology,2021
+1976,National University of Tucumán,2021
+1977,University of International Business and Economics,2021
+1978,Institute of Problems of Chemical Physics of the Russian Academy of Sciences,2021
+1979,SASTRA,2021
+1980,Pondicherry University,2021
+1981,Sam Houston State University,2021
+1982,Sophia University,2021
+1983,University of Sousse,2021
+1984,Shanxi Normal University,2021
+1985,National Institute of Mental Health and Neurosciences,2021
+1986,Polytechnic Institute of Bragança,2021
+1987,East China University of Technology,2021
+1988,Shahid Chamran University of Ahvaz,2021
+1989,University of Hawaii at Hilo,2021
+1990,University of North Florida,2021
+1991,Trinity College,2021
+1992,Riga Technical University,2021
+1993,Sonoma State University,2021
+1994,"National Institute of Pharmaceutical Education and Research, S.A.S. Nagar",2021
+1995,Gadjah Mada University,2021
+1996,Santa Catarina State University,2021
+1997,Yancheng Institute of Technology,2021
+1998,Xi'an University of Science and Technology,2021
+1999,CEU San Pablo University,2021
+2000,Huzhou University,2021
