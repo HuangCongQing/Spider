@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2022-03-19 01:06:15
-LastEditTime: 2022-03-19 02:03:13
+LastEditTime: 2022-03-28 13:19:35
 FilePath: \Spider-1\practice\25school_ranking\04USNews.py
 '''
 
@@ -16,8 +16,8 @@ import bs4
  
 allUniv = {'rank':[],'school':[],'year':[]}
 # USNEWS
-url = 'http://www.qianmu.org/2022USNEWS%E4%B8%96%E7%95%8C%E5%A4%A7%E5%AD%A6%E6%8E%92%E5%90%8D'
-#  2021世界大学学术排名
+# url = 'http://www.qianmu.org/2022USNEWS%E4%B8%96%E7%95%8C%E5%A4%A7%E5%AD%A6%E6%8E%92%E5%90%8D'
+#  2021世界大学学术排名 06CWUR世界大学排名2021 不行
 # url = 'http://www.qianmu.org/ranking/904.htm'
 
 def getHTMLText(url):
@@ -37,6 +37,9 @@ def fillUnivList(soup):
     for tr in data[1:]:
         ltd = tr.find_all('td')
         if len(ltd) == 0:
+            continue
+        # 中国判断
+        if (ltd[3].text != "中国" and ltd[3].text != "香港" and ltd[3].text != "澳门"):
             continue
         allUniv['rank'].append(ltd[0].string)
         # allUniv['school'].append(ltd[1].string) 
