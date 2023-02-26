@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-02-27 00:45:22
+LastEditTime: 2023-02-27 01:27:44
 FilePath: \Spider-1\practice\27微商相册\01微商相册数据爬取_json.py
 '''
 import re
@@ -14,11 +14,79 @@ import requests
 import json
 import time
 from urllib import parse
+import glob
+import os
 
 
+# 获取全部参数的键值组成字典 https://blog.csdn.net/weixin_43721000/article/details/117219408
 def get_mapping(link):
-    pass
-    return 
+    # 获取全部参数的键值组成字典
+    result = parse.urlparse(link)
+    query_dict = parse.parse_qs(result.query)
+    # print(query_dict)  
+    # {'link_type': ['pc_home'], 'shop_id': ['_dtHtHGdM4QEUthlnddxYWF6o7rewxx7rLC_9Zig'], 'shop_name': ['朝露昙花']}
+    return query_dict
+
+def save_img(url, img_path=None):
+    print("保存图片")
+    #content返回的是二进制形式的图片数据
+    # text（字符串） content（二进制）json() (对象)
+    create_mkdir = os.path.dirname(img_path)
+    os.makedirs(create_mkdir, exist_ok=True) #新建文件
+    # print(f"create_mkdir: {create_mkdir}")
+    img_data = requests.get(url=url).content
+    with open(img_path,'wb') as fp:
+        fp.write(img_data)
+
+
+def process_json(json_data):
+    need_data = json_data['result']['items']
+    num_list = len(need_data)
+    shop_list = []
+    title_list = []
+    imgsSrc_list = []
+    print(f'商品条目：{num_list}')
+    for i in range(num_list):
+        # shop_name
+        shop_name = need_data[i]['shop_name']
+        # title
+        title = need_data[i]['title']
+        print(f'title: {title}')
+        # imgsSrc(保存单独文件夹)
+        imgsSrc = need_data[i]['imgsSrc']
+        
+        path = f'title'
+        for i, src in enumerate(imgsSrc):
+            # img_path = glob.glob("%s/%s.jpg"%(title,i))
+            img_path = f"微商结果/{shop_name}/{title}/{i}.jpg"
+            print(img_path)
+            save_img(src, img_path)
+
+
+        # save
+        shop_list.append(shop_name)
+        title_list.append(title)
+        imgsSrc_list.append(imgsSrc)
+
+    result_dict = {
+        'shop_name': shop_list,
+        'title': title_list,
+        'imgsSrc_list': imgsSrc_list,
+    }
+    print(result_dict)
+    save_csv(result_dict)
+
+
+def save_csv(result_dict):
+    import pandas as pd
+    # 保存csv文件
+    print('保存csv文件...')
+    #字典中的key值即为csv中列名
+    dataframe = pd.DataFrame(result_dict)
+    #将DataFrame存储为csv,index表示是否显示行名，default=True
+    dataframe.to_csv(r"result.csv",index=False, sep=',')
+    print('爬取结束',)
+
 
 def get_content(url):
     #step_1:指定url
@@ -42,13 +110,14 @@ def get_content(url):
     # json格式转为字典
     result = json.loads(content)
     # print(result)
+    process_json(result)
     print(result['result']['items'][0]['title'])
 
 
 if __name__ == '__main__':
     origin_link = 'https://www.szwego.com/static/index.html?link_type=pc_home&shop_id=_dtHtHGdM4QEUthlnddxYWF6o7rewxx7rLC_9Zig&shop_name=%E6%9C%9D%E9%9C%B2%E6%98%99%E8%8A%B1#/album_home'
-    map_dict = get_mapping(origin_link)
-    shop_id = '_dtHtHGdM4QEUthlnddxYWF6o7rewxx7rLC_9Zig'
-    shop_name = '%25E6%259C%259D%25E9%259C%25B2%25E6%2598%2599%25E8%258A%25B1'
+    query_dict = get_mapping(origin_link)
+    shop_id =query_dict['shop_id'] # '_dtHtHGdM4QEUthlnddxYWF6o7rewxx7rLC_9Zig'
+    shop_name = query_dict['shop_id'] #  '%25E6%259C%259D%25E9%259C%25B2%25E6%2598%2599%25E8%258A%25B1'
     url=f"https://www.szwego.com/album/moments?searchValue=&searchImg=&noCache=0&requestDataType=&link_type=pc_home&shop_id={shop_id}&shop_name={shop_name}"
     get_content(url) #
