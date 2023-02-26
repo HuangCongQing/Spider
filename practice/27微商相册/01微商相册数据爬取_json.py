@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-02-26 00:11:52
+LastEditTime: 2023-02-27 00:45:22
 FilePath: \Spider-1\practice\27微商相册\01微商相册数据爬取_json.py
 '''
 import re
@@ -15,6 +15,10 @@ import json
 import time
 from urllib import parse
 
+
+def get_mapping(link):
+    pass
+    return 
 
 def get_content(url):
     #step_1:指定url
@@ -42,6 +46,8 @@ def get_content(url):
 
 
 if __name__ == '__main__':
+    origin_link = 'https://www.szwego.com/static/index.html?link_type=pc_home&shop_id=_dtHtHGdM4QEUthlnddxYWF6o7rewxx7rLC_9Zig&shop_name=%E6%9C%9D%E9%9C%B2%E6%98%99%E8%8A%B1#/album_home'
+    map_dict = get_mapping(origin_link)
     shop_id = '_dtHtHGdM4QEUthlnddxYWF6o7rewxx7rLC_9Zig'
     shop_name = '%25E6%259C%259D%25E9%259C%25B2%25E6%2598%2599%25E8%258A%25B1'
     url=f"https://www.szwego.com/album/moments?searchValue=&searchImg=&noCache=0&requestDataType=&link_type=pc_home&shop_id={shop_id}&shop_name={shop_name}"
