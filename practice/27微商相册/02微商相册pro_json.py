@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-02 23:50:30
+LastEditTime: 2023-03-03 00:04:12
 FilePath: \Spider-1\practice\27微商相册\02微商相册pro_json.py
 '''
 import re
@@ -64,14 +64,17 @@ def process_json(json_data):
     title_list = []
     imgsSrc_list = []
     print(f'商品条目：{num_list}')
+    num_valid = 0
     for i in tqdm(range(num_list)):
         # shop_name
         shop_name = need_data[i]['shop_name']
         # title
         title = need_data[i]['title']
 
-        if "长期有货" not in title:
-            continue
+        valid_shop = False
+        # if ("长期有货" not in title ) or valid_shop:
+        #     continue
+        num_valid +=1
         # print(f'title: {title}')
         # imgsSrc(保存单独文件夹)
         imgsSrc = need_data[i]['imgsSrc']
@@ -92,6 +95,8 @@ def process_json(json_data):
         title_list.append(title)
         # imgsSrc_list.append(imgsSrc)
 
+    print(f"满足条件【长期有货】的商品数量：{num_valid}")
+
     result_dict = {
         '序号': id_list,
         '物件名称': item_list,
@@ -100,9 +105,12 @@ def process_json(json_data):
         # 'shop_name': shop_list,
         # 'imgsSrc_list': imgsSrc_list,
     }
-    # print(result_dict)
-    shop_path = f"微商结果/{shop_name}.csv"
-    save_csv(result_dict, shop_path)
+    if len(id_list) == 0:
+        print("没有合法数据保存文件")
+    else:
+        # print(result_dict)
+        shop_path = f"微商结果/{shop_name}.csv"
+        save_csv(result_dict, shop_path)
 
 
 def save_csv(result_dict, path):
@@ -112,7 +120,7 @@ def save_csv(result_dict, path):
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame(result_dict)
     #将DataFrame存储为csv,index表示是否显示行名，default=True
-    dataframe.to_csv(path,index=False, sep=',')
+    dataframe.to_csv(path,index=False, sep=',', encoding = 'utf_8_sig') # fix 乱码
 
 
 def get_single_page_shop_list(shop_list):
@@ -206,13 +214,13 @@ if __name__ == '__main__':
     print(f"好友条目：{len(shop_id_list)}")
 
     for i, shop_id in enumerate(shop_id_list):
-        print(f"开始爬取好友[{shop_name_list[i]}]的数据...")
+        print(f"开始爬取好友【{shop_name_list[i]}】的数据...")
         # origin_link = "https://www.szwego.com/album/personal/all?&albumId=_d4nEqZvegdnC9XAeqotJLk9reJ7Sf7C4mSZ9DUA&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
         # query_dict = get_mapping(origin_link)
         # albumId = query_dict['albumId']
         albumId = shop_id
         url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
         get_content(url,headers, cookie) #
-        print(f"爬取好友[{shop_name_list[i]}]的数据结束")
+        print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
     print('爬取结束',)
