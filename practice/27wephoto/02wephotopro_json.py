@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-13 02:26:23
+LastEditTime: 2023-03-13 02:29:47
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -111,7 +111,7 @@ def process_json(json_data):
         # filter 时间过期就continue
         print(type(need_data[i]['time_stamp']))
         cur_stamp = need_data[i]['time_stamp']
-        print(f"时间对比  {cur_stamp} v.s. {filter_dict['expire_time']}")
+        # print(f"时间对比  {cur_stamp} v.s. {filter_dict['expire_time']}")
         if  cur_stamp < filter_dict['expire_time']:
             print(f'!!!好友【{shop_name}】的此商品不满足时间爬取条件，已跳过')
             continue
