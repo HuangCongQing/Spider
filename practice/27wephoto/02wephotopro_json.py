@@ -6,8 +6,8 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-07 21:18:38
-FilePath: \Spider-1\practice\27微商相册\02微商相册pro_json.py
+LastEditTime: 2023-03-13 02:26:23
+FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
 import requests
@@ -17,6 +17,38 @@ from urllib import parse
 import glob
 import os
 from tqdm import tqdm
+from datetime import datetime # 时间戳
+
+# 全局变量~~~~~~~~~~
+print("=======请根据自己需要输出以下4个问题结果(*^▽^*):========")
+# 在直接回车的情况下，input函数保存的是空字符串--""
+# filter1
+expire_time = input("1 请输入爬取的开始日期(e.g.2023-03-10)”:")
+# expire_time = '2020-4-06'
+if expire_time =="":
+    expire_time = int(1268379831000) # 2010-03-12 15:43:51
+else:
+    expire_time +=' 00:00:00.123'
+    s_t = datetime.strptime(expire_time, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
+    # expire_time = int(time.mktime(s_t) * 1000)
+    expire_time = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
+# print()
+# filter2不爬取的好友列表
+no_users = input("2 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2)注意：中间‘,’隔开 好友名字要完整”:")
+no_users = no_users.split(',')
+# filter3
+is_long_term_shop = input("3 是否只提取“长期有货的商品？(Y【default】 or N)”:")
+# filter4
+is_sale = input("4 是否不提取“已售”？(Y【default】 or N)”:")
+filter_dict = {
+    'expire_time':expire_time,
+    'no_users':no_users,
+    'is_long_term_shop':is_long_term_shop,
+    'is_sale':is_sale,
+}
+# print(filter_dict)
+
+
 
 # 替换 URL 中的 query 字段 https://blog.csdn.net/qq_37144341/article/details/120993382
 # url='https://xxx.cn/comments/hotflow?mid=456116456616146&max_id=123456789&count=20'
@@ -53,8 +85,12 @@ def save_img(url, img_path=None):
     with open(img_path,'wb') as fp:
         fp.write(img_data)
 
-
+# 某个好友的所有朋友圈遍历
 def process_json(json_data):
+    # print(json_data)
+    if json_data['success'] is False:
+        # print(json_data['errmsg'])
+        return
     need_data = json_data['result']['items']
     num_list = len(need_data)
     id_list = []
@@ -65,15 +101,31 @@ def process_json(json_data):
     imgsSrc_list = []
     print(f'商品条目：{num_list}')
     num_valid = 0
+    # 遍历1个好友的朋友圈（商品）数量
     for i in tqdm(range(num_list)):
         # shop_name
         shop_name = need_data[i]['shop_name']
         # title
         title = need_data[i]['title']
 
-        valid_shop = False
-        # if ("长期有货" not in title ) or valid_shop:
-        #     continue
+        # filter 时间过期就continue
+        print(type(need_data[i]['time_stamp']))
+        cur_stamp = need_data[i]['time_stamp']
+        print(f"时间对比  {cur_stamp} v.s. {filter_dict['expire_time']}")
+        if  cur_stamp < filter_dict['expire_time']:
+            print(f'!!!好友【{shop_name}】的此商品不满足时间爬取条件，已跳过')
+            continue
+        else:
+            print(f'!!!好友【{shop_name}】的此商品满足时间爬取条件')
+
+
+        # valid_shop = False
+        if ("长期有货" not in title ) and  filter_dict['is_long_term_shop'] in ["", "Y"]:
+            print(f'!!!好友【{shop_name}】的此商品不满足长期有货条件，已跳过')
+            continue
+        if ("已售"  in title ) and  filter_dict['is_sale'] in ["", "Y"]:
+            print(f'!!!好友【{shop_name}】的此商品已售，已跳过')
+            continue
         num_valid +=1
         # print(f'title: {title}')
         # imgsSrc(保存单独文件夹)
@@ -106,7 +158,7 @@ def process_json(json_data):
         # 'imgsSrc_list': imgsSrc_list,
     }
     if len(id_list) == 0:
-        print("没有合法数据保存文件")
+        print("!!!没有合法数据保存文件")
     else:
         # print(result_dict)
         shop_path = f"微商结果/{shop_name}.csv"
@@ -172,7 +224,7 @@ def get_content(url, headers, cookie):
     url = url
     #step_2:发起请求
     #get方法会返回一个响应对象
-    response = requests.get(url=url, headers=headers,cookies = cookie)
+    response = requests.get(url=url, headers=headers, cookies = cookie)
     response.encoding = 'utf-8' 
     content = response.content
     # json格式转为字典
@@ -206,21 +258,26 @@ def get_header_and_cookie():
     }
     return headers, cookie
 
+
 if __name__ == '__main__':
     headers, cookie = get_header_and_cookie()
     friends_link = "https://www.szwego.com/service/album/get_album_list.jsp?act=attention_enc&search_value=&page_index=1&tag_id="
     shop_name_list, shop_id_list = get_shop_id(friends_link, headers, cookie)
     # print(f"shop_id_list: {shop_id_list}")
-    print(f"好友条目：{len(shop_id_list)}")
+    print(f"好友列表：{shop_name_list}")
+    print(f"好友总条目：{len(shop_id_list)}")
 
     for i, shop_id in enumerate(shop_id_list):
-        print(f"开始爬取好友【{shop_name_list[i]}】的数据...")
+        print(f"开始爬取好友 {i+1}【{shop_name_list[i]}】的数据...")
+        if shop_name_list[i] in no_users:
+            print(f"好友【{shop_name_list[i]}】的数据已过滤~")
+            continue
         # origin_link = "https://www.szwego.com/album/personal/all?&albumId=_d4nEqZvegdnC9XAeqotJLk9reJ7Sf7C4mSZ9DUA&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
         # query_dict = get_mapping(origin_link)
         # albumId = query_dict['albumId']
         albumId = shop_id
         url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-        get_content(url,headers, cookie) #
+        get_content(url, headers, cookie) #
         print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
     print('爬取结束',)
