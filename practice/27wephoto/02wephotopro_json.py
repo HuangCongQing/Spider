@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-13 02:32:24
+LastEditTime: 2023-03-14 00:07:43
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -34,15 +34,18 @@ else:
     expire_time = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
 # print()
 # filter2不爬取的好友列表
-no_users = input("2 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2)注意：中间‘,’隔开 好友名字要完整”:")
+no_users = input("2.1 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2) 注意：中间‘,’隔开 好友名字要完整”:")
 no_users = no_users.split(',')
+yes_users = input("2.2 请输入要爬取的好友列表(e.g. 好友名字1,好友名字2) 若直接回车，则默认下载所有。注意：中间‘,’隔开 好友名字要完整”:")
+yes_users = yes_users.split(',')
 # filter3
 is_long_term_shop = input("3 是否只提取“长期有货的商品？(Y【default】 or N)”:")
 # filter4
-is_sale = input("4 是否不提取“已售”？(Y【default】 or N)”:")
+is_sale = input("4 是否不提取“已售/已出”？(Y【default】 or N)”:")
 filter_dict = {
     'expire_time':expire_time,
     'no_users':no_users,
+    'yes_users':yes_users,
     'is_long_term_shop':is_long_term_shop,
     'is_sale':is_sale,
 }
@@ -109,7 +112,7 @@ def process_json(json_data):
         title = need_data[i]['title']
 
         # filter 时间过期就continue
-        print(type(need_data[i]['time_stamp']))
+        # print(type(need_data[i]['time_stamp']))
         cur_stamp = need_data[i]['time_stamp']
         # print(f"时间对比  {cur_stamp} v.s. {filter_dict['expire_time']}")
         if  cur_stamp < filter_dict['expire_time']:
@@ -123,8 +126,8 @@ def process_json(json_data):
         if ("长期有货" not in title ) and  filter_dict['is_long_term_shop'] in ["", "Y"]:
             print(f'!!!好友【{shop_name}】的此商品不满足长期有货条件，已跳过')
             continue
-        if ("已售"  in title ) and  filter_dict['is_sale'] in ["", "Y"]:
-            print(f'!!!好友【{shop_name}】的此商品已售，已跳过')
+        if ("已售"  in title or "已出" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
+            print(f'!!!好友【{shop_name}】的此商品已售/已出，已跳过')
             continue
         num_valid +=1
         # print(f'title: {title}')
@@ -261,6 +264,7 @@ def get_header_and_cookie():
 
 if __name__ == '__main__':
     headers, cookie = get_header_and_cookie()
+    # 朋友圈API
     friends_link = "https://www.szwego.com/service/album/get_album_list.jsp?act=attention_enc&search_value=&page_index=1&tag_id="
     shop_name_list, shop_id_list = get_shop_id(friends_link, headers, cookie)
     # print(f"shop_id_list: {shop_id_list}")
@@ -269,15 +273,18 @@ if __name__ == '__main__':
 
     for i, shop_id in enumerate(shop_id_list):
         print(f"开始爬取好友 {i+1}【{shop_name_list[i]}】的数据...")
-        if shop_name_list[i] in no_users:
+        if shop_name_list[i] in filter_dict['no_users']:
             print(f"好友【{shop_name_list[i]}】的数据已过滤~")
             continue
-        # origin_link = "https://www.szwego.com/album/personal/all?&albumId=_d4nEqZvegdnC9XAeqotJLk9reJ7Sf7C4mSZ9DUA&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-        # query_dict = get_mapping(origin_link)
-        # albumId = query_dict['albumId']
-        albumId = shop_id
-        url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-        get_content(url, headers, cookie) #
-        print(f"爬取好友【{shop_name_list[i]}】的数据结束")
+        # 如果yes_users  is '' 或者 yes_users 有2个名字，则
+        if (shop_name_list[i] in filter_dict['yes_users']) or (filter_dict['yes_users'][0]  ==  ''):
+            # origin_link = "https://www.szwego.com/album/personal/all?&albumId=_d4nEqZvegdnC9XAeqotJLk9reJ7Sf7C4mSZ9DUA&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
+            # query_dict = get_mapping(origin_link)
+            # albumId = query_dict['albumId']
+            albumId = shop_id
+            # 单个朋友的所有动态？
+            url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
+            get_content(url, headers, cookie) #
+            print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
     print('爬取结束',)
