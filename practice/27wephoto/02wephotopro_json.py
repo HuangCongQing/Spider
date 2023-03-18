@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-18 17:16:58
+LastEditTime: 2023-03-18 17:23:02
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -19,42 +19,6 @@ import os
 from tqdm import tqdm
 from datetime import datetime # 时间戳
 import random # 随机选择headers
-
-
-loca=time.strftime('%Y-%m-%d') # time.strftime('%Y-%m-%d-%H-%M-%S')
-
-# 全局变量~~~~~~~~~~
-print("=======请根据自己需要输出以下4个问题结果(*^▽^*):========")
-# 在直接回车的情况下，input函数保存的是空字符串--""
-# filter1
-expire_time = input("1 请输入爬取的开始日期(e.g.2023-03-10)”:")
-# expire_time = '2020-4-06'
-if expire_time =="":
-    expire_time = int(1268379831000) # 2010-03-12 15:43:51
-else:
-    expire_time +=' 00:00:00.123'
-    s_t = datetime.strptime(expire_time, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
-    # expire_time = int(time.mktime(s_t) * 1000)
-    expire_time = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
-# print()
-# filter2不爬取的好友列表
-no_users = input("2.1 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2) 注意：中间‘,’隔开 好友名字要完整”:")
-no_users = no_users.split(',')
-yes_users = input("2.2 请输入要爬取的好友列表(e.g. 好友名字1,好友名字2) 若直接回车，则默认下载所有。注意：中间‘,’隔开 好友名字要完整”:")
-yes_users = yes_users.split(',')
-# filter3
-is_long_term_shop = input("3 是否只提取“长期有货的商品？(Y【default】 or N)”:")
-# filter4
-is_sale = input("4 是否不提取“已售/已出”？(Y【default】 or N)”:")
-filter_dict = {
-    'expire_time':expire_time,
-    'no_users':no_users,
-    'yes_users':yes_users,
-    'is_long_term_shop':is_long_term_shop,
-    'is_sale':is_sale,
-}
-# print(filter_dict)
-
 
 
 # 替换 URL 中的 query 字段 https://blog.csdn.net/qq_37144341/article/details/120993382
@@ -309,6 +273,9 @@ def get_header_and_cookie():
 
 
 if __name__ == '__main__':
+    
+
+
     headers, cookie = get_header_and_cookie()
     # 朋友圈API
     friends_link = "https://www.szwego.com/service/album/get_album_list.jsp?act=attention_enc&search_value=&page_index=1&tag_id="
@@ -316,6 +283,42 @@ if __name__ == '__main__':
     # print(f"shop_id_list: {shop_id_list}")
     print(f"好友列表：{shop_name_list}")
     print(f"好友总条目：{len(shop_id_list)}")
+
+    
+    loca=time.strftime('%Y-%m-%d') # time.strftime('%Y-%m-%d-%H-%M-%S')
+
+    # 全局变量~~~~~~~~~~
+    print("=======请根据自己需要输出以下4个问题结果(*^▽^*):========")
+    # 在直接回车的情况下，input函数保存的是空字符串--""
+    # filter1
+    expire_time = input("1 请输入爬取的开始日期(e.g.2023-03-10)”:")
+    # expire_time = '2020-4-06'
+    if expire_time =="":
+        expire_time = int(1268379831000) # 2010-03-12 15:43:51
+    else:
+        expire_time +=' 00:00:00.123'
+        s_t = datetime.strptime(expire_time, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
+        # expire_time = int(time.mktime(s_t) * 1000)
+        expire_time = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
+    # print()
+    # filter2不爬取的好友列表
+    no_users = input("2.1 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2) 注意：中间‘,’隔开 好友名字要完整”:")
+    no_users = no_users.split(',')
+    yes_users = input("2.2 请输入要爬取的好友列表(e.g. 好友名字1,好友名字2) 若直接回车，则默认下载所有。注意：中间‘,’隔开 好友名字要完整”:")
+    yes_users = yes_users.split(',')
+    # filter3
+    is_long_term_shop = input("3 是否只提取“长期有货的商品？(Y【default】 or N)”:")
+    # filter4
+    is_sale = input("4 是否不提取“已售/已出”？(Y【default】 or N)”:")
+    filter_dict = {
+        'expire_time':expire_time,
+        'no_users':no_users,
+        'yes_users':yes_users,
+        'is_long_term_shop':is_long_term_shop,
+        'is_sale':is_sale,
+    }
+    # print(filter_dict)
+
 
     for i, shop_id in enumerate(shop_id_list):
         print(f"好友 {i+1}【{shop_name_list[i]}】(总商品：【{total_goods[i]}】,但实际爬取商品经过时间过滤会少)爬取ing...")
