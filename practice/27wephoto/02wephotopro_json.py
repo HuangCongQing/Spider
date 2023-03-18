@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-18 17:23:02
+LastEditTime: 2023-03-18 17:30:26
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -58,7 +58,7 @@ def save_img(url, img_path=None):
 
 # 某个好友的所有朋友圈遍历
 def process_json(json_data, **kargs):
-    num = kargs['name']
+    num = kargs['num']
     # print(json_data)
     if json_data['success'] is False:
         # print(json_data['errmsg'])
