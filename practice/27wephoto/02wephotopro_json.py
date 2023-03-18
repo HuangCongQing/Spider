@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-14 00:16:39
+LastEditTime: 2023-03-18 17:16:58
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -18,6 +18,10 @@ import glob
 import os
 from tqdm import tqdm
 from datetime import datetime # 时间戳
+import random # 随机选择headers
+
+
+loca=time.strftime('%Y-%m-%d') # time.strftime('%Y-%m-%d-%H-%M-%S')
 
 # 全局变量~~~~~~~~~~
 print("=======请根据自己需要输出以下4个问题结果(*^▽^*):========")
@@ -89,7 +93,8 @@ def save_img(url, img_path=None):
         fp.write(img_data)
 
 # 某个好友的所有朋友圈遍历
-def process_json(json_data):
+def process_json(json_data, **kargs):
+    num = kargs['name']
     # print(json_data)
     if json_data['success'] is False:
         # print(json_data['errmsg'])
@@ -102,7 +107,7 @@ def process_json(json_data):
     shop_list = []
     title_list = []
     imgsSrc_list = []
-    print(f'商品条目：{num_list}')
+    print(f'\tpage{num+1}商品条目：{num_list}')
     num_valid = 0
     # 遍历1个好友的朋友圈（商品）数量
     for i in tqdm(range(num_list)):
@@ -137,7 +142,7 @@ def process_json(json_data):
         # path = f'title'
         for j, src in enumerate(imgsSrc):
             # img_path = glob.glob("%s/%s.jpg"%(title,i))
-            img_path = f"微商结果/{shop_name}/{i+1}({j+1}).jpg"
+            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + num*32 }({j+1}).jpg"
             # print(img_path)
             if not os.path.isfile(img_path):
                 save_img(src, img_path)
@@ -167,12 +172,15 @@ def process_json(json_data):
         print("!!!没有合法数据保存文件")
     else:
         # print(result_dict)
-        shop_path = f"微商结果/{shop_name}.csv"
+        shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_{loca}.csv"
         save_csv(result_dict, shop_path)
 
 
 def save_csv(result_dict, path):
     import pandas as pd
+    
+    create_mkdir = os.path.dirname(path)
+    os.makedirs(create_mkdir, exist_ok=True) #新建文件
     # 保存csv文件
     print('保存csv文件...')
     #字典中的key值即为csv中列名
@@ -183,6 +191,7 @@ def save_csv(result_dict, path):
 
 def get_single_page_shop_list(shop_list):
     name_id_mapping = dict()
+    total_goods = []
     for i in range(len(shop_list)):
        shop_name = shop_list[i]["shop_name"]
        shop_id = shop_list[i]["shop_id"]
@@ -190,13 +199,15 @@ def get_single_page_shop_list(shop_list):
        if shop_name in '我的相册':
             continue
        name_id_mapping[shop_name] = shop_id
+       total_goods.append(shop_list[i]["total_goods"])
 
-    return name_id_mapping
+    return name_id_mapping, total_goods
     
 
 def get_shop_id(url, headers, cookie):
     shop_id_list = []
     shop_name_list = []
+    total_goods_list = []
     query_dict = get_mapping(url)
     
     response = requests.get(url=url, headers=headers,cookies = cookie)
@@ -218,33 +229,65 @@ def get_shop_id(url, headers, cookie):
         result_new = json.loads(content_new)
         # print(result_new)
 
-        name_id_mapping = get_single_page_shop_list(result_new['result']['shop_list'])
+        name_id_mapping, total_goods = get_single_page_shop_list(result_new['result']['shop_list'])
         shop_id_list += name_id_mapping.values()
         shop_name_list += name_id_mapping.keys()
+        total_goods_list += total_goods
 
 
-    return shop_name_list, shop_id_list
+    return shop_name_list, shop_id_list, total_goods_list
 
-def get_content(url, headers, cookie):
+def get_content(url, headers, cookie, method = 'post',**kargs):
     #step_1:指定url
     url = url
     #step_2:发起请求
     #get方法会返回一个响应对象
-    response = requests.get(url=url, headers=headers, cookies = cookie)
+    # response = requests.get(url=url, headers=headers, cookies = cookie)
+    response = eval(f"requests.{method}")(url=url, headers=headers, cookies = cookie)
+    
     response.encoding = 'utf-8' 
     content = response.content
     # json格式转为字典
     result = json.loads(content)
     # print(result)
-    process_json(result)
+    process_json(result, **kargs)
     # print(result['result']['items'][0]['title'])
 
 # 需要修改cookie参数
 def get_header_and_cookie():
 
     #UA伪装：将对应的User-Agent封装到一个字典中
+    # headers = {
+    #     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
+    # }
+    
+    UserAgent_List = [
+        "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2226.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.4; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2225.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2225.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2224.3 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 4.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.67 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.67 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.3319.102 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.2309.372 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.2117.157 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1866.237 Safari/537.36",
+    ]
+
+    
     headers = {
-        'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
+        'User-agent': random.choice(UserAgent_List),
+        # 'Host': 'https://wegooooo.com/',
+        # 'Referer': 'https://www.szwego.com/static/index.html?link_type=pc_home&shop_id=_dEqEqzcXuSZl5l_P3LLyeOwYEcLKbDZESq6m8Kw&shop_name=%E6%88%91%E8%A6%81%E6%97%A9%E7%9D%A1%E6%99%9A%E8%B5%B7#/followed',
     }
     # 重庆
     # cookie = {
@@ -269,13 +312,13 @@ if __name__ == '__main__':
     headers, cookie = get_header_and_cookie()
     # 朋友圈API
     friends_link = "https://www.szwego.com/service/album/get_album_list.jsp?act=attention_enc&search_value=&page_index=1&tag_id="
-    shop_name_list, shop_id_list = get_shop_id(friends_link, headers, cookie)
+    shop_name_list, shop_id_list, total_goods = get_shop_id(friends_link, headers, cookie)
     # print(f"shop_id_list: {shop_id_list}")
     print(f"好友列表：{shop_name_list}")
     print(f"好友总条目：{len(shop_id_list)}")
 
     for i, shop_id in enumerate(shop_id_list):
-        print(f"开始爬取好友 {i+1}【{shop_name_list[i]}】的数据...")
+        print(f"好友 {i+1}【{shop_name_list[i]}】(总商品：【{total_goods[i]}】,但实际爬取商品经过时间过滤会少)爬取ing...")
         if shop_name_list[i] in filter_dict['no_users']:
             print(f"好友【{shop_name_list[i]}】的数据已过滤~")
             continue
@@ -286,8 +329,13 @@ if __name__ == '__main__':
             # albumId = query_dict['albumId']
             albumId = shop_id
             # 单个朋友的所有动态？
-            url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-            get_content(url, headers, cookie) #
+            pages = total_goods[i]//32 + 1 # 
+            for num in range(pages):
+                # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
+                url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp=1678890967997&requestDataType="
+                kargs = {}
+                kargs['num'] = num
+                get_content(url, headers, cookie, method = 'post', **kargs) #
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
     print('爬取结束',)
