@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-01 20:27:56
+LastEditTime: 2023-04-01 21:39:31
 FilePath: /lmv-merge/111.py
 '''
 import re
@@ -52,7 +52,21 @@ def save_img(url, img_path=None):
     create_mkdir = os.path.dirname(img_path)
     os.makedirs(create_mkdir, exist_ok=True) #新建文件
     # print(f"create_mkdir: {create_mkdir}")
-    img_data = requests.get(url=url, headers=headers, cookies=cookie).content
+    # fix:requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+    # 我的问题我使用 requests库进行请求，可能是没有限制频率睡眠，导致出错
+    for i in range(5):
+        try:
+            headers, cookie = get_header_and_cookie()
+            img_data = requests.get(url=url, headers=headers, cookies=cookie).content
+            break
+
+        except Exception as e:
+            print(e)
+
+        if i < 5:
+            time.sleep(0.5)
+    time.sleep(0.2)
+    # img_data = requests.get(url=url, headers=headers, cookies=cookie).content
     with open(img_path,'wb') as fp:
         fp.write(img_data)
 
@@ -341,10 +355,12 @@ if __name__ == '__main__':
             for num in range(pages):
                 # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
                 # https://www.szwego.com/album/personal/all?&searchValue=&searchImg=&startDate=2023-04-01&endDate=2023-04-01&albumId=_dEyEqizHht1K7kwZpFlYD2eHMOaiRRJjcsnw3zw&requestDataType=
-                url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp={timestamp}&requestDataType="
+                # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp={timestamp}&requestDataType="
+                url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType=1&timestamp={timestamp}&requestDataType="
                 kargs = {}
                 kargs['num'] = num
                 print(f"当前pages的url：{url}")
+                headers, cookie = get_header_and_cookie()
                 get_content(url, headers, cookie, method = 'post', **kargs) #
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
