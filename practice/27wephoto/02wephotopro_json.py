@@ -6,8 +6,8 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-03-18 17:30:26
-FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
+LastEditTime: 2023-04-01 20:27:56
+FilePath: /lmv-merge/111.py
 '''
 import re
 import requests
@@ -52,7 +52,7 @@ def save_img(url, img_path=None):
     create_mkdir = os.path.dirname(img_path)
     os.makedirs(create_mkdir, exist_ok=True) #新建文件
     # print(f"create_mkdir: {create_mkdir}")
-    img_data = requests.get(url=url).content
+    img_data = requests.get(url=url, headers=headers, cookies=cookie).content
     with open(img_path,'wb') as fp:
         fp.write(img_data)
 
@@ -71,9 +71,10 @@ def process_json(json_data, **kargs):
     shop_list = []
     title_list = []
     imgsSrc_list = []
-    print(f'\tpage{num+1}商品条目：{num_list}')
+    print(f'>>>page{num+1}商品条目：{num_list}') # 
     num_valid = 0
     # 遍历1个好友的朋友圈（商品）数量
+    print(f"要爬取当前pages的商品数量：{num_list}")
     for i in tqdm(range(num_list)):
         # shop_name
         shop_name = need_data[i]['shop_name']
@@ -122,7 +123,7 @@ def process_json(json_data, **kargs):
         title_list.append(title)
         # imgsSrc_list.append(imgsSrc)
 
-    print(f"满足条件【长期有货】的商品数量：{num_valid}")
+    print(f"满足条件【长期有货】【已售/已出】的商品数量：{num_valid}")
 
     result_dict = {
         '序号': id_list,
@@ -133,7 +134,7 @@ def process_json(json_data, **kargs):
         # 'imgsSrc_list': imgsSrc_list,
     }
     if len(id_list) == 0:
-        print("!!!没有合法数据保存文件")
+        print("!!!没有合法数据.不保存文件")
     else:
         # print(result_dict)
         shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_{loca}.csv"
@@ -307,7 +308,7 @@ if __name__ == '__main__':
     yes_users = input("2.2 请输入要爬取的好友列表(e.g. 好友名字1,好友名字2) 若直接回车，则默认下载所有。注意：中间‘,’隔开 好友名字要完整”:")
     yes_users = yes_users.split(',')
     # filter3
-    is_long_term_shop = input("3 是否只提取“长期有货的商品？(Y【default】 or N)”:")
+    is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
     # filter4
     is_sale = input("4 是否不提取“已售/已出”？(Y【default】 or N)”:")
     filter_dict = {
@@ -321,10 +322,11 @@ if __name__ == '__main__':
 
 
     for i, shop_id in enumerate(shop_id_list):
-        print(f"好友 {i+1}【{shop_name_list[i]}】(总商品：【{total_goods[i]}】,但实际爬取商品经过时间过滤会少)爬取ing...")
         if shop_name_list[i] in filter_dict['no_users']:
             print(f"好友【{shop_name_list[i]}】的数据已过滤~")
             continue
+        # 筛选后的输出
+        print(f"好友 {i+1}【{shop_name_list[i]}】(总商品：【{total_goods[i]}】,但实际爬取商品经过时间过滤会少)爬取ing...")
         # 如果yes_users  is '' 或者 yes_users 有2个名字，则
         if (shop_name_list[i] in filter_dict['yes_users']) or (filter_dict['yes_users'][0]  ==  ''):
             # origin_link = "https://www.szwego.com/album/personal/all?&albumId=_d4nEqZvegdnC9XAeqotJLk9reJ7Sf7C4mSZ9DUA&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
@@ -333,11 +335,16 @@ if __name__ == '__main__':
             albumId = shop_id
             # 单个朋友的所有动态？
             pages = total_goods[i]//32 + 1 # 
+            t = time.time()
+            timestamp = int(round(t * 1000)) # 13位 时间戳 (毫秒) "1678890967997"
+            print(f"遍历pages(总页数pages: {pages})ing")
             for num in range(pages):
                 # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-                url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp=1678890967997&requestDataType="
+                # https://www.szwego.com/album/personal/all?&searchValue=&searchImg=&startDate=2023-04-01&endDate=2023-04-01&albumId=_dEyEqizHht1K7kwZpFlYD2eHMOaiRRJjcsnw3zw&requestDataType=
+                url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp={timestamp}&requestDataType="
                 kargs = {}
                 kargs['num'] = num
+                print(f"当前pages的url：{url}")
                 get_content(url, headers, cookie, method = 'post', **kargs) #
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
