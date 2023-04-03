@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-01 21:39:31
+LastEditTime: 2023-04-03 13:04:57
 FilePath: /lmv-merge/111.py
 '''
 import re
@@ -54,21 +54,27 @@ def save_img(url, img_path=None):
     # print(f"create_mkdir: {create_mkdir}")
     # fix:requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
     # 我的问题我使用 requests库进行请求，可能是没有限制频率睡眠，导致出错
-    for i in range(5):
+    nums_circle = 100
+    for i in range(nums_circle):
         try:
             headers, cookie = get_header_and_cookie()
             img_data = requests.get(url=url, headers=headers, cookies=cookie).content
+            with open(img_path,'wb') as fp:
+                fp.write(img_data)
+            # 
             break
 
         except Exception as e:
-            print(e)
+            print(f"[{i+1}]尝试重新连接【INFO：{e}】")
+            if i == nums_circle-1:
+                print(f"此图片（{url}）不下载，跳过~")
 
-        if i < 5:
+        if i < nums_circle:
             time.sleep(0.5)
     time.sleep(0.2)
     # img_data = requests.get(url=url, headers=headers, cookies=cookie).content
-    with open(img_path,'wb') as fp:
-        fp.write(img_data)
+    # with open(img_path,'wb') as fp:
+    #     fp.write(img_data)
 
 # 某个好友的所有朋友圈遍历
 def process_json(json_data, **kargs):
@@ -148,10 +154,10 @@ def process_json(json_data, **kargs):
         # 'imgsSrc_list': imgsSrc_list,
     }
     if len(id_list) == 0:
-        print("!!!没有合法数据.不保存文件")
+        print("!!!没有合法数据.不保存csv文件")
     else:
         # print(result_dict)
-        shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_{loca}.csv"
+        shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{i+1 + (num-1)*32 }-{i+1 + num*32 }_{loca}.csv"
         save_csv(result_dict, shop_path)
 
 
@@ -279,10 +285,11 @@ def get_header_and_cookie():
     
     # 木兰
     cookie = {
-        'client_type':'net',
-        'token':'QjMzNTRFRUEwQ0Q2RTY0N0MzQUJFNUIzNDEyRUE3MzJGRTM1NDU1OURCMjBBMkVBRDZBMTY1MDIyRkM1RTU2OTg4ODMxMzcyMTExRUU2MkMyRTc0MTE5NjNCN0UyOERD',
-        'sensorsdata2015jssdkcross':'%7B%22distinct_id%22%3A%22_dEqEqzcXuSZl5l_P3LLyeOwYEcLKbDZESq6m8Kw%22%2C%22first_id%22%3A%2218686aed717141-025794af05686fc-1a343370-1821369-18686aed7184a3%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfbG9naW5faWQiOiJfZEVxRXF6Y1h1U1psNWxfUDNMTHllT3dZRWNMS2JEWkVTcTZtOEt3IiwiJGlkZW50aXR5X2Nvb2tpZV9pZCI6IjE4Njg2YWVkNzE3MTQxLTAyNTc5NGFmMDU2ODZmYy0xYTM0MzM3MC0xODIxMzY5LTE4Njg2YWVkNzE4NGEzIn0%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%22_dEqEqzcXuSZl5l_P3LLyeOwYEcLKbDZESq6m8Kw%22%7D%2C%22%24device_id%22%3A%2218686aed717141-025794af05686fc-1a343370-1821369-18686aed7184a3%22%7D',
-        'JSESSIONID':'3A026131D634371909427EBBD8B8ABDB',
+        'client_type': 'net',
+        'token': 'QjMzNTRFRUEwQ0Q2RTY0N0MzQUJFNUIzNDEyRUE3MzJGRTM1NDU1OURCMjBBMkVBRDZBMTY1MDIyRkM1RTU2OTg4ODMxMzcyMTExRUU2MkMyRTc0MTE5NjNCN0UyOERD',
+        'sensorsdata2015jssdkcross': '%7B%22distinct_id%22%3A%22_dEqEqzcXuSZl5l_P3LLyeOwYEcLKbDZESq6m8Kw%22%2C%22first_id%22%3A%2218686aed717141-025794af05686fc-1a343370-1821369-18686aed7184a3%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfbG9naW5faWQiOiJfZEVxRXF6Y1h1U1psNWxfUDNMTHllT3dZRWNMS2JEWkVTcTZtOEt3IiwiJGlkZW50aXR5X2Nvb2tpZV9pZCI6IjE4Njg2YWVkNzE3MTQxLTAyNTc5NGFmMDU2ODZmYy0xYTM0MzM3MC0xODIxMzY5LTE4Njg2YWVkNzE4NGEzIn0%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%22_dEqEqzcXuSZl5l_P3LLyeOwYEcLKbDZESq6m8Kw%22%7D%2C%22%24device_id%22%3A%2218686aed717141-025794af05686fc-1a343370-1821369-18686aed7184a3%22%7D',
+        'producte_run_to_dev_tomcat': '',
+        'JSESSIONID': '3A026131D634371909427EBBD8B8ABDB',
     }
     return headers, cookie
 
@@ -352,11 +359,15 @@ if __name__ == '__main__':
             t = time.time()
             timestamp = int(round(t * 1000)) # 13位 时间戳 (毫秒) "1678890967997"
             print(f"遍历pages(总页数pages: {pages})ing")
-            for num in range(pages):
+            for num in range(pages+1):
                 # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
                 # https://www.szwego.com/album/personal/all?&searchValue=&searchImg=&startDate=2023-04-01&endDate=2023-04-01&albumId=_dEyEqizHht1K7kwZpFlYD2eHMOaiRRJjcsnw3zw&requestDataType=
                 # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp={timestamp}&requestDataType="
-                url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType=1&timestamp={timestamp}&requestDataType="
+                if num == 0:
+                    # 首页
+                    url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
+                else:
+                    url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType=1&timestamp={timestamp}&requestDataType="
                 kargs = {}
                 kargs['num'] = num
                 print(f"当前pages的url：{url}")
