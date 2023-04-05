@@ -444,4 +444,4 @@ if __name__ == '__main__':
             
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
-    print('爬取结束',)
+    print('爬取结束end',)
