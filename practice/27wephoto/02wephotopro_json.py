@@ -6,8 +6,8 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-03 13:04:57
-FilePath: /lmv-merge/111.py
+LastEditTime: 2023-04-06 01:44:55
+FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
 import requests
@@ -17,7 +17,7 @@ from urllib import parse
 import glob
 import os
 from tqdm import tqdm
-from datetime import datetime # 时间戳
+import datetime # 时间戳
 import random # 随机选择headers
 
 
@@ -222,6 +222,7 @@ def get_shop_id(url, headers, cookie):
 
     return shop_name_list, shop_id_list, total_goods_list
 
+# post请求
 def get_content(url, headers, cookie, method = 'post',**kargs):
     #step_1:指定url
     url = url
@@ -270,9 +271,19 @@ def get_header_and_cookie():
 
     
     headers = {
-        'User-agent': random.choice(UserAgent_List),
-        # 'Host': 'https://wegooooo.com/',
-        # 'Referer': 'https://www.szwego.com/static/index.html?link_type=pc_home&shop_id=_dEqEqzcXuSZl5l_P3LLyeOwYEcLKbDZESq6m8Kw&shop_name=%E6%88%91%E8%A6%81%E6%97%A9%E7%9D%A1%E6%99%9A%E8%B5%B7#/followed',
+        'user-agent': random.choice(UserAgent_List),
+        'authority': 'www.szwego.com',
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,de;q=0.6',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'origin': 'https://www.szwego.com',
+        'referer': 'https://www.szwego.com/static/index.html?t=1660503705068',
+        'wego-albumid': '',
+        'wego-channel': 'net',
+        'wego-staging': '0',
+        'wego-uuid': '',
+        'wego-version': '',
+        'x-requested-with': 'XMLHttpRequest',
     }
     # 重庆
     # cookie = {
@@ -292,6 +303,59 @@ def get_header_and_cookie():
         'JSESSIONID': '3A026131D634371909427EBBD8B8ABDB',
     }
     return headers, cookie
+
+
+
+def findPage(data):
+    return data["result"]["pagination"]["pageTimestamp"]
+
+
+def findLoadMore(data):
+    return data["result"]["pagination"]["isLoadMore"]
+
+def createParams(alb: str, page: str, start_date: str):
+    if page == '':
+        params = {
+            'albumId': f'{alb}',
+            'searchValue': '',
+            'searchImg': '',
+            'startDate': f'{start_date}',
+            'endDate': f'{datetime.date.today().strftime("%Y-%m-%d")}',
+            'sourceId': '',
+            'requestDataType': '',
+            'transLang': 'en'
+        }
+    else:
+        params = {
+            'albumId': f'{alb}',
+            'searchValue': '',
+            'searchImg': '',
+            'startDate': f'{start_date}',
+            'endDate': f'{datetime.date.today().strftime("%Y-%m-%d")}',
+            'sourceId': '',
+            'slipType': '1',
+            'timestamp': f'{page}',
+            'requestDataType': '',
+            'transLang': 'en'
+        }
+    return params
+
+
+def createData(tag):
+    data = {
+        'tagList': f"[{tag}]"
+    }
+    return data
+
+
+
+def download_json(alb, page, start_date):
+    headers, cookies= get_header_and_cookie()
+    params = createParams(alb, page, start_date)
+    data = createData('')
+    url = 'https://www.szwego.com/album/personal/all'
+    resp = requests.post(url, headers=headers, params=params, data=data, cookies=cookies)
+    return resp.json()
 
 
 if __name__ == '__main__':
@@ -319,7 +383,7 @@ if __name__ == '__main__':
         expire_time = int(1268379831000) # 2010-03-12 15:43:51
     else:
         expire_time +=' 00:00:00.123'
-        s_t = datetime.strptime(expire_time, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
+        s_t = datetime.datetime.strptime(expire_time, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
         # expire_time = int(time.mktime(s_t) * 1000)
         expire_time = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
     # print()
@@ -354,25 +418,42 @@ if __name__ == '__main__':
             # query_dict = get_mapping(origin_link)
             # albumId = query_dict['albumId']
             albumId = shop_id
+            LoadMore = True
+            num = 0
+            page = ''
             # 单个朋友的所有动态？
             pages = total_goods[i]//32 + 1 # 
             t = time.time()
             timestamp = int(round(t * 1000)) # 13位 时间戳 (毫秒) "1678890967997"
-            print(f"遍历pages(总页数pages: {pages})ing")
-            for num in range(pages+1):
-                # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-                # https://www.szwego.com/album/personal/all?&searchValue=&searchImg=&startDate=2023-04-01&endDate=2023-04-01&albumId=_dEyEqizHht1K7kwZpFlYD2eHMOaiRRJjcsnw3zw&requestDataType=
-                # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp={timestamp}&requestDataType="
-                if num == 0:
-                    # 首页
-                    url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-                else:
-                    url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType=1&timestamp={timestamp}&requestDataType="
-                kargs = {}
-                kargs['num'] = num
-                print(f"当前pages的url：{url}")
-                headers, cookie = get_header_and_cookie()
-                get_content(url, headers, cookie, method = 'post', **kargs) #
+            print(f"遍历pages ing")
+            
+            while LoadMore:
+                # 当前配置的数据
+                data = download_json(albumId, page, expire_time)
+                kargs = {
+                    'num': num,
+                    }
+                process_json(data, **kargs)
+                
+                LoadMore = findLoadMore(data)
+                if LoadMore == True:
+                    page = findPage(data)
+
+                num  += 1
+                time.sleep(random.randint(1, 3))
+            # for num in range(pages+1):
+            #     # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
+            #     # https://www.szwego.com/album/personal/all?&searchValue=&searchImg=&startDate=2023-04-01&endDate=2023-04-01&albumId=_dEyEqizHht1K7kwZpFlYD2eHMOaiRRJjcsnw3zw&requestDataType=
+            #     # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp={timestamp}&requestDataType="
+            #     url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType=1&timestamp={timestamp}&requestDataType="
+            #     kargs = {}
+            #     kargs['num'] = num
+            #     print(f"当前pages的url：{url}")
+            #     headers, cookie = get_header_and_cookie()
+            #     get_content(url, headers, cookie, method = 'post', **kargs) #
+            # 保存csv文件
+
+            
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
     print('爬取结束',)
