@@ -2,8 +2,10 @@ Python 爬虫从入门到实战光速通关
 package/3xpath/07picLibs
 # *.csv
 *.txt
+*.html
 practice/17百度地图爬取/imgs
 practice/17百度地图爬取/baidu_map.py
+practice/27wephoto/微商结果
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
