@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-06 01:44:55
+LastEditTime: 2023-04-06 01:50:22
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -410,10 +410,10 @@ if __name__ == '__main__':
         if shop_name_list[i] in filter_dict['no_users']:
             print(f"好友【{shop_name_list[i]}】的数据已过滤~")
             continue
-        # 筛选后的输出
-        print(f"好友 {i+1}【{shop_name_list[i]}】(总商品：【{total_goods[i]}】,但实际爬取商品经过时间过滤会少)爬取ing...")
         # 如果yes_users  is '' 或者 yes_users 有2个名字，则
         if (shop_name_list[i] in filter_dict['yes_users']) or (filter_dict['yes_users'][0]  ==  ''):
+            # 筛选后的输出
+            print(f"好友 {i+1}【{shop_name_list[i]}】(总商品：【{total_goods[i]}】,但实际爬取商品经过时间过滤会少)爬取ing...")
             # origin_link = "https://www.szwego.com/album/personal/all?&albumId=_d4nEqZvegdnC9XAeqotJLk9reJ7Sf7C4mSZ9DUA&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
             # query_dict = get_mapping(origin_link)
             # albumId = query_dict['albumId']
