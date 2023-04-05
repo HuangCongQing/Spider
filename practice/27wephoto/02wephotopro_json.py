@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-06 01:50:22
+LastEditTime: 2023-04-06 01:52:32
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -420,9 +420,7 @@ if __name__ == '__main__':
             albumId = shop_id
             LoadMore = True
             num = 0
-            page = ''
-            # 单个朋友的所有动态？
-            pages = total_goods[i]//32 + 1 # 
+            page = '' 
             t = time.time()
             timestamp = int(round(t * 1000)) # 13位 时间戳 (毫秒) "1678890967997"
             print(f"遍历pages ing")
@@ -441,16 +439,6 @@ if __name__ == '__main__':
 
                 num  += 1
                 time.sleep(random.randint(1, 3))
-            # for num in range(pages+1):
-            #     # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&requestDataType="
-            #     # https://www.szwego.com/album/personal/all?&searchValue=&searchImg=&startDate=2023-04-01&endDate=2023-04-01&albumId=_dEyEqizHht1K7kwZpFlYD2eHMOaiRRJjcsnw3zw&requestDataType=
-            #     # url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType={num}&timestamp={timestamp}&requestDataType="
-            #     url = f"https://www.szwego.com/album/personal/all?&albumId={albumId}&searchValue=&searchImg=&startDate=&endDate=&sourceId=&slipType=1&timestamp={timestamp}&requestDataType="
-            #     kargs = {}
-            #     kargs['num'] = num
-            #     print(f"当前pages的url：{url}")
-            #     headers, cookie = get_header_and_cookie()
-            #     get_content(url, headers, cookie, method = 'post', **kargs) #
             # 保存csv文件
 
             
