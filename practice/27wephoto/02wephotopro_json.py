@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-06 09:24:34
+LastEditTime: 2023-04-06 10:29:49
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -77,7 +77,7 @@ def save_img(url, img_path=None):
     #     fp.write(img_data)
 
 # 某个好友的所有朋友圈遍历
-def process_json(json_data, **kargs):
+def process_json(json_data, cur_items, **kargs):
     num = kargs['num']
     # print(json_data)
     if json_data['success'] is False:
@@ -88,9 +88,11 @@ def process_json(json_data, **kargs):
     id_list = []
     item_list = []
     money_list = []
-    shop_list = []
+    # shop_list = []
     title_list = []
-    imgsSrc_list = []
+
+    if num_list == 0:
+        return id_list, item_list, money_list, title_list
     print(f'>>>page{num+1}商品条目：{num_list}') # 
     num_valid = 0
     # 遍历1个好友的朋友圈（商品）数量
@@ -127,7 +129,7 @@ def process_json(json_data, **kargs):
         # path = f'title'
         for j, src in enumerate(imgsSrc):
             # img_path = glob.glob("%s/%s.jpg"%(title,i))
-            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + num*32 }({j+1}).jpg"
+            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + cur_items }({j+1}).jpg"
             # print(img_path)
             if not os.path.isfile(img_path):
                 save_img(src, img_path)
@@ -136,29 +138,25 @@ def process_json(json_data, **kargs):
 
 
         # save
-        id_list.append(i+1)
+        id_list.append(i+1 + cur_items)
         item_list.append(' ')
         money_list.append(' ')
-        shop_list.append(shop_name)
+        # shop_list.append(shop_name)
         title_list.append(title)
         # imgsSrc_list.append(imgsSrc)
 
     print(f"满足条件【长期有货】【已售/已出】的商品数量：{num_valid}")
 
-    result_dict = {
-        '序号': id_list,
-        '物件名称': item_list,
-        '价格': money_list,
-        '待处理数据': title_list,
-        # 'shop_name': shop_list,
-        # 'imgsSrc_list': imgsSrc_list,
-    }
-    if len(id_list) == 0:
-        print("!!!没有合法数据.不保存csv文件")
-    else:
-        # print(result_dict)
-        shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{i+1 + (num-1)*32 }-{i+1 + num*32 }_{loca}.csv"
-        save_csv(result_dict, shop_path)
+    # result_dict = {
+    #     '序号': id_list,
+    #     '物件名称': item_list,
+    #     '价格': money_list,
+    #     '待处理数据': title_list,
+    #     # 'shop_name': shop_list,
+    #     # 'imgsSrc_list': imgsSrc_list,
+    # }
+    return id_list, item_list, money_list, title_list
+    # return result_dict
 
 
 def save_csv(result_dict, path):
@@ -167,7 +165,7 @@ def save_csv(result_dict, path):
     create_mkdir = os.path.dirname(path)
     os.makedirs(create_mkdir, exist_ok=True) #新建文件
     # 保存csv文件
-    print('保存csv文件...')
+    print(f'保存csv文件({path})...')
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame(result_dict)
     #将DataFrame存储为csv,index表示是否显示行名，default=True
@@ -223,21 +221,21 @@ def get_shop_id(url, headers, cookie):
     return shop_name_list, shop_id_list, total_goods_list
 
 # post请求
-def get_content(url, headers, cookie, method = 'post',**kargs):
-    #step_1:指定url
-    url = url
-    #step_2:发起请求
-    #get方法会返回一个响应对象
-    # response = requests.get(url=url, headers=headers, cookies = cookie)
-    response = eval(f"requests.{method}")(url=url, headers=headers, cookies = cookie)
+# def get_content(url, headers, cookie, method = 'post',**kargs):
+#     #step_1:指定url
+#     url = url
+#     #step_2:发起请求
+#     #get方法会返回一个响应对象
+#     # response = requests.get(url=url, headers=headers, cookies = cookie)
+#     response = eval(f"requests.{method}")(url=url, headers=headers, cookies = cookie)
     
-    response.encoding = 'utf-8' 
-    content = response.content
-    # json格式转为字典
-    result = json.loads(content)
-    # print(result)
-    process_json(result, **kargs)
-    # print(result['result']['items'][0]['title'])
+#     response.encoding = 'utf-8' 
+#     content = response.content
+#     # json格式转为字典
+#     result = json.loads(content)
+#     # print(result)
+#     process_json(result, **kargs)
+#     # print(result['result']['items'][0]['title'])
 
 # 需要修改cookie参数
 def get_header_and_cookie():
@@ -357,6 +355,22 @@ def download_json(alb, page, start_date):
     resp = requests.post(url, headers=headers, params=params, data=data, cookies=cookies)
     return resp.json()
 
+def update_dict(result_dict, id_list, item_list, money_list, title_list):
+    # result_dict = {
+    #     '序号': [],
+    #     '物件名称': [],
+    #     '价格': [],
+    #     '待处理数据': [],
+    #     # 'shop_name': shop_list,
+    #     # 'imgsSrc_list': imgsSrc_list,
+    # }
+    if len(id_list) == 0:
+        return
+    result_dict['序号'] += id_list
+    result_dict['物件名称'] += item_list
+    result_dict['价格'] += money_list
+    result_dict['待处理数据'] += title_list
+
 
 if __name__ == '__main__':
     headers, cookie = get_header_and_cookie()
@@ -422,14 +436,32 @@ if __name__ == '__main__':
             t = time.time()
             timestamp = int(round(t * 1000)) # 13位 时间戳 (毫秒) "1678890967997"
             print(f"遍历pages ing")
-            
+
+            # result dict
+            result_dict = {
+                '序号': [],
+                '物件名称': [],
+                '价格': [],
+                '待处理数据': [],
+                # 'shop_name': shop_list,
+                # 'imgsSrc_list': imgsSrc_list,
+            }
+            # id_list_all, item_list_all, money_list_all, title_list_all = [], [], [], []
+            shop_name = ''
+            cur_items = 0
             while LoadMore:
                 # 当前配置的数据
                 data = download_json(albumId, page, start_date)
+                if shop_name == '':
+                    shop_name = data['result']['items'][0]['shop_name']
+                
                 kargs = {
                     'num': num,
                     }
-                process_json(data, **kargs)
+                id_list, item_list, money_list, title_list = process_json(data, cur_items,  **kargs)
+
+                update_dict(result_dict, id_list, item_list, money_list, title_list)
+                cur_items = len(result_dict['序号'])
                 
                 LoadMore = findLoadMore(data)
                 if LoadMore == True:
@@ -438,6 +470,13 @@ if __name__ == '__main__':
                 num  += 1
                 time.sleep(random.randint(1, 3))
             # 保存csv文件
+            # print(result_dict)
+            shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{len(result_dict['序号'])}_{loca}.csv"
+            # if not os.path.isfile(shop_path):
+            #     save_csv(result_dict, shop_path)
+            # else:
+            #     print("excel表格已生成过，跳过~")
+            save_csv(result_dict, shop_path)
 
             
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
