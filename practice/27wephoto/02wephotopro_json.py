@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-06 01:52:32
+LastEditTime: 2023-04-06 09:24:34
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -103,11 +103,11 @@ def process_json(json_data, **kargs):
 
         # filter 时间过期就continue
         # print(type(need_data[i]['time_stamp']))
-        cur_stamp = need_data[i]['time_stamp']
-        # print(f"时间对比  {cur_stamp} v.s. {filter_dict['expire_time']}")
-        if  cur_stamp < filter_dict['expire_time']:
-            print(f'!!!好友【{shop_name}】的此商品不满足时间爬取条件，已跳过')
-            continue
+        # cur_stamp = need_data[i]['time_stamp']
+        # # print(f"时间对比  {cur_stamp} v.s. {filter_dict['start_date']}")
+        # if  cur_stamp < filter_dict['start_date']:
+        #     print(f'!!!好友【{shop_name}】的此商品不满足时间爬取条件，已跳过')
+        #     continue
         # else:
         #     print(f'!!!好友【{shop_name}】的此商品满足时间爬取条件')
 
@@ -359,9 +359,6 @@ def download_json(alb, page, start_date):
 
 
 if __name__ == '__main__':
-    
-
-
     headers, cookie = get_header_and_cookie()
     # 朋友圈API
     friends_link = "https://www.szwego.com/service/album/get_album_list.jsp?act=attention_enc&search_value=&page_index=1&tag_id="
@@ -377,15 +374,16 @@ if __name__ == '__main__':
     print("=======请根据自己需要输出以下4个问题结果(*^▽^*):========")
     # 在直接回车的情况下，input函数保存的是空字符串--""
     # filter1
-    expire_time = input("1 请输入爬取的开始日期(e.g.2023-03-10)”:")
-    # expire_time = '2020-4-06'
-    if expire_time =="":
-        expire_time = int(1268379831000) # 2010-03-12 15:43:51
-    else:
-        expire_time +=' 00:00:00.123'
-        s_t = datetime.datetime.strptime(expire_time, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
-        # expire_time = int(time.mktime(s_t) * 1000)
-        expire_time = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
+    start_date = input("1 请输入爬取的开始日期(e.g.2023-03-10)”:")
+    # start_date = '2020-4-06'
+    if start_date =="":
+        # start_date = int(1268379831000) # 2010-03-12 15:43:51
+        start_date = '2010-03-12' # 2010-03-12 15:43:51
+    # else:
+    #     start_date +=' 00:00:00.123'
+    #     s_t = datetime.datetime.strptime(start_date, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
+    #     # start_date = int(time.mktime(s_t) * 1000)
+    #     start_date = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
     # print()
     # filter2不爬取的好友列表
     no_users = input("2.1 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2) 注意：中间‘,’隔开 好友名字要完整”:")
@@ -397,7 +395,7 @@ if __name__ == '__main__':
     # filter4
     is_sale = input("4 是否不提取“已售/已出”？(Y【default】 or N)”:")
     filter_dict = {
-        'expire_time':expire_time,
+        'start_date':start_date,
         'no_users':no_users,
         'yes_users':yes_users,
         'is_long_term_shop':is_long_term_shop,
@@ -427,7 +425,7 @@ if __name__ == '__main__':
             
             while LoadMore:
                 # 当前配置的数据
-                data = download_json(albumId, page, expire_time)
+                data = download_json(albumId, page, start_date)
                 kargs = {
                     'num': num,
                     }
