@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-06 10:29:49
+LastEditTime: 2023-04-06 11:23:23
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -76,6 +76,19 @@ def save_img(url, img_path=None):
     # with open(img_path,'wb') as fp:
     #     fp.write(img_data)
 
+# 输入毫秒级的时间，转出正常格式的时间
+# https://blog.csdn.net/qq_38486203/article/details/80239762
+# 13位是毫秒时间戳
+# 10位是秒时间戳。
+def timeStamp(timeNum):
+    timeStamp = float(int(timeNum)/1000)
+    timeArray = time.localtime(timeStamp)
+    # otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
+    otherStyleTime = time.strftime("%Y-%m-%d", timeArray)
+    # print(f'年月日时间戳{otherStyleTime}')
+    return otherStyleTime
+
+
 # 某个好友的所有朋友圈遍历
 def process_json(json_data, cur_items, **kargs):
     num = kargs['num']
@@ -90,9 +103,10 @@ def process_json(json_data, cur_items, **kargs):
     money_list = []
     # shop_list = []
     title_list = []
+    time_list = []
 
     if num_list == 0:
-        return id_list, item_list, money_list, title_list
+        return id_list, item_list, money_list, title_list, time_list
     print(f'>>>page{num+1}商品条目：{num_list}') # 
     num_valid = 0
     # 遍历1个好友的朋友圈（商品）数量
@@ -105,7 +119,8 @@ def process_json(json_data, cur_items, **kargs):
 
         # filter 时间过期就continue
         # print(type(need_data[i]['time_stamp']))
-        # cur_stamp = need_data[i]['time_stamp']
+        cur_stamp = need_data[i]['time_stamp']
+        cur_time = timeStamp(cur_stamp)
         # # print(f"时间对比  {cur_stamp} v.s. {filter_dict['start_date']}")
         # if  cur_stamp < filter_dict['start_date']:
         #     print(f'!!!好友【{shop_name}】的此商品不满足时间爬取条件，已跳过')
@@ -144,6 +159,7 @@ def process_json(json_data, cur_items, **kargs):
         # shop_list.append(shop_name)
         title_list.append(title)
         # imgsSrc_list.append(imgsSrc)
+        time_list.append(cur_time)
 
     print(f"满足条件【长期有货】【已售/已出】的商品数量：{num_valid}")
 
@@ -155,7 +171,7 @@ def process_json(json_data, cur_items, **kargs):
     #     # 'shop_name': shop_list,
     #     # 'imgsSrc_list': imgsSrc_list,
     # }
-    return id_list, item_list, money_list, title_list
+    return id_list, item_list, money_list, title_list, time_list
     # return result_dict
 
 
@@ -165,7 +181,7 @@ def save_csv(result_dict, path):
     create_mkdir = os.path.dirname(path)
     os.makedirs(create_mkdir, exist_ok=True) #新建文件
     # 保存csv文件
-    print(f'保存csv文件({path})...')
+    print(f'保存csv文件(path: {path})...')
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame(result_dict)
     #将DataFrame存储为csv,index表示是否显示行名，default=True
@@ -311,14 +327,15 @@ def findPage(data):
 def findLoadMore(data):
     return data["result"]["pagination"]["isLoadMore"]
 
-def createParams(alb: str, page: str, start_date: str):
+def createParams(alb: str, page: str, start_date: str, end_date:str):
     if page == '':
         params = {
             'albumId': f'{alb}',
             'searchValue': '',
             'searchImg': '',
             'startDate': f'{start_date}',
-            'endDate': f'{datetime.date.today().strftime("%Y-%m-%d")}',
+            # 'endDate': f'{datetime.date.today().strftime("%Y-%m-%d")}',
+            'endDate': f'{end_date}',
             'sourceId': '',
             'requestDataType': '',
             'transLang': 'en'
@@ -329,7 +346,7 @@ def createParams(alb: str, page: str, start_date: str):
             'searchValue': '',
             'searchImg': '',
             'startDate': f'{start_date}',
-            'endDate': f'{datetime.date.today().strftime("%Y-%m-%d")}',
+            'endDate': f'{end_date}', # f'{datetime.date.today().strftime("%Y-%m-%d")}',
             'sourceId': '',
             'slipType': '1',
             'timestamp': f'{page}',
@@ -347,15 +364,15 @@ def createData(tag):
 
 
 
-def download_json(alb, page, start_date):
+def download_json(alb, page, start_date, end_date):
     headers, cookies= get_header_and_cookie()
-    params = createParams(alb, page, start_date)
+    params = createParams(alb, page, start_date,end_date)
     data = createData('')
     url = 'https://www.szwego.com/album/personal/all'
     resp = requests.post(url, headers=headers, params=params, data=data, cookies=cookies)
     return resp.json()
 
-def update_dict(result_dict, id_list, item_list, money_list, title_list):
+def update_dict(result_dict, id_list, item_list, money_list, title_list, time_list):
     # result_dict = {
     #     '序号': [],
     #     '物件名称': [],
@@ -370,6 +387,7 @@ def update_dict(result_dict, id_list, item_list, money_list, title_list):
     result_dict['物件名称'] += item_list
     result_dict['价格'] += money_list
     result_dict['待处理数据'] += title_list
+    result_dict['日期'] +=time_list
 
 
 if __name__ == '__main__':
@@ -388,11 +406,15 @@ if __name__ == '__main__':
     print("=======请根据自己需要输出以下4个问题结果(*^▽^*):========")
     # 在直接回车的情况下，input函数保存的是空字符串--""
     # filter1
-    start_date = input("1 请输入爬取的开始日期(e.g.2023-03-10)”:")
+    start_date = input("1.1 请输入爬取的开始日期(e.g.2023-03-10)”:")
+    end_date = input("1.2 请输入爬取的结束日期(e.g.2023-04-06)”:")
     # start_date = '2020-4-06'
     if start_date =="":
         # start_date = int(1268379831000) # 2010-03-12 15:43:51
         start_date = '2010-03-12' # 2010-03-12 15:43:51
+    if end_date =="":
+        # end_date = int(1268379831000) # 2010-03-12 15:43:51
+        end_date = f'{datetime.date.today().strftime("%Y-%m-%d")}'
     # else:
     #     start_date +=' 00:00:00.123'
     #     s_t = datetime.datetime.strptime(start_date, "%Y-%m-%d %H:%M:%S.%f")  # 返回元祖
@@ -410,6 +432,7 @@ if __name__ == '__main__':
     is_sale = input("4 是否不提取“已售/已出”？(Y【default】 or N)”:")
     filter_dict = {
         'start_date':start_date,
+        'end_date':end_date,
         'no_users':no_users,
         'yes_users':yes_users,
         'is_long_term_shop':is_long_term_shop,
@@ -443,6 +466,7 @@ if __name__ == '__main__':
                 '物件名称': [],
                 '价格': [],
                 '待处理数据': [],
+                '日期': [],
                 # 'shop_name': shop_list,
                 # 'imgsSrc_list': imgsSrc_list,
             }
@@ -451,16 +475,16 @@ if __name__ == '__main__':
             cur_items = 0
             while LoadMore:
                 # 当前配置的数据
-                data = download_json(albumId, page, start_date)
+                data = download_json(albumId, page, start_date, end_date)
                 if shop_name == '':
                     shop_name = data['result']['items'][0]['shop_name']
                 
                 kargs = {
                     'num': num,
                     }
-                id_list, item_list, money_list, title_list = process_json(data, cur_items,  **kargs)
+                id_list, item_list, money_list, title_list, time_list = process_json(data, cur_items,  **kargs)
 
-                update_dict(result_dict, id_list, item_list, money_list, title_list)
+                update_dict(result_dict, id_list, item_list, money_list, title_list, time_list)
                 cur_items = len(result_dict['序号'])
                 
                 LoadMore = findLoadMore(data)
@@ -471,7 +495,7 @@ if __name__ == '__main__':
                 time.sleep(random.randint(1, 3))
             # 保存csv文件
             # print(result_dict)
-            shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{len(result_dict['序号'])}_{loca}.csv"
+            shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{len(result_dict['序号'])}.csv"
             # if not os.path.isfile(shop_path):
             #     save_csv(result_dict, shop_path)
             # else:
