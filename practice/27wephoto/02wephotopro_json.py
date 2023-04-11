@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-06 11:23:23
+LastEditTime: 2023-04-12 01:36:22
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -144,7 +144,7 @@ def process_json(json_data, cur_items, **kargs):
         # path = f'title'
         for j, src in enumerate(imgsSrc):
             # img_path = glob.glob("%s/%s.jpg"%(title,i))
-            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + cur_items }({j+1}).jpg"
+            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + cur_items }_{title}_({j+1}).jpg"
             # print(img_path)
             if not os.path.isfile(img_path):
                 save_img(src, img_path)
