@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-12 01:36:22
+LastEditTime: 2023-04-13 22:10:17
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -422,10 +422,12 @@ if __name__ == '__main__':
     #     start_date = int(time.mktime(s_t.timetuple()) * 1000.0 + s_t.microsecond / 1000.0)
     # print()
     # filter2不爬取的好友列表
-    no_users = input("2.1 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2) 注意：中间‘,’隔开 好友名字要完整”:")
-    no_users = no_users.split(',')
-    yes_users = input("2.2 请输入要爬取的好友列表(e.g. 好友名字1,好友名字2) 若直接回车，则默认下载所有。注意：中间‘,’隔开 好友名字要完整”:")
-    yes_users = yes_users.split(',')
+    no_users = input("2.1 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2) 注意：中间‘，’隔开 好友名字要完整”:")
+    no_users = no_users.split('，')
+    print(f"不爬取的好友列表：{no_users}")
+    yes_users = input("2.2 请输入要爬取的好友列表(e.g. 好友名字1,好友名字2) 若直接回车，则默认下载所有。注意：中间‘，’隔开 好友名字要完整”:")
+    yes_users = yes_users.split('，')
+    print(f"要爬取的好友列表：{yes_users}")
     # filter3
     is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
     # filter4
@@ -477,7 +479,11 @@ if __name__ == '__main__':
                 # 当前配置的数据
                 data = download_json(albumId, page, start_date, end_date)
                 if shop_name == '':
-                    shop_name = data['result']['items'][0]['shop_name']
+                    try:
+                        shop_name = data['result']['items'][0]['shop_name']
+                    except Exception as e:
+                        print(data) # 删除好友
+                        break
                 
                 kargs = {
                     'num': num,
