@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-13 22:10:17
+LastEditTime: 2023-04-13 22:33:40
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -144,7 +144,8 @@ def process_json(json_data, cur_items, **kargs):
         # path = f'title'
         for j, src in enumerate(imgsSrc):
             # img_path = glob.glob("%s/%s.jpg"%(title,i))
-            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + cur_items }_{title}_({j+1}).jpg"
+            filename =  re.sub('[\/:*?"<>|]','_',title) # 处理非法字符
+            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + cur_items }_{filename}_({j+1}).jpg"
             # print(img_path)
             if not os.path.isfile(img_path):
                 save_img(src, img_path)
@@ -475,14 +476,17 @@ if __name__ == '__main__':
             # id_list_all, item_list_all, money_list_all, title_list_all = [], [], [], []
             shop_name = ''
             cur_items = 0
+            is_good_friend = 1
             while LoadMore:
                 # 当前配置的数据
                 data = download_json(albumId, page, start_date, end_date)
                 if shop_name == '':
                     try:
+                        print()
                         shop_name = data['result']['items'][0]['shop_name']
                     except Exception as e:
-                        print(data) # 删除好友
+                        print(f"ERROR:\n 无数据原因： {data}") # 删除好友
+                        is_good_friend = 0 # 不是好朋友
                         break
                 
                 kargs = {
@@ -501,12 +505,15 @@ if __name__ == '__main__':
                 time.sleep(random.randint(1, 3))
             # 保存csv文件
             # print(result_dict)
-            shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{len(result_dict['序号'])}.csv"
-            # if not os.path.isfile(shop_path):
-            #     save_csv(result_dict, shop_path)
-            # else:
-            #     print("excel表格已生成过，跳过~")
-            save_csv(result_dict, shop_path)
+            if is_good_friend == 1:
+                shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{len(result_dict['序号'])}.csv"
+                # if not os.path.isfile(shop_path):
+                #     save_csv(result_dict, shop_path)
+                # else:
+                #     print("excel表格已生成过，跳过~")
+                save_csv(result_dict, shop_path)
+            else:
+                print(f"此好友数据有问题，不保存excel表格！")
 
             
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
