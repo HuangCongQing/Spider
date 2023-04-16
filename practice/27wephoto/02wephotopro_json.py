@@ -140,6 +140,8 @@ def process_json(json_data, cur_items, **kargs):
         # print(f'title: {title}')
         # imgsSrc(保存单独文件夹)
         imgsSrc = need_data[i]['imgsSrc']
+        # 序号
+        sequence_number = i+1 + cur_items
         
         # path = f'title'
         for j, src in enumerate(imgsSrc):
@@ -148,7 +150,7 @@ def process_json(json_data, cur_items, **kargs):
             filename.replace(' ','').replace('\n', '_').replace('\r', '').strip()
             filename = '_'.join(filename.split()) # 多行字符串转换为单行字符串
             filename =  re.sub('[\/:*?"<>|]','_',filename) # 处理非法字符
-            img_path = f"微商结果/{shop_name}/{loca}/img/{i+1 + cur_items }_{filename}_({j+1}).jpg"
+            img_path = f"微商结果/{shop_name}/{loca}/img/{sequence_number}_{filename}_({j+1}).jpg"
             # print(img_path)
             if not os.path.isfile(img_path):
                 save_img(src, img_path)
@@ -157,7 +159,7 @@ def process_json(json_data, cur_items, **kargs):
 
 
         # save
-        id_list.append(i+1 + cur_items)
+        id_list.append(sequence_number)
         item_list.append(' ')
         money_list.append(' ')
         # shop_list.append(shop_name)
@@ -498,7 +500,7 @@ if __name__ == '__main__':
                 id_list, item_list, money_list, title_list, time_list = process_json(data, cur_items,  **kargs)
 
                 update_dict(result_dict, id_list, item_list, money_list, title_list, time_list)
-                cur_items = len(result_dict['序号'])
+                cur_items = len(result_dict['序号']) # 每次都得到序号总数
                 
                 LoadMore = findLoadMore(data)
                 if LoadMore == True:
