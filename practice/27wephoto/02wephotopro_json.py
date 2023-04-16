@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-16 17:07:45
+LastEditTime: 2023-04-16 23:35:05
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -142,6 +142,7 @@ def process_json(json_data, cur_items, **kargs):
         imgsSrc = need_data[i]['imgsSrc']
         # 序号
         sequence_number = i+1 + cur_items
+        print(f"序号：{sequence_number}")
         
         # path = f'title'
         for j, src in enumerate(imgsSrc):
@@ -501,6 +502,7 @@ if __name__ == '__main__':
 
                 update_dict(result_dict, id_list, item_list, money_list, title_list, time_list)
                 cur_items = len(result_dict['序号']) # 每次都得到序号总数
+                print(f"当前好友总条数：{cur_items}")
                 
                 LoadMore = findLoadMore(data)
                 if LoadMore == True:
