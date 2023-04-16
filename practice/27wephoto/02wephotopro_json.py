@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-16 13:56:06
+LastEditTime: 2023-04-16 17:02:59
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -133,8 +133,8 @@ def process_json(json_data, cur_items, **kargs):
         if ("长期有货" not in title ) and  filter_dict['is_long_term_shop'] in ["", "Y"]:
             print(f'!!!好友【{shop_name}】的此商品不满足长期有货条件，已跳过')
             continue
-        if ("已售"  in title or "已出" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
-            print(f'!!!好友【{shop_name}】的此商品已售/已出，已跳过')
+        if ("已售"  in title or "已出" in title  or "售出" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
+            print(f'!!!好友【{shop_name}】的此商品已售/已出/售出，已跳过')
             continue
         num_valid +=1
         # print(f'title: {title}')
@@ -164,7 +164,7 @@ def process_json(json_data, cur_items, **kargs):
         # imgsSrc_list.append(imgsSrc)
         time_list.append(cur_time)
 
-    print(f"满足条件【长期有货】【已售/已出】的商品数量：{num_valid}")
+    print(f"满足条件【长期有货】【已售/已出/售出】的商品数量：{num_valid}")
 
     # result_dict = {
     #     '序号': id_list,
@@ -434,7 +434,7 @@ if __name__ == '__main__':
     # filter3
     is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
     # filter4
-    is_sale = input("4 是否不提取“已售/已出”？(Y【default】 or N)”:")
+    is_sale = input("4 是否不提取“已售/已出/售出”？(Y【default】 or N)”:")
     filter_dict = {
         'start_date':start_date,
         'end_date':end_date,
