@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-16 23:35:05
+LastEditTime: 2023-04-17 00:11:09
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -49,32 +49,35 @@ def save_img(url, img_path=None):
     # print("保存图片")
     #content返回的是二进制形式的图片数据
     # text（字符串） content（二进制）json() (对象)
-    create_mkdir = os.path.dirname(img_path)
+    create_mkdir = os.path.dirname(img_path) # 目录
     os.makedirs(create_mkdir, exist_ok=True) #新建文件
     # print(f"create_mkdir: {create_mkdir}")
     # fix:requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
     # 我的问题我使用 requests库进行请求，可能是没有限制频率睡眠，导致出错
-    nums_circle = 100
-    for i in range(nums_circle):
-        try:
-            headers, cookie = get_header_and_cookie()
-            img_data = requests.get(url=url, headers=headers, cookies=cookie).content
-            with open(img_path,'wb') as fp:
-                fp.write(img_data)
-            # 
-            break
+    # nums_circle = 10
+    # for i in range(nums_circle):
+    #     try:
+    #         headers, cookie = get_header_and_cookie()
+    #         img_data = requests.get(url=url, headers=headers, cookies=cookie).content
+    #         # print(f'保存图片目录：{img_path}')
+    #         with open(img_path,'wb') as fp:
+    #             fp.write(img_data)
+    #         # 
+    #         break
 
-        except Exception as e:
-            print(f"[{i+1}]尝试重新连接【INFO：{e}】")
-            if i == nums_circle-1:
-                print(f"此图片（{url}）不下载，跳过~")
+    #     except Exception as e:
+    #         print(f"[{i+1}]尝试重新连接【INFO：{e}】")
+    #         if i == nums_circle-1:
+    #             print(f"此图片（{url}）不下载，跳过~")
 
-        if i < nums_circle:
-            time.sleep(0.5)
-    time.sleep(0.2)
-    # img_data = requests.get(url=url, headers=headers, cookies=cookie).content
-    # with open(img_path,'wb') as fp:
-    #     fp.write(img_data)
+    #     if i < nums_circle:
+    #         time.sleep(0.5)
+    # time.sleep(0.2)
+    # old
+    headers, cookie = get_header_and_cookie()
+    img_data = requests.get(url=url, headers=headers, cookies=cookie).content
+    with open(img_path,'wb') as fp:
+        fp.write(img_data)
 
 # 输入毫秒级的时间，转出正常格式的时间
 # https://blog.csdn.net/qq_38486203/article/details/80239762
@@ -88,6 +91,22 @@ def timeStamp(timeNum):
     # print(f'年月日时间戳{otherStyleTime}')
     return otherStyleTime
 
+def validateTitle(filename):
+    # 去除空格 \r ]n
+    filename.replace(' ','').replace('\n', '_').replace('\r', '').strip()
+    filename = '_'.join(filename.split()) # 多行字符串转换为单行字符串
+    # 非法字符
+    rstr = r"[\/\\\:\*\?\"\<\>\|]"  # '/ \ : * ? " < > |'
+    filename = re.sub(rstr, "_", filename)  # 替换为下划线
+    # 处理中文标点符号
+    punctuation = """！？｡＂＃＄％＆＇（）＊＋－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘'‛“”„‟…‧﹏"""
+    re_punctuation = "[{}]+".format(punctuation)
+    filename = re.sub(re_punctuation, "", filename)
+    # 表情替换
+    p = re.compile(u'['u'\U0001F300-\U0001F64F' u'\U0001F680-\U0001F6FF' u'\u2600-\u2B55 \U00010000-\U0010ffff]+')
+    filename = re.sub(p,'',filename) # 正则匹配，将表情符合替换为空''
+    # 返回
+    return filename
 
 # 某个好友的所有朋友圈遍历
 def process_json(json_data, cur_items, **kargs):
@@ -148,9 +167,9 @@ def process_json(json_data, cur_items, **kargs):
         for j, src in enumerate(imgsSrc):
             # img_path = glob.glob("%s/%s.jpg"%(title,i)).
             filename = title
-            filename.replace(' ','').replace('\n', '_').replace('\r', '').strip()
-            filename = '_'.join(filename.split()) # 多行字符串转换为单行字符串
-            filename =  re.sub('[\/:*?"<>|]','_',filename) # 处理非法字符
+            print(f"start: {filename}")
+            filename =  validateTitle(filename) # 
+            print(f"end: {filename}")
             img_path = f"微商结果/{shop_name}/{loca}/img/{sequence_number}_{filename}_({j+1}).jpg"
             # print(img_path)
             if not os.path.isfile(img_path):
