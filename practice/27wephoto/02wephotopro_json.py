@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-17 00:29:17
+LastEditTime: 2023-04-18 03:55:14
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -139,6 +139,9 @@ def process_json(json_data, cur_items, **kargs):
         # filter 时间过期就continue
         # print(type(need_data[i]['time_stamp']))
         cur_stamp = need_data[i]['time_stamp']
+        cur_tag = None
+        if 'tags' in need_data[i].keys():
+            cur_tag = need_data[i]['tags'][0]['tagName'] 
         cur_time = timeStamp(cur_stamp)
         # # print(f"时间对比  {cur_stamp} v.s. {filter_dict['start_date']}")
         # if  cur_stamp < filter_dict['start_date']:
@@ -154,6 +157,11 @@ def process_json(json_data, cur_items, **kargs):
             continue
         if ("已售"  in title or "已出" in title  or "售出" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
             print(f'!!!好友【{shop_name}】的此商品已售/已出/售出，已跳过')
+            continue
+        if select_tags == '':
+            pass
+        elif (cur_tag not in select_tags):
+            print(f'!!![{cur_tag}]不满足【{select_tags}】条件，已跳过')
             continue
         num_valid +=1
         # print(f'title: {title}')
@@ -429,7 +437,7 @@ if __name__ == '__main__':
     loca=time.strftime('%Y-%m-%d') # time.strftime('%Y-%m-%d-%H-%M-%S')
 
     # 全局变量~~~~~~~~~~
-    print("=======请根据自己需要输出以下4个问题结果(*^▽^*):========")
+    print("=======请根据自己需要输出以下5个问题结果(*^▽^*):========")
     # 在直接回车的情况下，input函数保存的是空字符串--""
     # filter1
     start_date = input("1.1 请输入爬取的开始日期(e.g.2023-03-10)”:")
@@ -458,6 +466,10 @@ if __name__ == '__main__':
     is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
     # filter4
     is_sale = input("4 是否不提取“已售/已出/售出”？(Y【default】 or N)”:")
+
+    select_tags = input("5 请输入筛选的分类名tag(e.g. 长期有货，已售完) 若直接回车，则默认不筛选：")
+    print(f"筛选tag：{select_tags}")
+    select_tags = select_tags.split('，')
     filter_dict = {
         'start_date':start_date,
         'end_date':end_date,
@@ -465,6 +477,7 @@ if __name__ == '__main__':
         'yes_users':yes_users,
         'is_long_term_shop':is_long_term_shop,
         'is_sale':is_sale,
+        'select_tags':select_tags,
     }
     # print(filter_dict)
 
@@ -517,6 +530,7 @@ if __name__ == '__main__':
                 kargs = {
                     'num': num,
                     }
+                # !!!!!!!!!重要处理步骤process_json
                 id_list, item_list, money_list, title_list, time_list = process_json(data, cur_items,  **kargs)
 
                 update_dict(result_dict, id_list, item_list, money_list, title_list, time_list)
