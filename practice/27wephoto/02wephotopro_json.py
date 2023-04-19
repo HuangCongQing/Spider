@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-18 03:55:14
+LastEditTime: 2023-04-19 09:58:55
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -161,8 +161,9 @@ def process_json(json_data, cur_items, **kargs):
         if select_tags == '':
             pass
         elif (cur_tag not in select_tags):
-            print(f'!!![{cur_tag}]不满足【{select_tags}】条件，已跳过')
+            print(f'!!!tag[{cur_tag}]不满足【{select_tags}】条件，已跳过')
             continue
+        # print(f'tag:{cur_tag}')
         num_valid +=1
         # print(f'title: {title}')
         # imgsSrc(保存单独文件夹)
@@ -469,7 +470,8 @@ if __name__ == '__main__':
 
     select_tags = input("5 请输入筛选的分类名tag(e.g. 长期有货，已售完) 若直接回车，则默认不筛选：")
     print(f"筛选tag：{select_tags}")
-    select_tags = select_tags.split('，')
+    if select_tags != '':
+        select_tags = select_tags.split('，')
     filter_dict = {
         'start_date':start_date,
         'end_date':end_date,
