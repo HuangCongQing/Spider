@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-04-22 13:57:00
+LastEditTime: 2023-05-24 23:03:19
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -213,15 +213,25 @@ def process_json(json_data, cur_items, **kargs):
 
 def save_csv(result_dict, path):
     import pandas as pd
+    from pandas.io.excel import ExcelWriter
+    import os
     
     create_mkdir = os.path.dirname(path)
     os.makedirs(create_mkdir, exist_ok=True) #新建文件
     # 保存csv文件
-    print(f'保存csv文件(path: {path})...')
+    # print(f'保存csv文件(path: {path})...')
     #字典中的key值即为csv中列名
     dataframe = pd.DataFrame(result_dict)
     #将DataFrame存储为csv,index表示是否显示行名，default=True
     dataframe.to_csv(path,index=False, sep=',', encoding = 'utf_8_sig') # fix 乱码
+    # 转excel
+    name = os.path.split(path)[1].split('.')[0]
+    excel_path = os.path.join(os.path.split(path)[0], f"{name}.xlsx")
+    with ExcelWriter(excel_path) as ew:
+        #将csv文件转换为excel文件
+        pd.read_csv(path).to_excel(ew, sheet_name="data", index=False)
+        print(f"保存路径: {excel_path}")
+    os.remove(path) # 删除csv文件
 
 
 def get_single_page_shop_list(shop_list):
