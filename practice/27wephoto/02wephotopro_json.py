@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-05-24 23:16:18
+LastEditTime: 2023-05-25 00:18:44
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 import re
@@ -14,7 +14,6 @@ import requests
 import json
 import time
 from urllib import parse
-import glob
 import os
 from tqdm import tqdm
 import datetime # 时间戳
