@@ -225,7 +225,7 @@ def save_csv(result_dict, path):
     if path.split('.')[-1] == 'csv':
         dataframe.to_csv(path, index=False, sep=',', encoding = 'utf_8_sig') # fix 乱码
     elif path.split('.')[-1] == 'xlsx':
-        dataframe.to_excel(path, sheet_name="data", index=False, encoding = 'utf_8_sig') # fix 乱码
+        dataframe.to_excel(path, sheet_name="data", index=False) # fix 乱码
     else:
         raise Exception("No match file!")
     # # 转excel
