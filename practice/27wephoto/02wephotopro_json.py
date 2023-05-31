@@ -6,9 +6,10 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-05-25 00:18:44
+LastEditTime: 2023-05-31 16:08:03
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
+
 import re
 import requests
 import json
@@ -53,30 +54,29 @@ def save_img(url, img_path=None):
     # print(f"create_mkdir: {create_mkdir}")
     # fix:requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
     # 我的问题我使用 requests库进行请求，可能是没有限制频率睡眠，导致出错
-    # nums_circle = 10
-    # for i in range(nums_circle):
-    #     try:
-    #         headers, cookie = get_header_and_cookie()
-    #         img_data = requests.get(url=url, headers=headers, cookies=cookie).content
-    #         # print(f'保存图片目录：{img_path}')
-    #         with open(img_path,'wb') as fp:
-    #             fp.write(img_data)
-    #         # 
-    #         break
+    nums_circle = 10
+    for i in range(nums_circle):
+        try:
+            headers, cookie = get_header_and_cookie()
+            img_data = requests.get(url=url, headers=headers, cookies=cookie).content
+            # print(f'保存图片目录：{img_path}')
+            with open(img_path,'wb') as fp:
+                fp.write(img_data)
+            # 
+            break
+        except Exception as e:
+            print(f"[{i+1}]尝试重新连接【INFO：{e}】")
+            if i == nums_circle-1:
+                print(f"此图片（{url}）不下载，跳过~")
 
-    #     except Exception as e:
-    #         print(f"[{i+1}]尝试重新连接【INFO：{e}】")
-    #         if i == nums_circle-1:
-    #             print(f"此图片（{url}）不下载，跳过~")
-
-    #     if i < nums_circle:
-    #         time.sleep(0.5)
+            if i < nums_circle:
+                time.sleep(0.5)
     # time.sleep(0.2)
     # old
-    headers, cookie = get_header_and_cookie()
-    img_data = requests.get(url=url, headers=headers, cookies=cookie).content
-    with open(img_path,'wb') as fp:
-        fp.write(img_data)
+    # headers, cookie = get_header_and_cookie()
+    # img_data = requests.get(url=url, headers=headers, cookies=cookie).content
+    # with open(img_path,'wb') as fp:
+    #     fp.write(img_data)
 
 # 输入毫秒级的时间，转出正常格式的时间
 # https://blog.csdn.net/qq_38486203/article/details/80239762
@@ -154,8 +154,8 @@ def process_json(json_data, cur_items, **kargs):
         if ("长期有货" not in title ) and  filter_dict['is_long_term_shop'] in ["", "Y"]:
             print(f'!!!好友【{shop_name}】的此商品不满足长期有货条件，已跳过')
             continue
-        if ("已售"  in title or "已出" in title  or "售出" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
-            print(f'!!!好友【{shop_name}】的此商品已售/已出/售出，已跳过')
+        if ("已售"  in title or "已出" in title  or "售出" in title  or "售完" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
+            print(f'!!!好友【{shop_name}】的此商品已售/已出/售出/售完，已跳过')
             continue
         if select_tags == '':
             pass
@@ -196,7 +196,7 @@ def process_json(json_data, cur_items, **kargs):
         # imgsSrc_list.append(imgsSrc)
         time_list.append(cur_time)
 
-    print(f"满足条件【长期有货】【已售/已出/售出】的商品数量：{num_valid}")
+    print(f"满足条件【长期有货】【已售/已出/售出/售完】的商品数量：{num_valid}")
 
     # result_dict = {
     #     '序号': id_list,
@@ -483,7 +483,7 @@ if __name__ == '__main__':
     # filter3
     is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
     # filter4
-    is_sale = input("4 是否不提取“已售/已出/售出”？(Y【default】 or N)”:")
+    is_sale = input("4 是否不提取“已售/已出/售出/售完”？(Y【default】 or N)”:")
 
     select_tags = input("5 请输入筛选的分类名tag(e.g. 长期有货，已售完) 若直接回车，则默认不筛选：")
     print(f"筛选tag：{select_tags}")
