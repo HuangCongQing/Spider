@@ -476,9 +476,13 @@ if __name__ == '__main__':
     # filter2不爬取的好友列表
     no_users = input("2.1 请输入不爬取的好友列表(e.g. 好友名字1,好友名字2) 注意：中间‘，’隔开 好友名字要完整”:")
     no_users = no_users.split('，')
+    if not (set(no_users).issubset(set(shop_name_list))) and no_users[0] != '':
+        raise ValueError(f'{no_users} 不包含在好友列表里！')
     print(f"不爬取的好友列表：{no_users}")
     yes_users = input("2.2 请输入要爬取的好友列表(e.g. 好友名字1,好友名字2) 若直接回车，则默认下载所有。注意：中间‘，’隔开 好友名字要完整”:")
     yes_users = yes_users.split('，')
+    if not (set(yes_users).issubset(set(shop_name_list))) and yes_users[0] != '':
+        raise ValueError(f'{yes_users} 不包含在好友列表里！')
     print(f"要爬取的好友列表：{yes_users}")
     # filter3
     is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
