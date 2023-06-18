@@ -216,7 +216,7 @@ def process_json(json_data, cur_items, **kargs):
         # imgsSrc_list.append(imgsSrc)
         time_list.append(cur_time)
 
-    print(f"满足条件的商品数量：{num_valid}")
+    print(f"满足当前日期所有条件的商品数量：{num_valid}")
 
     # result_dict = {
     #     '序号': id_list,
