@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-06-19 00:41:36
+LastEditTime: 2023-06-19 00:42:36
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 
@@ -509,7 +509,7 @@ if __name__ == '__main__':
     # # filter4
     # is_sale = input("4 是否不提取“已售/已出/售出/售完”？(Y【default】 or N)”:")
     # filter3
-    is_include = input("3 请输入必须包含的文字列表(e.g. 货号A，出售) 若直接回车，则默认下载所有。注意：中间‘，’隔开:")
+    is_include = input("3 请输入必须包含的文字列表(e.g. 货号A) 若直接回车，则默认下载所有。注意：中间‘，’隔开:")
     
     print(f"必须包含的文字列表{is_include}")
     # filter4
