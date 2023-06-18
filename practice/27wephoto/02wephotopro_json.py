@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-05-31 16:08:03
+LastEditTime: 2023-06-19 00:41:36
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 
@@ -151,13 +151,33 @@ def process_json(json_data, cur_items, **kargs):
 
 
         # valid_shop = False
-        if ("长期有货" not in title ) and  filter_dict['is_long_term_shop'] in ["", "Y"]:
-            print(f'!!!好友【{shop_name}】的此商品不满足长期有货条件，已跳过')
+        # if  ("货号A" not in title ):
+        #     continue # 不下载
+        # if  ("寿山石" in title ):
+        #     continue
+        # if  ("成批" in title ):
+        #     continue
+        # if ("长期有货" not in title ) and  filter_dict['is_long_term_shop'] in ["", "Y"]:
+        #     print(f'!!!好友【{shop_name}】的此商品不满足长期有货条件，已跳过')
+        #     continue
+        # if ("已售"  in title or "已出" in title  or "售出" in title  or "售完" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
+        #     print(f'!!!好友【{shop_name}】的此商品已售/已出/售出/售完，已跳过')
+        #     continue
+
+        # 包含筛选
+        if filter_dict['is_include'] == '':
+            pass
+        elif  all([w not in title and w for w in filter_dict['is_include'].split('，')]) :
+            print("不满足【必须包含】条件")
             continue
-        if ("已售"  in title or "已出" in title  or "售出" in title  or "售完" in title ) and  filter_dict['is_sale'] in ["", "Y"]:
-            print(f'!!!好友【{shop_name}】的此商品已售/已出/售出/售完，已跳过')
+        # 不包含筛选
+        if filter_dict['is_no_include'] == '':
+            pass
+        elif  all([w in title and w for w in filter_dict['is_no_include'].split('，')]):
+            print("不满足【不能包含】条件")
             continue
-        if select_tags == '':
+        
+        if filter_dict['select_tags'] == '':
             pass
         elif (cur_tag not in select_tags):
             print(f'!!!tag[{cur_tag}]不满足【{select_tags}】条件，已跳过')
@@ -196,7 +216,7 @@ def process_json(json_data, cur_items, **kargs):
         # imgsSrc_list.append(imgsSrc)
         time_list.append(cur_time)
 
-    print(f"满足条件【长期有货】【已售/已出/售出/售完】的商品数量：{num_valid}")
+    print(f"满足条件的商品数量：{num_valid}")
 
     # result_dict = {
     #     '序号': id_list,
@@ -484,11 +504,18 @@ if __name__ == '__main__':
     if not (set(yes_users).issubset(set(shop_name_list))) and yes_users[0] != '':
         raise ValueError(f'{yes_users} 不包含在好友列表里！')
     print(f"要爬取的好友列表：{yes_users}")
+    # # filter3
+    # is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
+    # # filter4
+    # is_sale = input("4 是否不提取“已售/已出/售出/售完”？(Y【default】 or N)”:")
     # filter3
-    is_long_term_shop = input("3 是否只提取“长期有货”的商品？(Y【default】 or N)”:")
+    is_include = input("3 请输入必须包含的文字列表(e.g. 货号A，出售) 若直接回车，则默认下载所有。注意：中间‘，’隔开:")
+    
+    print(f"必须包含的文字列表{is_include}")
     # filter4
-    is_sale = input("4 是否不提取“已售/已出/售出/售完”？(Y【default】 or N)”:")
-
+    is_no_include = input("4 请输入不能包含的文字列表(e.g. 寿山石，成批，已售，已出，售出，售完) 若直接回车，则默认下载所有。注意：中间‘，’隔开:")
+    print(f"不能包含的文字列表{is_no_include}")
+    # 
     select_tags = input("5 请输入筛选的分类名tag(e.g. 长期有货，已售完) 若直接回车，则默认不筛选：")
     print(f"筛选tag：{select_tags}")
     if select_tags != '':
@@ -498,8 +525,8 @@ if __name__ == '__main__':
         'end_date':end_date,
         'no_users':no_users,
         'yes_users':yes_users,
-        'is_long_term_shop':is_long_term_shop,
-        'is_sale':is_sale,
+        'is_include':is_include,
+        'is_no_include':is_no_include,
         'select_tags':select_tags,
     }
     # print(filter_dict)
