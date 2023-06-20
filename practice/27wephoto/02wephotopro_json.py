@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-06-19 00:45:24
+LastEditTime: 2023-06-20 21:31:34
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 
@@ -198,8 +198,8 @@ def process_json(json_data, cur_items, **kargs):
             # print(f"start: {filename}")
             filename =  validateTitle(filename) # 
             # print(f"end: {filename}")
-            # img_path = f"微商结果/{shop_name}/{loca}/img/{sequence_number}_{filename}_({j+1}).jpg"
-            img_path = f"微商结果/{shop_name}/{loca}/img/{sequence_number}({j+1}).jpg"
+            # img_path = f"微商结果/{shop_name}/{shop_name}({start_date}~{end_date})/img/{sequence_number}_{filename}_({j+1}).jpg"
+            img_path = f"微商结果/{shop_name}/{shop_name}({start_date}~{end_date})/img/{sequence_number}({j+1}).jpg"
             # print(img_path)
             if not os.path.isfile(img_path):
                 save_img(src, img_path)
@@ -472,7 +472,8 @@ if __name__ == '__main__':
     print(f"好友总条目：{len(shop_id_list)}")
 
     
-    loca=time.strftime('%Y-%m-%d') # time.strftime('%Y-%m-%d-%H-%M-%S')
+    loca=time.strftime('%Y-%m-%d') # 
+    # loca=time.strftime('%Y-%m-%d-%H-%M-%S')
 
     # 全局变量~~~~~~~~~~
     print("=======请根据自己需要输出以下5个问题结果(*^▽^*):========")
@@ -596,8 +597,8 @@ if __name__ == '__main__':
             # 保存csv文件
             # print(result_dict)
             if is_good_friend == 1:
-                # shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{len(result_dict['序号'])}_{start_date}~{end_date}.csv"
-                shop_path = f"微商结果/{shop_name}/{loca}/{shop_name}_item{len(result_dict['序号'])}_{start_date}~{end_date}.xlsx"
+                # shop_path = f"微商结果/{shop_name}/{shop_name}({start_date}~{end_date})/{shop_name}_item{len(result_dict['序号'])}_{start_date}~{end_date}.csv"
+                shop_path = f"微商结果/{shop_name}/{shop_name}({start_date}~{end_date})/{shop_name}({len(result_dict['序号'])}件)_{start_date}~{end_date}.xlsx"
                 # if not os.path.isfile(shop_path):
                 #     save_csv(result_dict, shop_path)
                 # else:
