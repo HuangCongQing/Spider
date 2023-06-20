@@ -43,6 +43,10 @@ python3 各种爬虫技术
 
 []()[]()
 
+### 通用代码(输出|表格|)
+
+* [common.ipynb](common.ipynb)
+
 ### 爬虫实战
 
 1. [practice/01复仇者联盟3豆瓣影评爬虫](practice/01复仇者联盟3豆瓣影评爬虫)
