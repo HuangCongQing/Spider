@@ -618,6 +618,8 @@ if __name__ == '__main__':
             if not  os.path.isdir(new_folder):
                 os.rename(old_folder,new_folder)
             
+            print(f'修改后的文件夹路径(path: {new_folder})...')
+            
             
             print(f"爬取好友【{shop_name_list[i]}】的数据结束")
     
