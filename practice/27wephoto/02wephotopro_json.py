@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-06-21 03:38:57
+LastEditTime: 2023-07-04 01:29:10
 FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
 '''
 
@@ -182,6 +182,26 @@ def process_json(json_data, cur_items, **kargs):
         elif (cur_tag not in select_tags):
             print(f'!!!tag[{cur_tag}]不满足【{select_tags}】条件，已跳过')
             continue
+        
+        # 金额筛选
+        # 匹配格式（当前匹配 元|个|件）
+        Regx = re.compile("(([1-9]\\d*[\\d,，]*\\.?\\d*)|(0\\.[0-9]+))(/|元|个|件|百万|万元|亿元|万|亿)")
+        match_result =  Regx.search(title)
+        get_money = None
+        if match_result != None:
+            get_money = float(re.findall("\d+",match_result.group())[0])
+        min_money = float(filter_dict['select_money'][0])
+        max_money = float(filter_dict['select_money'][1])
+        need_flag = (get_money >= min_money) and (get_money <= max_money)
+        if filter_dict['select_money'] == '':
+            pass
+        elif get_money is None:
+                print(f'!!!没有匹配到金额[{get_money}]，请询问开发人员（黄重庆）匹配建议，已跳过')
+                continue
+        elif not need_flag:
+                print(f'!!!金额[{get_money}]不满足【{min_money}~{max_money}】条件，已跳过')
+                continue
+
         # print(f'tag:{cur_tag}')
         num_valid +=1
         # print(f'title: {title}')
@@ -476,7 +496,7 @@ if __name__ == '__main__':
     # loca=time.strftime('%Y-%m-%d-%H-%M-%S')
 
     # 全局变量~~~~~~~~~~
-    print("=======请根据自己需要输出以下5个问题结果(*^▽^*):========")
+    print("=======请根据自己需要输出以下几个个问题结果(*^▽^*):========")
     # 在直接回车的情况下，input函数保存的是空字符串--""
     # filter1
     start_date = input("1.1 请输入爬取的开始日期(e.g.2023-03-10)”:")
@@ -516,8 +536,14 @@ if __name__ == '__main__':
     # filter4
     is_no_include = input("4 请输入不能包含的文字列表(e.g. 寿山石，成批，已售，已出，售出，售完) 若直接回车，则默认不筛选。注意：中间‘，’隔开:")
     print(f"不能包含的文字列表：{is_no_include}")
+    # 金额大小
+    select_money = input("5 请输入价格区间(e.g. 10，300) 若直接回车，则默认不筛选：")
+    if select_money != '':
+        select_money = select_money.split('，')
+        print(f"价格曲线：{select_money}")
+        assert len(select_money) == 2, f"不符合要求:{select_money}，请注意，是中文下的逗号"
     # 
-    select_tags = input("5 请输入筛选的分类名tag(e.g. 长期有货，已售完) 若直接回车，则默认不筛选：")
+    select_tags = input("6 请输入筛选的分类名tag(e.g. 长期有货，已售完) 若直接回车，则默认不筛选：")
     print(f"筛选tag：{select_tags}")
     if select_tags != '':
         select_tags = select_tags.split('，')
@@ -529,6 +555,7 @@ if __name__ == '__main__':
         'is_include':is_include,
         'is_no_include':is_no_include,
         'select_tags':select_tags,
+        'select_money':select_money,
     }
     # print(filter_dict)
 
