@@ -188,7 +188,8 @@ def process_json(json_data, cur_items, **kargs):
             pass
         else:
             # 匹配格式（当前匹配 元|个|件）
-            Regx = re.compile("(([1-9]\\d*[\\d,，]*\\.?\\d*)|(0\\.[0-9]+))(/|元|个|件|百万|万元|亿元|万|亿)")
+            # Regx = re.compile("(([1-9]\\d*[\\d,，]*\\.?\\d*)|(0\\.[0-9]+))(/|元|个|件|百万|万元|亿元|万|亿)")
+            Regx = re.compile("(([1-9]\\d*[\\d,，]*\\.?\\d*)|(0\\.[0-9]+))(/|元|百万|万元|亿元|万|亿)")
             match_result =  Regx.search(title)
             get_money = -1
             if match_result != None:
