@@ -6,7 +6,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-07-04 18:30:22
+LastEditTime: 2023-07-04 18:44:27
 FilePath: /lmv/home/chongqinghuang/Downloads/02wephotopro_json.py
 '''
 
@@ -184,23 +184,24 @@ def process_json(json_data, cur_items, **kargs):
             continue
         
         # 金额筛选
-        # 匹配格式（当前匹配 元|个|件）
-        Regx = re.compile("(([1-9]\\d*[\\d,，]*\\.?\\d*)|(0\\.[0-9]+))(/|元|个|件|百万|万元|亿元|万|亿)")
-        match_result =  Regx.search(title)
-        get_money = -1
-        if match_result != None:
-            get_money = float(re.findall("\d+",match_result.group())[0])
-        min_money = float(filter_dict['select_money'][0])
-        max_money = float(filter_dict['select_money'][1])
-        need_flag = (get_money >= min_money) and (get_money <= max_money)
         if filter_dict['select_money'] == '':
             pass
-        elif get_money  == -1:
-                print(f'!!!没有匹配到金额[{get_money}]，请询问开发人员（黄重庆）匹配建议，已跳过')
-                continue
-        elif not need_flag:
-                print(f'!!!金额[{get_money}]不满足【{min_money}~{max_money}】条件，已跳过')
-                continue
+        else:
+            # 匹配格式（当前匹配 元|个|件）
+            Regx = re.compile("(([1-9]\\d*[\\d,，]*\\.?\\d*)|(0\\.[0-9]+))(/|元|个|件|百万|万元|亿元|万|亿)")
+            match_result =  Regx.search(title)
+            get_money = -1
+            if match_result != None:
+                get_money = float(re.findall("\d+",match_result.group())[0])
+            min_money = float(filter_dict['select_money'][0])
+            max_money = float(filter_dict['select_money'][1])
+            need_flag = (get_money >= min_money) and (get_money <= max_money)
+            if get_money == -1:
+                    print(f'!!!没有匹配到金额[{get_money}]，请询问开发人员（黄重庆）匹配建议，已跳过')
+                    continue
+            elif not need_flag:
+                    print(f'!!!金额[{get_money}]不满足【{min_money}~{max_money}】条件，已跳过')
+                    continue
 
         # print(f'tag:{cur_tag}')
         num_valid +=1
