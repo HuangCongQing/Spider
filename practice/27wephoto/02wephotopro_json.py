@@ -6,8 +6,8 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-02-25 11:40:38
-LastEditTime: 2023-07-04 01:29:10
-FilePath: \Spider-1\practice\27wephoto\02wephotopro_json.py
+LastEditTime: 2023-07-04 18:30:22
+FilePath: /lmv/home/chongqinghuang/Downloads/02wephotopro_json.py
 '''
 
 import re
@@ -187,7 +187,7 @@ def process_json(json_data, cur_items, **kargs):
         # 匹配格式（当前匹配 元|个|件）
         Regx = re.compile("(([1-9]\\d*[\\d,，]*\\.?\\d*)|(0\\.[0-9]+))(/|元|个|件|百万|万元|亿元|万|亿)")
         match_result =  Regx.search(title)
-        get_money = None
+        get_money = -1
         if match_result != None:
             get_money = float(re.findall("\d+",match_result.group())[0])
         min_money = float(filter_dict['select_money'][0])
@@ -195,7 +195,7 @@ def process_json(json_data, cur_items, **kargs):
         need_flag = (get_money >= min_money) and (get_money <= max_money)
         if filter_dict['select_money'] == '':
             pass
-        elif get_money is None:
+        elif get_money  == -1:
                 print(f'!!!没有匹配到金额[{get_money}]，请询问开发人员（黄重庆）匹配建议，已跳过')
                 continue
         elif not need_flag:
